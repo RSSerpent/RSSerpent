@@ -6,11 +6,12 @@ authors = ["Queensferry <queensferry.me@gmail.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.6.1"
+python = "^3.6.2"
 fastapi = "^0.65.2"
 uvicorn = {extras = ["standard"], version = "^0.14.0"}
 
 [tool.poetry.dev-dependencies]
+black = "^21.6b0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
