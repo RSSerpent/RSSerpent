@@ -14,6 +14,13 @@ uvicorn = {extras = ["standard"], version = "^0.14.0"}
 black = "^21.6b0"
 mypy = "^0.902"
 
+[tool.black]
+target-version = ['py36']
+
+[tool.mypy]
+disallow_untyped_defs = true
+python_version = "3.6"
+
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
