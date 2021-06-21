@@ -1,5 +1,7 @@
+.mypy_cache/
 .vercel/
 .vscode/
 __pycache__/
+dist/
 
 .python-version
