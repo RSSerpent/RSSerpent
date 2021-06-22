@@ -16,6 +16,7 @@ rsserpent-plugin-example = {git = "https://github.com/RSSerpent/rsserpent-plugin
 
 [tool.poetry.dev-dependencies]
 black = "^21.6b0"
+flake8 = "^3.9.2"
 mypy = "^0.902"
 pre-commit = "^2.13.0"
 

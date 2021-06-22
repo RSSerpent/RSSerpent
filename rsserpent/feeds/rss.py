@@ -56,7 +56,8 @@ class Item(BaseModel):
 
 class Feed(BaseModel):
     """
-    Data model for RSS 2.0 feeds, see specification at https://www.rssboard.org/rss-specification.
+    Data model for RSS 2.0 feeds, see specification at \
+    https://www.rssboard.org/rss-specification.
 
     Note that some rarely used fields are not implemented:
     * `<cloud>`
