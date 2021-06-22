@@ -24,6 +24,7 @@ target-version = ['py36']
 
 [tool.mypy]
 disallow_untyped_defs = true
+plugins = ["pydantic.mypy"]
 python_version = "3.6"
 
 [build-system]
