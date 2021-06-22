@@ -285,17 +285,14 @@ version = "0.0.0"
 description = "An example plugin for RSSerpent"
 category = "main"
 optional = true
-python-versions = "^3.6"
+python-versions = "^3.6.2"
 develop = false
-
-[package.dependencies]
-fastapi = "^0.65.2"
 
 [package.source]
 type = "git"
 url = "https://github.com/RSSerpent/rsserpent-plugin-example.git"
 reference = "master"
-resolved_reference = "f59957b942d8182367af4caf0fab66072cb6fcff"
+resolved_reference = "7be8a7cd421de56f824cd492ea1dd47353e4d6f8"
 
 [[package]]
 name = "six"

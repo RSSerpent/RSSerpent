@@ -1,9 +1,13 @@
 from importlib_metadata import entry_points
 
-from fastapi import FastAPI
+from fastapi import Depends, FastAPI
 
 
 app = FastAPI()
 
 for plugin in entry_points(group="rsserpent.plugins"):
-    app.include_router(plugin.load())
+    path, provider = plugin.load()
+    # register the plugin at `path`
+    @app.get(path)
+    def router(data: dict = Depends(provider)) -> dict:
+        return data
