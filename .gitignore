@@ -9,6 +9,7 @@ __pycache__/
 .coverage
 .hypothesis/
 .pytest_cache/
+coverage.xml
 
 # Toolchain
 .mypy_cache/
