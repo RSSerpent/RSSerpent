@@ -1,14 +1,20 @@
 from datetime import datetime
-from typing import List, Optional
+from typing import TYPE_CHECKING, List, Optional
 
-from pydantic import AnyUrl, BaseModel, HttpUrl, root_validator
+from pydantic import AnyUrl, BaseModel, root_validator
+
+
+if TYPE_CHECKING:
+    HttpUrl = str
+else:
+    from pydantic import HttpUrl
 
 
 class Category(BaseModel):
     """Data model for the `<category>` field in an RSS 2.0 feed."""
 
     name: str
-    domain: Optional[str]
+    domain: Optional[HttpUrl]
 
 
 class Enclosure(BaseModel):
@@ -58,9 +64,8 @@ class Item(BaseModel):
     pub_date: Optional[datetime]
     source: Optional[Source]
 
-    @classmethod
     @root_validator
-    def validate(cls, values: dict) -> dict:  # type: ignore
+    def validate(cls, values: dict) -> dict:  # type: ignore # noqa: N805
         """Ensure at least one of `<title>` or `<description>` is present."""
         title, description = values.get("title"), values.get("description")
         if title is None and description is None:
@@ -92,7 +97,7 @@ class Feed(BaseModel):
     last_build_date: Optional[datetime]
     categories: Optional[List[Category]]
     generator: Optional[str] = __package__.split(".")[0]
-    docs: Optional[HttpUrl] = HttpUrl("https://www.rssboard.org/rss-specification")
+    docs: Optional[HttpUrl] = "https://www.rssboard.org/rss-specification"
     ttl: Optional[int] = 60
     image: Optional[Image]
     items: Optional[List[Item]]

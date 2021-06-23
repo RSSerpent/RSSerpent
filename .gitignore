@@ -1,7 +1,16 @@
-.mypy_cache/
-.vercel/
+# IDE
 .vscode/
-__pycache__/
-dist/
 
+# Misc
+.vercel/
+__pycache__/
+
+# Test
+.coverage
+.hypothesis/
+.pytest_cache/
+
+# Toolchain
+.mypy_cache/
 .python-version
+dist/
