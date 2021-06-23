@@ -1,23 +1,26 @@
+fail_fast: true
 repos:
-  - repo: local
+  - repo: https://github.com/psf/black
+    rev: 21.6b0
     hooks:
-      - id: format
-        name: format
-        entry: black
-        types: [python]
-        language: system
-      - id: lint
-        name: lint
-        entry: flake8
-        types: [python]
-        language: system
-      - id: sort
-        name: sort
-        entry: isort
-        types: [python]
-        language: system
-      - id: type-check
-        name: type-check
-        entry: mypy
-        types: [python]
-        language: system
+      - id: black
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v0.902
+    hooks:
+      - id: mypy
+        additional_dependencies: [pydantic]
+  - repo: https://github.com/pycqa/isort
+    rev: 5.9.1
+    hooks:
+      - id: isort
+  - repo: https://github.com/PyCQA/flake8
+    rev: 3.9.2
+    hooks:
+      - id: flake8
+        additional_dependencies:
+          - flake8-docstrings
+          - flake8-expression-complexity
+          - flake8-functions
+          - flake8-print
+          - mypy-extensions  # required by flake8-functions
+          - pep8-naming
