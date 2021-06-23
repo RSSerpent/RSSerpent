@@ -19,10 +19,18 @@ black = "^21.6b0"
 flake8 = "^3.9.2"
 mypy = "^0.902"
 pre-commit = "^2.13.0"
+isort = "^5.9.1"
 
 [tool.black]
 include = '\.pyi?$'
 target-version = ["py36", "py37", "py38", "py39"]
+
+[tool.isort]
+balanced_wrapping = true
+combine_as_imports = true
+lines_after_imports = 2
+profile = "black"
+src_paths = ["rsserpent"]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

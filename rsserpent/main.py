@@ -1,6 +1,5 @@
-from importlib_metadata import entry_points
-
 from fastapi import Depends, FastAPI
+from importlib_metadata import entry_points
 
 
 app = FastAPI()

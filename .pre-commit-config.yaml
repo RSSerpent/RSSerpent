@@ -11,6 +11,11 @@ repos:
         entry: flake8
         types: [python]
         language: system
+      - id: sort
+        name: sort
+        entry: isort
+        types: [python]
+        language: system
       - id: type-check
         name: type-check
         entry: mypy
