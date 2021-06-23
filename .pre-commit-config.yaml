@@ -31,5 +31,6 @@ repos:
           - flake8-expression-complexity
           - flake8-functions
           - flake8-print
-          - mypy-extensions  # required by flake8-functions
+          - mypy-extensions  # required by flake8-functions for py3.7
           - pep8-naming
+          - typing-extensions  # required by flake8-functions for py3.8
