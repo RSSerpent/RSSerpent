@@ -1,7 +1,6 @@
 asgiref==3.3.4; python_version >= "3.6"
 click==8.0.1; python_version >= "3.6"
 colorama==0.4.4; python_version >= "3.6" and python_full_version < "3.0.0" and sys_platform == "win32" and platform_system == "Windows" or sys_platform == "win32" and python_full_version >= "3.5.0" and platform_system == "Windows" and python_version >= "3.6"
-dataclasses==0.8; python_version >= "3.6" and python_version < "3.7" and python_full_version >= "3.6.1"
 fastapi==0.65.2; python_version >= "3.6"
 h11==0.12.0; python_version >= "3.6"
 httptools==0.2.0
@@ -13,7 +12,7 @@ rsserpent-plugin-example @ git+https://github.com/RSSerpent/rsserpent-plugin-exa
 starlette==0.14.2; python_version >= "3.6"
 typing-extensions==3.10.0.0; python_full_version >= "3.6.1" and python_version >= "3.6" and python_version < "3.8"
 uvicorn==0.14.0
-uvloop==0.14.0; sys_platform != "win32" and sys_platform != "cygwin" and platform_python_implementation != "PyPy"
+uvloop==0.15.2; sys_platform != "win32" and sys_platform != "cygwin" and platform_python_implementation != "PyPy" and python_version >= "3.7"
 watchgod==0.7; python_version >= "3.5"
 websockets==9.1; python_full_version >= "3.6.1"
 zipp==3.4.1; python_version < "3.8" and python_version >= "3.6"

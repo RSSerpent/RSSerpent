@@ -5,22 +5,30 @@ from pydantic import AnyUrl, BaseModel, HttpUrl, root_validator
 
 
 class Category(BaseModel):
+    """Data model for the `<category>` field in an RSS 2.0 feed."""
+
     name: str
     domain: Optional[str]
 
 
 class Enclosure(BaseModel):
+    """Data model for the `<enclosure>` field in an RSS 2.0 feed."""
+
     length: int = 0
     type: str
     url: AnyUrl
 
 
 class GUID(BaseModel):
-    isPermaLink: bool = True
+    """Data model for the `<guid>` field in an RSS 2.0 feed."""
+
+    is_perma_link: bool = True
     value: str
 
 
 class Image(BaseModel):
+    """Data model for the `<image>` field in an RSS 2.0 feed."""
+
     url: HttpUrl
     title: str
     link: HttpUrl
@@ -30,11 +38,15 @@ class Image(BaseModel):
 
 
 class Source(BaseModel):
+    """Data model for the `<source>` field in an RSS 2.0 feed."""
+
     name: str
     url: Optional[HttpUrl]
 
 
 class Item(BaseModel):
+    """Data model for the `<item>` field in an RSS 2.0 feed."""
+
     title: Optional[str]
     link: Optional[HttpUrl]
     description: Optional[str]
@@ -43,11 +55,13 @@ class Item(BaseModel):
     comments: Optional[HttpUrl]
     enclosure: Optional[Enclosure]
     guid: Optional[GUID]
-    pubDate: Optional[datetime]
+    pub_date: Optional[datetime]
     source: Optional[Source]
 
+    @classmethod
     @root_validator
     def validate(cls, values: dict) -> dict:  # type: ignore
+        """Ensure at least one of `<title>` or `<description>` is present."""
         title, description = values.get("title"), values.get("description")
         if title is None and description is None:
             raise ValueError("at least one of title or description must be present")
@@ -72,10 +86,10 @@ class Feed(BaseModel):
     description: str
     language: Optional[str]
     copyright: Optional[str]
-    managingEditor: Optional[str]
-    webMaster: Optional[str]
-    pubDate: Optional[datetime]
-    lastBuildDate: Optional[datetime]
+    managing_editor: Optional[str]
+    web_master: Optional[str]
+    pub_date: Optional[datetime]
+    last_build_date: Optional[datetime]
     categories: Optional[List[Category]]
     generator: Optional[str] = __package__.split(".")[0]
     docs: Optional[HttpUrl] = HttpUrl("https://www.rssboard.org/rss-specification")

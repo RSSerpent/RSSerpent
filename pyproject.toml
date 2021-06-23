@@ -9,7 +9,7 @@ license = "MIT"
 plugin = ["rsserpent-plugin-example"]
 
 [tool.poetry.dependencies]
-python = "^3.6.2"
+python = "^3.7"
 fastapi = "^0.65.2"
 uvicorn = {extras = ["standard"], version = "^0.14.0"}
 rsserpent-plugin-example = {git = "https://github.com/RSSerpent/rsserpent-plugin-example.git", optional = true}
@@ -17,13 +17,18 @@ rsserpent-plugin-example = {git = "https://github.com/RSSerpent/rsserpent-plugin
 [tool.poetry.dev-dependencies]
 black = "^21.6b0"
 flake8 = "^3.9.2"
-mypy = "^0.902"
-pre-commit = "^2.13.0"
+flake8-docstrings = "^1.6.0"
+flake8-expression-complexity = "^0.0.9"
+flake8-functions = "^0.0.6"
+flake8-print = "^4.0.0"
 isort = "^5.9.1"
+mypy = "^0.902"
+pep8-naming = "^0.11.1"
+pre-commit = "^2.13.0"
 
 [tool.black]
 include = '\.pyi?$'
-target-version = ["py36", "py37", "py38", "py39"]
+target-version = ["py37", "py38", "py39"]
 
 [tool.isort]
 balanced_wrapping = true

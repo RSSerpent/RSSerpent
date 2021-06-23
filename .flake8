@@ -1,7 +1,13 @@
 [flake8]
 count = true
-max-complexity = 10
+ignore =
+    # D100: Missing docstring in public module
+    D100,
+    # D104: Missing docstring in public package
+    D104
+max-complexity = 5
+max-expression-complexity = 5
 max-line-length = 88
 per-file-ignores =
-    # module imported but unused
+    # F401: `module` imported but unused
     __init__.py: F401
