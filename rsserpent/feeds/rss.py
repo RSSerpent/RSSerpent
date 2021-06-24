@@ -1,13 +1,16 @@
+from __future__ import annotations
+
 from datetime import datetime
 from typing import TYPE_CHECKING, List, Optional
 
-from pydantic import AnyUrl, BaseModel, root_validator
+from pydantic import BaseModel, root_validator
 
 
 if TYPE_CHECKING:
-    HttpUrl = str
+    AnyUrl = str  # pragma: no cover
+    HttpUrl = str  # pragma: no cover
 else:
-    from pydantic import HttpUrl
+    from pydantic import AnyUrl, HttpUrl
 
 
 class Category(BaseModel):
@@ -57,7 +60,7 @@ class Item(BaseModel):
     link: Optional[HttpUrl]
     description: Optional[str]
     author: Optional[str]
-    category: Optional[List[Category]]
+    categories: Optional[List[Category]]
     comments: Optional[HttpUrl]
     enclosure: Optional[Enclosure]
     guid: Optional[GUID]
@@ -69,7 +72,9 @@ class Item(BaseModel):
         """Ensure at least one of `<title>` or `<description>` is present."""
         title, description = values.get("title"), values.get("description")
         if title is None and description is None:
-            raise ValueError("at least one of title or description must be present")
+            raise ValueError(
+                "at least one of <title> or <description> must be present."
+            )
         return values
 
 
