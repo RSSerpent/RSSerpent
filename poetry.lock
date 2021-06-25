@@ -10,7 +10,7 @@ python-versions = "*"
 name = "asgiref"
 version = "3.3.4"
 description = "ASGI specs, helper code, and adapters"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -54,7 +54,7 @@ python-versions = ">=3.6.1"
 name = "click"
 version = "8.0.1"
 description = "Composable command line interface toolkit"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -66,7 +66,7 @@ importlib-metadata = {version = "*", markers = "python_version < \"3.8\""}
 name = "colorama"
 version = "0.4.4"
 description = "Cross-platform colored terminal text."
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
@@ -146,7 +146,7 @@ python-versions = "*"
 name = "h11"
 version = "0.12.0"
 description = "A pure-Python, bring-your-own-I/O implementation of HTTP/1.1"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -154,7 +154,7 @@ python-versions = ">=3.6"
 name = "httptools"
 version = "0.2.0"
 description = "A collection of framework independent HTTP protocol utils."
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -212,7 +212,7 @@ python-versions = ">=3.5"
 name = "importlib-metadata"
 version = "4.5.0"
 description = "Read metadata from Python packages"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -356,7 +356,7 @@ testing = ["fields", "hunter", "process-tests", "six", "pytest-xdist", "virtuale
 name = "python-dotenv"
 version = "0.18.0"
 description = "Read key-value pairs from a .env file and set them as environment variables"
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -367,7 +367,7 @@ cli = ["click (>=5.0)"]
 name = "pyyaml"
 version = "5.4.1"
 description = "YAML parser and emitter for Python"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*"
 
@@ -418,7 +418,7 @@ python-versions = "*"
 name = "uvicorn"
 version = "0.14.0"
 description = "The lightning-fast ASGI server."
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -442,7 +442,7 @@ standard = ["websockets (>=9.1)", "httptools (>=0.2.0,<0.3.0)", "watchgod (>=0.6
 name = "uvloop"
 version = "0.15.2"
 description = "Fast implementation of asyncio event loop on top of libuv"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -474,7 +474,7 @@ testing = ["coverage (>=4)", "coverage-enable-subprocess (>=1)", "flaky (>=3)", 
 name = "watchgod"
 version = "0.7"
 description = "Simple, modern file watching and code reload in python."
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.5"
 
@@ -482,7 +482,7 @@ python-versions = ">=3.5"
 name = "websockets"
 version = "9.1"
 description = "An implementation of the WebSocket Protocol (RFC 6455 & 7692)"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6.1"
 
@@ -490,7 +490,7 @@ python-versions = ">=3.6.1"
 name = "zipp"
 version = "3.4.1"
 description = "Backport of pathlib-compatible object wrapper for zip files"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -504,7 +504,7 @@ plugin = []
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "b4052e0ee3124d7eaa6c9d96566015b1a240c7e843c7a5e48a6f46a1149a47eb"
+content-hash = "7f09b6ba45ed4652c22480a6198060f02fb4dd5d099193db49197d840f1e360a"
 
 [metadata.files]
 appdirs = [

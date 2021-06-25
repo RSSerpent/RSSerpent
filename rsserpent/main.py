@@ -1,3 +1,5 @@
+from typing import cast
+
 from fastapi import Depends, FastAPI
 from importlib_metadata import entry_points
 
@@ -6,8 +8,8 @@ from .model.plugin import Plugin
 
 app = FastAPI()
 
-for plugin in entry_points(group="rsserpent.plugins"):
-    assert isinstance(plugin, Plugin)
+for entry_point in entry_points(group="rsserpent.plugins"):
+    plugin = cast(Plugin, entry_point.load())
 
     for path, provider in plugin.routers.items():
 
