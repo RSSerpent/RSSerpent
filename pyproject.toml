@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "rsserpent"
-version = "0.1.0"
+version = "0.1.0a1"
 description = "🐍 This snake helps you reconnect the Web, with RSS feeds!"
 authors = ["Queensferry <queensferry.me@gmail.com>"]
 license = "MIT"
@@ -12,14 +12,13 @@ plugin = ["rsserpent-plugin-example"]
 python = "^3.7"
 pydantic = {extras = ["email"], version = "^1.8.2"}
 fastapi = "^0.65.2"
-uvicorn = {extras = ["standard"], version = "^0.14.0"}
-rsserpent-plugin-example = {git = "https://github.com/RSSerpent/rsserpent-plugin-example.git", optional = true}
 
 [tool.poetry.dev-dependencies]
+hypothesis = "^6.14.0"
 pre-commit = "^2.13.0"
 pytest = "^6.2.4"
 pytest-cov = "^2.12.1"
-hypothesis = "^6.14.0"
+uvicorn = {extras = ["standard"], version = "^0.14.0"}
 
 [tool.black]
 include = '\.pyi?$'
