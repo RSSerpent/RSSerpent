@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import TYPE_CHECKING, List, Optional
 
-from pydantic import BaseModel, root_validator
+from pydantic import BaseModel, Field, root_validator
 
 
 if TYPE_CHECKING:
@@ -96,8 +96,8 @@ class Feed(BaseModel):
     copyright: Optional[str]
     managing_editor: Optional[str]
     web_master: Optional[str]
-    pub_date: Optional[datetime]
-    last_build_date: Optional[datetime]
+    pub_date: Optional[datetime] = Field(default_factory=datetime.utcnow)
+    last_build_date: Optional[datetime] = Field(default_factory=datetime.utcnow)
     categories: Optional[List[Category]]
     generator: Optional[str] = __package__.split(".")[0]
     docs: Optional[HttpUrl] = "https://www.rssboard.org/rss-specification"

@@ -5,13 +5,12 @@ description = "🐍 This snake helps you reconnect the Web, with RSS feeds!"
 authors = ["Queensferry <queensferry.me@gmail.com>"]
 license = "MIT"
 
-[tool.poetry.extras]
-plugin = ["rsserpent-plugin-example"]
-
 [tool.poetry.dependencies]
 python = "^3.7"
-pydantic = {extras = ["email"], version = "^1.8.2"}
+arrow = "^1.1.1"
 fastapi = "^0.65.2"
+Jinja2 = "^3.0.1"
+pydantic = {extras = ["email"], version = "^1.8.2"}
 
 [tool.poetry.dev-dependencies]
 hypothesis = "^6.14.0"
