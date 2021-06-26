@@ -1,12 +1,13 @@
 from typing import TYPE_CHECKING, Callable, Dict, List, Optional
 
-from pydantic import BaseModel, EmailStr, validator
+from pydantic import BaseModel, validator
 
 
 if TYPE_CHECKING:
-    HttpUrl = str  # pragma: no cover
+    EmailStr = str
+    HttpUrl = str
 else:
-    from pydantic import HttpUrl
+    from pydantic import EmailStr, HttpUrl
 
 
 class Persona(BaseModel):

@@ -23,6 +23,15 @@ uvicorn = {extras = ["standard"], version = "^0.14.0"}
 include = '\.pyi?$'
 target-version = ["py37", "py38", "py39"]
 
+[tool.coverage.run]
+include = ["rsserpent/*"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "if TYPE_CHECKING:"
+]
+
 [tool.isort]
 balanced_wrapping = true
 classes = ["GUID"]

@@ -5,8 +5,8 @@ from pydantic import BaseModel, Field, root_validator
 
 
 if TYPE_CHECKING:
-    AnyUrl = str  # pragma: no cover
-    HttpUrl = str  # pragma: no cover
+    AnyUrl = str
+    HttpUrl = str
 else:
     from pydantic import AnyUrl, HttpUrl
 
