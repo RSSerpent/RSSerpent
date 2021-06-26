@@ -30,6 +30,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           prerelease: ${{ env.IS_PRE_RELEASE }}
       - name: "Publish to PyPI"
+        if: ${{ github.repository == 'RSSerpent/RSSerpent' }}
         env:
           POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_TOKEN }}
         run: poetry publish
