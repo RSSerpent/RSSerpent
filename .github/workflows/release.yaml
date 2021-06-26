@@ -8,6 +8,8 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
+    env:
+      IS_PRE_RELEASE: false
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
@@ -17,17 +19,16 @@ jobs:
         run: pip install --user poetry
       - name: "Build Project"
         run: poetry build
-      - name: "Check Version for Prereleases"
+      - name: "Check Version for Pre-releases"
         id: check-version
         run: |
-          [[ "$(poetry version --short)" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || echo "::set-output name=prerelease::true"
+          [[ "$(poetry version --short)" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || echo "IS_PRE_RELEASE=true" >> $GITHUB_ENV
       - name: "Create Release on GitHub"
         uses: ncipollo/release-action@v1
         with:
           artifacts: "dist/*"
           token: ${{ secrets.GITHUB_TOKEN }}
-          draft: false
-          prerelease: steps.check-version.outputs.prerelease == "true"
+          prerelease: ${{ env.IS_PRE_RELEASE }}
       - name: "Publish to PyPI"
         env:
           POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_TOKEN }}
