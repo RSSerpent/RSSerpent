@@ -3,6 +3,7 @@
 .vscode/
 
 # Misc
+.envrc
 .vercel/
 __pycache__/
 
