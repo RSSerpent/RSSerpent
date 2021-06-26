@@ -26,6 +26,7 @@ jobs:
       - name: "Create Release on GitHub"
         uses: ncipollo/release-action@v1
         with:
+          allowUpdates: true
           artifacts: "dist/*"
           token: ${{ secrets.GITHUB_TOKEN }}
           prerelease: ${{ env.IS_PRE_RELEASE }}
