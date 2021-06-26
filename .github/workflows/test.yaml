@@ -1,4 +1,4 @@
-name: Codecov
+name: Test
 
 on:
   pull_request:
@@ -17,11 +17,15 @@ jobs:
     runs-on: ubuntu-latest
     env:
       HYPOTHESIS_PROFILE: ci
+    strategy:
+      matrix:
+        python-version: [3.7, 3.8, 3.9]
+      fail-fast: false
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
         with:
-          python-version: "3.7"
+          python-version: ${{ matrix.python-version }}
       - name: "Install Dependencies"
         run: |
           pip install --user poetry
