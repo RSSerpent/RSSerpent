@@ -1,7 +1,7 @@
 from typing import Callable, Dict, List
 
 import pytest
-from hypothesis import given, infer
+from hypothesis import given, infer, settings
 from hypothesis.provisional import urls
 from hypothesis.strategies import (
     builds,
@@ -14,11 +14,13 @@ from hypothesis.strategies import (
 from pydantic import ValidationError
 
 from rsserpent.model.plugin import Persona, Plugin
+from tests.conftest import Times
 
 
 class TestPersona:
     """Test the `Persona` class."""
 
+    @settings(max_examples=Times.SOME)
     @given(builds(Persona, link=urls()))
     def test(self, persona: Persona) -> None:
         """Test if the `Persona` class works properly."""
@@ -28,6 +30,7 @@ class TestPersona:
 class TestPlugin:
     """Test the `Plugin` class."""
 
+    @settings(max_examples=Times.SOME)
     @given(
         builds(
             Plugin,
@@ -43,6 +46,7 @@ class TestPlugin:
         """Test if the `Plugin` class works properly."""
         assert plugin is not None
 
+    @settings(max_examples=Times.ONCE)
     @given(
         name=text(),
         author=builds(Persona, link=urls()),
@@ -68,6 +72,7 @@ class TestPlugin:
                 routers=routers,
             )
 
+    @settings(max_examples=Times.ONCE)
     @given(
         name=from_regex(r"^rsserpent-plugin-\w+"),
         author=builds(Persona, link=urls()),
