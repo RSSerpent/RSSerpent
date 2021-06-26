@@ -1,6 +1,7 @@
 name: Codecov
 
 on:
+  pull_request:
   push:
     branches:
       - '**'
@@ -9,7 +10,7 @@ on:
       - 'tests/**'
     tags-ignore:
       - '**'
-  pull_request:
+  workflow_dispatch:
 
 jobs:
   run:
@@ -22,7 +23,7 @@ jobs:
       - name: "Install Dependencies"
         run: |
           pip install --user poetry
-          poetry install
+          poetry install -E plugin
       - name: "Generate Coverage Report"
         run: poetry run pytest --cov --cov-report=xml
       - name: "Upload to Codecov.io"
