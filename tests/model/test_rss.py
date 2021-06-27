@@ -17,7 +17,6 @@ class TestCategory:
     def test(self, category: Category) -> None:
         """Test if the `Category` class works properly."""
         assert category is not None
-        assert isinstance(category.domain, HttpUrl) or (category.domain is None)
 
 
 class TestEnclosure:

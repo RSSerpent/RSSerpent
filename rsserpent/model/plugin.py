@@ -1,12 +1,16 @@
-from typing import TYPE_CHECKING, Callable, Dict, List, Optional
+from typing import TYPE_CHECKING, Callable, Dict
 
 from pydantic import BaseModel, validator
+from pydantic.class_validators import root_validator
 
 
 if TYPE_CHECKING:
     EmailStr = str
     HttpUrl = str
+    Path = str
 else:
+    from pathlib import Path
+
     from pydantic import EmailStr, HttpUrl
 
 
@@ -26,11 +30,21 @@ class Plugin(BaseModel):
     """Data model for RSSerpent plugins."""
 
     name: str
-    description: Optional[str]
     author: Persona
-    maintainers: List[Persona]
     repository: HttpUrl
-    routers: Dict[str, Callable]
+    prefix: Path
+    routers: Dict[Path, Callable]
+
+    @root_validator
+    def validate(cls, values: dict) -> dict:  # type: ignore # noqa: N805
+        """Ensure all paths in `routers` starts with `prefix`."""
+        prefix = values.get("prefix")
+        routers = values.get("routers")
+        assert prefix is not None and routers is not None
+        for path in routers:
+            if not str(path).startswith(str(prefix)):
+                raise ValueError("all path in `routers` must starts with `prefix`.")
+        return values
 
     @validator("name")
     def validate_name(cls, name: str) -> str:  # noqa: N805
@@ -41,8 +55,8 @@ class Plugin(BaseModel):
 
     @validator("routers")
     def validate_routers(
-        cls, routers: Dict[str, Callable]  # noqa: N805
-    ) -> Dict[str, Callable]:
+        cls, routers: Dict[Path, Callable]  # noqa: N805
+    ) -> Dict[Path, Callable]:
         """Ensure `routers` is not empty."""
         if len(routers) < 1:
             raise ValueError("plugin must include at least one router.")

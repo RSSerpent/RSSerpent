@@ -1,20 +1,25 @@
-from typing import Callable, Dict, List
+from typing import TYPE_CHECKING, Callable, Dict
 
-import pytest
-from hypothesis import given, infer, settings
+from hypothesis import given, settings
 from hypothesis.provisional import urls
 from hypothesis.strategies import (
     builds,
     dictionaries,
     from_regex,
     functions,
-    lists,
+    just,
     text,
 )
-from pydantic import ValidationError
+from pydantic import validate_model
 
 from rsserpent.model.plugin import Persona, Plugin
 from tests.conftest import Times
+
+
+if TYPE_CHECKING:
+    Path = str
+else:
+    from pathlib import Path
 
 
 class TestPersona:
@@ -30,70 +35,107 @@ class TestPersona:
 class TestPlugin:
     """Test the `Plugin` class."""
 
-    @settings(max_examples=Times.SOME)
+    @settings(max_examples=Times.ONCE)
     @given(
         builds(
             Plugin,
             name=from_regex(r"^rsserpent-plugin-\w+"),
-            description=infer,
             author=builds(Persona, link=urls()),
-            maintainers=lists(builds(Persona, link=urls())),
             repository=urls(),
-            routers=dictionaries(text(), functions(), min_size=1),
+            prefix=just("/prefix"),
+            routers=dictionaries(from_regex(r"^/prefix/\w+"), functions(), min_size=1),
         )
     )
     def test(self, plugin: Plugin) -> None:
         """Test if the `Plugin` class works properly."""
         assert plugin is not None
 
-    @settings(max_examples=Times.ONCE)
+    @settings(max_examples=Times.SOME)
     @given(
         name=text(),
         author=builds(Persona, link=urls()),
-        maintainers=lists(builds(Persona, link=urls())),
         repository=urls(),
-        routers=dictionaries(text(), functions(), min_size=1),
+        prefix=just("/prefix"),
+        routers=dictionaries(from_regex(r"^/prefix/\w+"), functions(), min_size=1),
     )
     def test_name_validation(
         self,
         name: str,
         author: Persona,
-        maintainers: List[Persona],
         repository: str,
-        routers: Dict[str, Callable],
+        prefix: Path,
+        routers: Dict[Path, Callable],
     ) -> None:
         """Test if the `Plugin` class validates `name` properly."""
-        with pytest.raises(ValidationError):
-            Plugin(
-                name=name,
-                author=author,
-                maintainers=maintainers,
-                repository=repository,
-                routers=routers,
-            )
+        _, _, e = validate_model(
+            Plugin,
+            {
+                "name": name,
+                "author": author,
+                "repository": repository,
+                "prefix": prefix,
+                "routers": routers,
+            },
+        )
+        assert e is not None
+        assert 'plugin names must start with "rsserpent-plugin-".' in str(e)
 
-    @settings(max_examples=Times.ONCE)
+    @settings(max_examples=Times.SOME)
     @given(
         name=from_regex(r"^rsserpent-plugin-\w+"),
         author=builds(Persona, link=urls()),
-        maintainers=lists(builds(Persona, link=urls())),
         repository=urls(),
+        prefix=just("/prefix"),
         routers=dictionaries(text(), functions(), max_size=0),
     )
     def test_routers_validation(
         self,
         name: str,
         author: Persona,
-        maintainers: List[Persona],
         repository: str,
-        routers: Dict[str, Callable],
+        prefix: Path,
+        routers: Dict[Path, Callable],
     ) -> None:
         """Test if the `Plugin` class validates `routers` properly."""
-        with pytest.raises(ValidationError):
-            Plugin(
-                name=name,
-                author=author,
-                maintainers=maintainers,
-                repository=repository,
-                routers=routers,
-            )
+        _, _, e = validate_model(
+            Plugin,
+            {
+                "name": name,
+                "author": author,
+                "repository": repository,
+                "prefix": prefix,
+                "routers": routers,
+            },
+        )
+        assert e is not None
+        assert "plugin must include at least one router." in str(e)
+
+    @settings(max_examples=Times.SOME)
+    @given(
+        name=from_regex(r"^rsserpent-plugin-\w+"),
+        author=builds(Persona, link=urls()),
+        repository=urls(),
+        prefix=just("/prefix"),
+        routers=dictionaries(text(), functions(), min_size=1),
+    )
+    def test_validation(
+        self,
+        name: str,
+        author: Persona,
+        repository: str,
+        prefix: Path,
+        routers: Dict[Path, Callable],
+    ) -> None:
+        """Test if the `@root_validator` of `Item` class works properly."""
+        _, _, e = validate_model(
+            Plugin,
+            {
+                "name": name,
+                "author": author,
+                "repository": repository,
+                "prefix": prefix,
+                "routers": routers,
+            },
+        )
+        assert e is not None
+        assert "all path in `routers` must starts with `prefix`." in str(e)
