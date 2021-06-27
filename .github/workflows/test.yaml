@@ -6,6 +6,8 @@ on:
     branches:
       - '**'
     paths:
+      - '.github/workflows/test.yaml'
+      - 'poetry.lock'
       - 'rsserpent/**'
       - 'tests/**'
     tags-ignore:
@@ -33,9 +35,9 @@ jobs:
       - uses: actions/cache@v1
         with:
           path: .venv
-          key: ${{ runner.os }}-${{ matrix.python-version }}-${{ hasFiles('poetry.lock') }}
+          key: ${{ runner.os }}-${{ matrix.python-version }}-${{ hashFiles('poetry.lock') }}
       - name: "Install Dependencies"
-        run: poetry install -E plugin
+        run: poetry install
       - name: "Generate Coverage Report"
         run: poetry run pytest --cov --cov-report=xml
       - name: "Upload to Codecov.io"
