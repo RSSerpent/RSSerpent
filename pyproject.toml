@@ -6,7 +6,7 @@ authors = ["Queensferry <queensferry.me@gmail.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.6.1"
 arrow = "^1.1.1"
 fastapi = "^0.65.2"
 importlib-metadata = "^4.5.0"
