@@ -1,4 +1,4 @@
-from typing import TYPE_CHECKING, Callable, Dict
+from typing import Callable, Dict
 
 from hypothesis import given, settings
 from hypothesis.provisional import urls
@@ -14,12 +14,6 @@ from pydantic import validate_model
 
 from rsserpent.model.plugin import Persona, Plugin
 from tests.conftest import Times
-
-
-if TYPE_CHECKING:
-    Path = str
-else:
-    from pathlib import Path
 
 
 class TestPersona:
@@ -63,8 +57,8 @@ class TestPlugin:
         name: str,
         author: Persona,
         repository: str,
-        prefix: Path,
-        routers: Dict[Path, Callable],
+        prefix: str,
+        routers: Dict[str, Callable],
     ) -> None:
         """Test if the `Plugin` class validates `name` properly."""
         _, _, e = validate_model(
@@ -93,8 +87,8 @@ class TestPlugin:
         name: str,
         author: Persona,
         repository: str,
-        prefix: Path,
-        routers: Dict[Path, Callable],
+        prefix: str,
+        routers: Dict[str, Callable],
     ) -> None:
         """Test if the `Plugin` class validates `routers` properly."""
         _, _, e = validate_model(
@@ -123,8 +117,8 @@ class TestPlugin:
         name: str,
         author: Persona,
         repository: str,
-        prefix: Path,
-        routers: Dict[Path, Callable],
+        prefix: str,
+        routers: Dict[str, Callable],
     ) -> None:
         """Test if the `@root_validator` of `Item` class works properly."""
         _, _, e = validate_model(

@@ -7,10 +7,7 @@ from pydantic.class_validators import root_validator
 if TYPE_CHECKING:
     EmailStr = str
     HttpUrl = str
-    Path = str
 else:
-    from pathlib import Path
-
     from pydantic import EmailStr, HttpUrl
 
 
@@ -32,8 +29,8 @@ class Plugin(BaseModel):
     name: str
     author: Persona
     repository: HttpUrl
-    prefix: Path
-    routers: Dict[Path, Callable]
+    prefix: str
+    routers: Dict[str, Callable]
 
     @root_validator
     def validate(cls, values: dict) -> dict:  # type: ignore # noqa: N805
@@ -42,7 +39,7 @@ class Plugin(BaseModel):
         routers = values.get("routers")
         assert prefix is not None and routers is not None
         for path in routers:
-            if not str(path).startswith(str(prefix)):
+            if not path.startswith(prefix):
                 raise ValueError("all path in `routers` must starts with `prefix`.")
         return values
 
@@ -55,8 +52,8 @@ class Plugin(BaseModel):
 
     @validator("routers")
     def validate_routers(
-        cls, routers: Dict[Path, Callable]  # noqa: N805
-    ) -> Dict[Path, Callable]:
+        cls, routers: Dict[str, Callable]  # noqa: N805
+    ) -> Dict[str, Callable]:
         """Ensure `routers` is not empty."""
         if len(routers) < 1:
             raise ValueError("plugin must include at least one router.")
