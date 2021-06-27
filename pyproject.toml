@@ -23,7 +23,7 @@ uvicorn = {extras = ["standard"], version = "^0.14.0"}
 
 [tool.black]
 include = '\.pyi?$'
-target-version = ["py37", "py38", "py39"]
+target-version = ["py36", "py37", "py38", "py39"]
 
 [tool.coverage.run]
 include = ["rsserpent/*"]
