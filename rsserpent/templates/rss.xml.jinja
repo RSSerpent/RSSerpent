@@ -124,7 +124,7 @@
                 {% endif %}
                 {% if item.pub_date %}
                 <pubDate>{{ arrow.get(item.pub_date).format(arrow.FORMAT_RFC822) }}</pubDate>
-                {% else %}}
+                {% else %}
                 <pubDate>{{ now.format(arrow.FORMAT_RFC822) }}</pubDate>
                 {% endif %}
                 {% if item.source %}

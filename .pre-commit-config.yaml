@@ -25,6 +25,8 @@ repos:
         # As `mypy` runs in an isolated environment, it is necessary to manually specify
         # some libraries of the current (poetry) environment for `mypy` to work properly.
         additional_dependencies:
+          - hypothesis
+          - pytest
           - rsserpent
           - types-dataclasses
   - repo: https://github.com/PyCQA/flake8
