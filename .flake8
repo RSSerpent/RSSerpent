@@ -5,8 +5,8 @@ ignore =
     D100,
     # D104: Missing docstring in public package
     D104
-max-complexity = 5
-max-expression-complexity = 5
+max-complexity = 6
+max-expression-complexity = 6
 max-line-length = 88
 per-file-ignores =
     # F401: `module` imported but unused
