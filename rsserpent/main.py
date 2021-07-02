@@ -2,7 +2,7 @@ from pathlib import Path
 from typing import cast
 
 import arrow
-from fastapi import Depends, FastAPI, Request, Response, APIRouter
+from fastapi import APIRouter, Depends, FastAPI, Request, Response
 from importlib_metadata import entry_points
 from jinja2 import Environment, FileSystemLoader
 
