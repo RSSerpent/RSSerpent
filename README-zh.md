@@ -11,21 +11,19 @@
 
 [![chat on telegram](https://img.shields.io/badge/chat%20on-telegram-blue.svg)](https://t.me/rsserpent)
 
-This snake helps you reconnect the Web, with RSS feeds!
-
-RSSerpent is an open-source software that create [RSS](https://en.wikipedia.org/wiki/RSS) feeds for websites that do not provide any.
+RSSerpent 是一个开源软件。它能帮助你使用 [RSS](https://zh.wikipedia.org/wiki/RSS) 订阅那些不支持 RSS 订阅的网站。
 
 [English](https://github.com/RSSerpent/RSSerpent/blob/master/README.md) | [中文](https://github.com/RSSerpent/RSSerpent/blob/master/README-zh.md)
 
-# Quick Start
+# 快速开始
 
-- Official Instance: <https://rsserpent.vercel.app/>
-- Documentation: <https://rsserpent.rtfd.io/>
+- 示例：<https://rsserpent.vercel.app/>
+- 文档：<https://rsserpent.rtfd.io/>
 
-# Thanks
-The RSSerpent Project is heavily inspired by [RSSHub](https://github.com/DIYgod/RSSHub) 🎉 We pay the highest possible tribute to RSSHub & its maintainers.
+# 致谢
+RSSerpent 项目是在 [RSSHub](https://github.com/DIYgod/RSSHub) 的启发下开发的 🎉 我们向 RSSHub 项目及其维护者致以最高的敬意。
 
 
 # People
 
-The RSSerpent Project is created by [@queensferry](https://github.com/queensferryme/), supported by various [project members](https://github.com/orgs/RSSerpent/people).
+RSSerpent 项目的创建者是 [@queensferry](https://github.com/queensferryme/)，还有许多其他热心的[项目成员](https://github.com/orgs/RSSerpent/people)支撑着这个项目.
