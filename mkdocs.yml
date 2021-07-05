@@ -11,6 +11,8 @@ extra:
       link: https://github.com/RSSerpent/RSSerpent
     - icon: fontawesome/brands/telegram
       link: https://t.me/rsserpent
+  version:
+    provider: mike
 
 markdown_extensions:
   - toc:
