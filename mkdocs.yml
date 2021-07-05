@@ -1,0 +1,5 @@
+site_name: RSSerpent
+site_url: https://example.com/
+
+theme:
+  name: material
