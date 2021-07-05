@@ -1,5 +1,5 @@
 site_name: RSSerpent
-site_url: https://example.com/
+site_url: https://rsserpent.readthedocs.io/
 
 theme:
   name: material
