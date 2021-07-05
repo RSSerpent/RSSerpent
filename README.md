@@ -1,7 +1,7 @@
 # RSSerpent 🐍
 
 [![python: 3.6.1+](https://img.shields.io/badge/python-^3.6.1-blue.svg)](https://www.python.org/downloads/)
-[![mypy: checked](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
+[![mypy: checked](https://img.shields.io/badge/mypy-checked-blue.svg)](https://github.com/python/mypy)
 [![code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![pypi: version](https://img.shields.io/pypi/v/rsserpent)](https://pypi.org/project/rsserpent/)
 
