@@ -1,29 +1,48 @@
-site_name: RSSerpent
-site_url: https://rsserpent.readthedocs.io/
-
 extra:
   alternate:
     - name: English
-      link: /
+      link: ''
       lang: en
     - name: 中文
-      link: /zh/
+      link: zh/
       lang: zh
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/RSSerpent/RSSerpent
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/rsserpent
+
+markdown_extensions:
+  - toc:
+      permalink: true
+      slugify: !!python/name:pymdownx.slugs.uslugify
+      toc_depth: 3
 
 plugins:
-  - search:
-      prebuild_index: true
+  - git-revision-date
   - i18n:
       default_language: en
       languages:
         en: english
         zh: 中文
       material_alternate: true
+  - search:
+      prebuild_index: true
 
 repo_name: RSSerpent/RSSerpent
 repo_url: https://github.com/RSSerpent/RSSerpent
 
+site_name: RSSerpent Docs
+site_url: https://rsserpent.readthedocs.io/
+
 theme:
+  favicon: 'assets/logo.png'
+  features:
+    - header.autohide
+    - navigation.top
+  icon:
+    repo: fontawesome/brands/github
+  logo: 'assets/logo.png'
   name: material
   palette:
     - media: "(prefers-color-scheme: light)"

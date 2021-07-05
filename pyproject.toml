@@ -15,14 +15,18 @@ pydantic = {extras = ["email"], version = "^1.8.2"}
 
 [tool.poetry.dev-dependencies]
 hypothesis = "^6.14.0"
-mkdocs = "^1.2.1"
-mkdocs-material = "^7.1.9"
-mkdocs-static-i18n = "^0.17"
 pre-commit = "^2.13.0"
 pytest = "^6.2.4"
 pytest-cov = "^2.12.1"
 requests = "^2.25.1"
 uvicorn = {extras = ["standard"], version = "^0.14.0"}
+mkdocs = {version = "^1.2.1", optional = true}
+mkdocs-git-revision-date-plugin = {version = "^0.3.1", optional = true}
+mkdocs-material = {version = "^7.1.9", optional = true}
+mkdocs-static-i18n = {version = "^0.17", optional = true}
+
+[tool.poetry.extras]
+doc = ["mkdocs", "mkdocs-git-revision-date-plugin", "mkdocs-material", "mkdocs-static-i18n"]
 
 [tool.black]
 include = '\.pyi?$'
