@@ -1,5 +1,42 @@
 site_name: RSSerpent
 site_url: https://rsserpent.readthedocs.io/
 
+extra:
+  alternate:
+    - name: English
+      link: /
+      lang: en
+    - name: 中文
+      link: /zh/
+      lang: zh
+
+plugins:
+  - search:
+      prebuild_index: true
+  - i18n:
+      default_language: en
+      languages:
+        en: english
+        zh: 中文
+      material_alternate: true
+
+repo_name: RSSerpent/RSSerpent
+repo_url: https://github.com/RSSerpent/RSSerpent
+
 theme:
   name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: orange
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode

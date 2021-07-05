@@ -392,6 +392,17 @@ python-versions = ">=3.5"
 mkdocs-material = ">=5.0.0"
 
 [[package]]
+name = "mkdocs-static-i18n"
+version = "0.17"
+description = "MkDocs i18n plugin using static translation markdown files"
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+mkdocs = ">=1.1.2"
+
+[[package]]
 name = "nodeenv"
 version = "1.6.0"
 description = "Node.js virtual environment builder"
@@ -741,7 +752,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pyt
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6.1"
-content-hash = "46af8b677ecabe8e2a5bb5d46e889dce59dc92e9e564dd7dfbbb615ee8f1428d"
+content-hash = "cdedb1e0ff24cea402d16a701786647bd98546c82ed791e2c60d1ce1ce8faf67"
 
 [metadata.files]
 appdirs = [
@@ -969,6 +980,9 @@ mkdocs-material = [
 mkdocs-material-extensions = [
     {file = "mkdocs-material-extensions-1.0.1.tar.gz", hash = "sha256:6947fb7f5e4291e3c61405bad3539d81e0b3cd62ae0d66ced018128af509c68f"},
     {file = "mkdocs_material_extensions-1.0.1-py3-none-any.whl", hash = "sha256:d90c807a88348aa6d1805657ec5c0b2d8d609c110e62b9dce4daf7fa981fa338"},
+]
+mkdocs-static-i18n = [
+    {file = "mkdocs-static-i18n-0.17.tar.gz", hash = "sha256:0637de8f1bf534efe70c627fa1045b8975cd12558e2a558b77d67c77b6aa7223"},
 ]
 nodeenv = [
     {file = "nodeenv-1.6.0-py2.py3-none-any.whl", hash = "sha256:621e6b7076565ddcacd2db0294c0381e01fd28945ab36bcf00f41c5daf63bef7"},
