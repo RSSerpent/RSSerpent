@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - run: git fetch origin doc:doc
       - uses: fregante/setup-git-user@v1
       - uses: actions/setup-python@v2
         with:
@@ -34,4 +35,4 @@ jobs:
       - name: "Install Dependencies"
         run: poetry install
       - name: "Build Latest Document"
-        run: poetry run mike deploy --push --force --update-aliases latest
+        run: poetry run mike deploy --push --update-aliases latest

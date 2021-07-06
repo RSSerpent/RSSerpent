@@ -12,6 +12,7 @@ jobs:
       IS_PRE_RELEASE: false
     steps:
       - uses: actions/checkout@v2
+      - run: git fetch origin doc:doc
       - uses: fregante/setup-git-user@v1
       - uses: actions/setup-python@v2
         with:
@@ -32,7 +33,7 @@ jobs:
         if: ${{ env.IS_PRE_RELEASE != true }}
         run: |
           poetry install
-          poetry run mike deploy --push --force --update-aliases $(poetry version --short) stable
+          poetry run mike deploy --push --update-aliases $(poetry version --short) stable
           poetry run mike set-default stable
       - name: "Build Project"
         run: poetry build
