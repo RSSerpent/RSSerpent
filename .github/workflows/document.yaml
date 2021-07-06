@@ -1,7 +1,6 @@
 name: Build Latest Document
 
 on:
-  pull_request:
   push:
     branches:
       - 'master'
