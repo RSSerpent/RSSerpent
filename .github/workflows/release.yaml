@@ -17,13 +17,25 @@ jobs:
         with:
           python-version: "3.7"
       - name: "Install Poetry"
-        run: pip install --user poetry
-      - name: "Build Project"
-        run: poetry build
+        run: |
+          pip install --user poetry
+          poetry config virtualenvs.in-project true
+      - uses: actions/cache@v1
+        with:
+          path: .venv
+          key: ${{ hashFiles('poetry.lock') }}
       - name: "Check Version for Pre-releases"
         id: check-version
         run: |
           [[ "$(poetry version --short)" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || echo "IS_PRE_RELEASE=true" >> $GITHUB_ENV
+      - name: "Build Stable Document"
+        if: ${{ env.IS_PRE_RELEASE != true }}
+        run: |
+          poetry install
+          poetry run mike deploy --push --force --update-aliases $(poetry version --short) stable
+          poetry run mike set-default stable
+      - name: "Build Project"
+        run: poetry build
       - name: "Create Release on GitHub"
         uses: ncipollo/release-action@v1
         with:
@@ -36,8 +48,3 @@ jobs:
         env:
           POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_TOKEN }}
         run: poetry publish
-      - name: "Build Stable Document"
-        if: ${{ env.IS_PRE_RELEASE == false }}
-        run: |
-          poetry run mike deploy --push --force --update-aliases $(poetry version --short) stable
-          poetry run mike set-default stable
