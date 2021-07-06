@@ -18,7 +18,7 @@ RSSerpent 是一个开源软件。它能帮助你使用 [RSS](https://zh.wikiped
 # 快速开始
 
 - 示例：<https://rsserpent.vercel.app/>
-- 文档：<https://rsserpent.rtfd.io/>
+- 文档：<https://rsserpent.netlify.app/>
 
 # 致谢
 RSSerpent 项目是在 [RSSHub](https://github.com/DIYgod/RSSHub) 的启发下开发的 🎉 我们向 RSSHub 项目及其维护者致以最高的敬意。
