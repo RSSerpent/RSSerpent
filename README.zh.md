@@ -13,7 +13,7 @@
 
 RSSerpent 是一个开源软件。它能帮助你使用 [RSS](https://zh.wikipedia.org/wiki/RSS) 订阅那些不支持 RSS 订阅的网站。
 
-[English](https://github.com/RSSerpent/RSSerpent/blob/master/README.md) | [中文](https://github.com/RSSerpent/RSSerpent/blob/master/README-zh.md)
+[English](https://github.com/RSSerpent/RSSerpent/blob/master/README.md) | [中文](https://github.com/RSSerpent/RSSerpent/blob/master/README.zh.md)
 
 # 快速开始
 
@@ -24,6 +24,6 @@ RSSerpent 是一个开源软件。它能帮助你使用 [RSS](https://zh.wikiped
 RSSerpent 项目是在 [RSSHub](https://github.com/DIYgod/RSSHub) 的启发下开发的 🎉 我们向 RSSHub 项目及其维护者致以最高的敬意。
 
 
-# People
+# 成员
 
 RSSerpent 项目的创建者是 [@queensferry](https://github.com/queensferryme/)，还有许多其他热心的[项目成员](https://github.com/orgs/RSSerpent/people)支撑着这个项目.

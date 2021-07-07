@@ -20,6 +20,25 @@ markdown_extensions:
       slugify: !!python/name:pymdownx.slugs.uslugify
       toc_depth: 3
 
+nav:
+  - Introduction:
+    - index.md
+    - structure.md
+    - faq.md
+  - Usage:
+    - usage/rss.md
+    - usage/router.md
+    - usage/parameter.md
+  - Deployment:
+    - deployment/index.md
+    - deployment/docker.md
+    - deployment/vercel.md
+  - Contribution:
+    - contribution/core.md
+    - contribution/plugin.md
+  - Plugin:
+    - plugin/official.md
+
 plugins:
   - git-revision-date
   - i18n:
@@ -28,6 +47,13 @@ plugins:
         en: english
         zh: 中文
       material_alternate: true
+      nav_translations:
+        zh:
+          Contribution: 贡献
+          Deployment: 部署
+          Introduction: 介绍
+          Plugin: 插件
+          Usage: 使用
   - search:
       prebuild_index: true
 
@@ -42,6 +68,7 @@ theme:
   favicon: 'assets/logo.png'
   features:
     - header.autohide
+    - navigation.tabs
     - navigation.top
   icon:
     repo: fontawesome/brands/github
