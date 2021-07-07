@@ -2,7 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://rsserpent.readthedocs.io/latest/</loc>
-         <lastmod>2021-07-06</lastmod>
+         <lastmod>2021-07-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://rsserpent.readthedocs.io/latest/faq/</loc>
+         <lastmod>2021-07-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://rsserpent.readthedocs.io/latest/structure/</loc>
+         <lastmod>2021-07-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://rsserpent.readthedocs.io/latest/contribution/core/</loc>
+         <lastmod>2021-07-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://rsserpent.readthedocs.io/latest/contribution/plugin/</loc>
+         <lastmod>2021-07-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://rsserpent.readthedocs.io/latest/deployment/</loc>
+         <lastmod>2021-07-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://rsserpent.readthedocs.io/latest/deployment/docker/</loc>
+         <lastmod>2021-07-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://rsserpent.readthedocs.io/latest/deployment/vercel/</loc>
+         <lastmod>2021-07-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://rsserpent.readthedocs.io/latest/plugin/official/</loc>
+         <lastmod>2021-07-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://rsserpent.readthedocs.io/latest/usage/parameter/</loc>
+         <lastmod>2021-07-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://rsserpent.readthedocs.io/latest/usage/router/</loc>
+         <lastmod>2021-07-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://rsserpent.readthedocs.io/latest/usage/rss/</loc>
+         <lastmod>2021-07-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
