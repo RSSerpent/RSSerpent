@@ -13,6 +13,9 @@ RSSerpent 是一个开源软件。它能帮助你使用 [RSS](https://zh.wikiped
 ## 致谢
 RSSerpent 项目是在 [RSSHub](https://github.com/DIYgod/RSSHub) 的启发下开发的 🎉 我们向 RSSHub 项目及其维护者致以最高的敬意。
 
+## 赞助商
+
+<a href="https://linktr.ee/rss3" target="_blank"><img alt="rss3" src="https://rss3.io/assets/images/Logo.svg" style="height:50px"/></a>
 
 ## 成员
 
