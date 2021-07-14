@@ -24,16 +24,16 @@ jobs:
       - uses: fregante/setup-git-user@v1
       - uses: actions/setup-python@v2
         with:
-          python-version: "3.7"
-      - name: "Setup Poetry"
-        run: |
-          pip install --user poetry
-          poetry config virtualenvs.in-project true
+          python-version: "3.9"
       - uses: actions/cache@v1
         with:
-          path: .venv
+          path: |
+            ~/.cache/pip
+            .venv
           key: ${{ hashFiles('poetry.lock') }}
-      - name: "Install Dependencies"
-        run: poetry install
+      - name: "Setup Poetry"
+        run: pip install --user poetry
       - name: "Build Latest Document"
-        run: poetry run mike deploy --push --update-aliases latest
+        run: |
+          poetry install
+          poetry run mike deploy --push --update-aliases latest

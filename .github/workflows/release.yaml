@@ -16,15 +16,15 @@ jobs:
       - uses: fregante/setup-git-user@v1
       - uses: actions/setup-python@v2
         with:
-          python-version: "3.7"
-      - name: "Install Poetry"
-        run: |
-          pip install --user poetry
-          poetry config virtualenvs.in-project true
+          python-version: "3.9"
       - uses: actions/cache@v1
         with:
-          path: .venv
+          path: |
+            ~/.cache/pip
+            .venv
           key: ${{ hashFiles('poetry.lock') }}
+      - name: "Setup Poetry"
+        run: pip install --user poetry
       - name: "Check Version for Pre-releases"
         id: check-version
         run: |
