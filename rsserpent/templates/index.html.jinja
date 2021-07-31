@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="https://i.loli.net/2021/07/31/LCsB3u2yInHfwak.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,13 +17,18 @@
             flex-direction: column;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             height: 100vh;
-            justify-content: center;
+            justify-content: flex-start;
+            padding-top: 20vh;
+            text-align: center;
         }
         main a {
             color: green!important;
         }
         main h1 {
-            padding: 1em 0;
+            padding-bottom: 1em;
+        }
+        main img {
+            max-width: 12em;
         }
         main p {
             padding: .3em 0;
@@ -32,6 +38,7 @@
 </head>
 <body>
     <main>
+        <img alt="RSSerpent" src="https://i.loli.net/2021/07/31/iFROzwEJ4HagUNv.png" />
         <h1>Welcome to <a href="https://github.com/RSSerpent/RSSerpent">RSSerpent</a>!</h1>
         <p>🎉 RSSerpent is up & running at <a href="{{host}}">{{host}}</a></p>
         <p>

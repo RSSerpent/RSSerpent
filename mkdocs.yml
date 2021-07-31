@@ -15,6 +15,7 @@ extra:
     provider: mike
 
 markdown_extensions:
+  - attr_list
   - toc:
       permalink: true
       slugify: !!python/name:pymdownx.slugs.uslugify
@@ -62,17 +63,17 @@ repo_name: RSSerpent/RSSerpent
 repo_url: https://github.com/RSSerpent/RSSerpent
 
 site_name: RSSerpent Docs
-site_url: https://rsserpent.readthedocs.io/
+site_url: https://rsserpent.netlify.app/
 
 theme:
-  favicon: 'assets/logo.png'
+  favicon: 'https://i.loli.net/2021/07/31/LCsB3u2yInHfwak.png'
   features:
     - header.autohide
     - navigation.tabs
     - navigation.top
   icon:
     repo: fontawesome/brands/github
-  logo: 'assets/logo.png'
+    logo: material/file-document-outline
   name: material
   palette:
     - media: "(prefers-color-scheme: light)"
