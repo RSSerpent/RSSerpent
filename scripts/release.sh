@@ -10,8 +10,7 @@ case $yn in
     [Yy]* )
         git add --all
         git commit -v
-        git tag $version;
-        git push --all
-        git push --tags;;
+        git tag $version
+        git push --tags origin master;;
     * ) exit;;
 esac
