@@ -1,5 +1,3 @@
-from typing import cast
-
 from fastapi.testclient import TestClient
 from importlib_metadata import entry_points
 
@@ -16,6 +14,6 @@ def test_routes() -> None:
     """Test if all routes of the current app works properly."""
     client = TestClient(app)
     for entry_point in entry_points(group="rsserpent.plugins"):
-        plugin = cast(Plugin, entry_point.load())
+        plugin: Plugin = entry_point.load()
         for path in plugin.routers:
             assert client.get(path).status_code == 200

@@ -36,7 +36,9 @@ class Plugin(BaseModel):
     routers: Dict[str, ProviderFn]
 
     @root_validator
-    def validate(cls, values: dict) -> dict:  # type: ignore # noqa: N805
+    def validate(  # type: ignore[override]
+        cls, values: Dict[str, Any]  # noqa: N805
+    ) -> Dict[str, Any]:
         """Ensure all paths in `routers` starts with `prefix`."""
         prefix = values.get("prefix")
         routers = values.get("routers")

@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import Any, Dict, cast
+from typing import Any, Dict
 
 import arrow
 from fastapi import APIRouter, Depends, FastAPI, Request, Response
@@ -23,7 +23,7 @@ def index(request: Request) -> str:
 
 
 for entry_point in entry_points(group="rsserpent.plugins"):
-    plugin = cast(Plugin, entry_point.load())
+    plugin: Plugin = entry_point.load()
     router = APIRouter()
     for path, provider in plugin.routers.items():
 

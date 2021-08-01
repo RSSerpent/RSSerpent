@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import TYPE_CHECKING, List, Optional
+from typing import TYPE_CHECKING, Any, Dict, List, Optional
 
 from pydantic import BaseModel, Field, root_validator
 
@@ -66,7 +66,9 @@ class Item(BaseModel):
     source: Optional[Source]
 
     @root_validator
-    def validate(cls, values: dict) -> dict:  # type: ignore # noqa: N805
+    def validate(  # type: ignore[override]
+        cls, values: Dict[str, Any]  # noqa: N805
+    ) -> Dict[str, Any]:
         """Ensure at least one of `<title>` or `<description>` is present."""
         title, description = values.get("title"), values.get("description")
         if title is None and description is None:
