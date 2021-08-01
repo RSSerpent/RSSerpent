@@ -1,4 +1,4 @@
-from typing import TYPE_CHECKING, Callable, Dict
+from typing import TYPE_CHECKING, Any, Callable, Dict
 
 from pydantic import BaseModel, validator
 from pydantic.class_validators import root_validator
@@ -9,6 +9,9 @@ if TYPE_CHECKING:
     HttpUrl = str
 else:
     from pydantic import EmailStr, HttpUrl
+
+
+ProviderFn = Callable[..., Dict[str, Any]]
 
 
 class Persona(BaseModel):
@@ -30,7 +33,7 @@ class Plugin(BaseModel):
     author: Persona
     repository: HttpUrl
     prefix: str
-    routers: Dict[str, Callable]
+    routers: Dict[str, ProviderFn]
 
     @root_validator
     def validate(cls, values: dict) -> dict:  # type: ignore # noqa: N805
@@ -52,8 +55,8 @@ class Plugin(BaseModel):
 
     @validator("routers")
     def validate_routers(
-        cls, routers: Dict[str, Callable]  # noqa: N805
-    ) -> Dict[str, Callable]:
+        cls, routers: Dict[str, ProviderFn]  # noqa: N805
+    ) -> Dict[str, ProviderFn]:
         """Ensure `routers` is not empty."""
         if len(routers) < 1:
             raise ValueError("plugin must include at least one router.")

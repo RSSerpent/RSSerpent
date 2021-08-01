@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import cast
+from typing import Any, Dict, cast
 
 import arrow
 from fastapi import APIRouter, Depends, FastAPI, Request, Response
@@ -28,7 +28,9 @@ for entry_point in entry_points(group="rsserpent.plugins"):
     for path, provider in plugin.routers.items():
 
         @router.get(path)
-        def endpoint(request: Request, data: dict = Depends(provider)) -> Response:
+        def endpoint(
+            request: Request, data: Dict[str, Any] = Depends(provider)
+        ) -> Response:
             """Define a general endpoint for registering plugins."""
             content = templates.get_template("rss.xml.jinja").render(
                 data=Feed(**data), plugin=plugin, request=request

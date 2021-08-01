@@ -4,8 +4,8 @@ from dataclasses import dataclass
 from hypothesis import settings
 
 
-settings.register_profile("ci", max_examples=100)
-settings.register_profile("default", max_examples=10)
+settings.register_profile("ci", max_examples=200)
+settings.register_profile("default", max_examples=50)
 
 settings.load_profile(os.getenv("HYPOTHESIS_PROFILE", "default"))
 
