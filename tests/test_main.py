@@ -10,10 +10,20 @@ def test_app() -> None:
     assert app.version == "0.1.0"
 
 
-def test_routes() -> None:
-    """Test if all routes of the current app works properly."""
+def test_index_route() -> None:
+    """Test if the index route works properly."""
+    client = TestClient(app)
+    response = client.get("/")
+    assert response.status_code == 200
+    assert "RSSerpent is up & running" in response.text
+
+
+def test_plugin_routes() -> None:
+    """Test if all plugin routes works properly."""
     client = TestClient(app)
     for entry_point in entry_points(group="rsserpent.plugins"):
         plugin: Plugin = entry_point.load()
         for path in plugin.routers:
-            assert client.get(path).status_code == 200
+            response = client.get(path)
+            assert response.status_code == 200
+            assert '<?xml version="1.0"?>' in response.text

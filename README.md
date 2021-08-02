@@ -1,7 +1,6 @@
 <p align="center">
-<img alt="RSSerpent" src="https://i.loli.net/2021/07/31/14nQw2XRFCPuLDN.png" width="150" />
+<img alt="RSSerpent" src="https://i.loli.net/2021/07/31/14nQw2XRFCPuLDN.png" width="200" />
 </p>
-<h1 align="center">RSSerpent</h1>
 
 [![python: 3.6.1+](https://img.shields.io/badge/python-^3.6.1-blue.svg)](https://www.python.org/downloads/)
 [![mypy: checked](https://img.shields.io/badge/mypy-checked-blue.svg)](https://github.com/python/mypy)
