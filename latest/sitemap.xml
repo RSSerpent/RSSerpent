@@ -2,62 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://rsserpent.netlify.app/latest/</loc>
-         <lastmod>2021-07-31</lastmod>
+         <lastmod>2021-08-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rsserpent.netlify.app/latest/faq/</loc>
-         <lastmod>2021-07-31</lastmod>
+         <lastmod>2021-08-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rsserpent.netlify.app/latest/structure/</loc>
-         <lastmod>2021-07-31</lastmod>
+         <lastmod>2021-08-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rsserpent.netlify.app/latest/contribution/core/</loc>
-         <lastmod>2021-07-31</lastmod>
+         <lastmod>2021-08-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rsserpent.netlify.app/latest/contribution/plugin/</loc>
-         <lastmod>2021-07-31</lastmod>
+         <lastmod>2021-08-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rsserpent.netlify.app/latest/deployment/</loc>
-         <lastmod>2021-07-31</lastmod>
+         <lastmod>2021-08-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rsserpent.netlify.app/latest/deployment/docker/</loc>
-         <lastmod>2021-07-31</lastmod>
+         <lastmod>2021-08-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rsserpent.netlify.app/latest/deployment/vercel/</loc>
-         <lastmod>2021-07-31</lastmod>
+         <lastmod>2021-08-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rsserpent.netlify.app/latest/plugin/official/</loc>
-         <lastmod>2021-07-31</lastmod>
+         <lastmod>2021-08-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rsserpent.netlify.app/latest/usage/parameter/</loc>
-         <lastmod>2021-07-31</lastmod>
+         <lastmod>2021-08-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rsserpent.netlify.app/latest/usage/router/</loc>
-         <lastmod>2021-07-31</lastmod>
+         <lastmod>2021-08-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rsserpent.netlify.app/latest/usage/rss/</loc>
-         <lastmod>2021-07-31</lastmod>
+         <lastmod>2021-08-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
