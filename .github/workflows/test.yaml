@@ -28,14 +28,17 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-      - uses: actions/cache@v1
+      - uses: actions/cache@v2
         with:
           path: |
             ~/.cache/pip
             .venv
           key: ${{ matrix.python-version }}-${{ hashFiles('poetry.lock') }}
       - name: "Setup Poetry"
-        run: pip install --user poetry
+        run: |
+          pip install --upgrade pip
+          pip install --user poetry
+          poetry config virtualenvs.in-project true
       - name: "Install Dependencies"
         run: |
           poetry install
