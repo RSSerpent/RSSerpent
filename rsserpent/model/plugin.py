@@ -1,4 +1,4 @@
-from typing import TYPE_CHECKING, Any, Callable, Dict
+from typing import TYPE_CHECKING, Any, Callable, Dict, Optional
 
 from pydantic import BaseModel, validator
 from pydantic.class_validators import root_validator
@@ -40,8 +40,8 @@ class Plugin(BaseModel):
         cls, values: Dict[str, Any]  # noqa: N805
     ) -> Dict[str, Any]:
         """Ensure all paths in `routers` starts with `prefix`."""
-        prefix = values.get("prefix")
-        routers = values.get("routers")
+        prefix: Optional[str] = values.get("prefix")
+        routers: Optional[Dict[str, ProviderFn]] = values.get("routers")
         assert prefix is not None and routers is not None
         for path in routers:
             if not path.startswith(prefix):

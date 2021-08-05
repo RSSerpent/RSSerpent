@@ -5,11 +5,23 @@ repos:
     hooks:
       - id: end-of-file-fixer
       - id: trailing-whitespace
+  - repo: https://github.com/pre-commit/pygrep-hooks
+    rev: v1.9.0
+    hooks:
+      - id: python-check-blanket-noqa
+        name: Check Blanket "#noqa"
+      - id: python-check-blanket-type-ignore
+        name: 'Check Blanket "#type:ignore"'
+  - repo: https://github.com/crate-ci/typos
+    rev: v1.1.5
+    hooks:
+      - id: typos
+        name: Check Typos
   - repo: https://github.com/psf/black
     rev: 21.7b0
     hooks:
       - id: black
-        name: Format
+        name: Format Source Code
   - repo: https://github.com/pycqa/isort
     rev: 5.9.3
     hooks:
@@ -41,3 +53,8 @@ repos:
           - mypy-extensions  # required by flake8-functions for py3.7
           - pep8-naming
           - typing-extensions  # required by flake8-functions for py3.8
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v2.17.13
+    hooks:
+      - id: commitizen
+        stages: [commit-msg]

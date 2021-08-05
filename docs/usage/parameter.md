@@ -1,1 +1,1 @@
-# Global Parametes
+# Global Parameters

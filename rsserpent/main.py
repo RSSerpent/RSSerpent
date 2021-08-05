@@ -1,17 +1,16 @@
-from pathlib import Path
 from typing import Any, Dict
 
 import arrow
 from fastapi import APIRouter, Depends, FastAPI, Request, Response
 from fastapi.responses import HTMLResponse
 from importlib_metadata import entry_points
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment, PackageLoader
 
 from .model import Feed, Plugin
 
 
 app = FastAPI(docs_url=None, redoc_url=None)
-templates = Environment(loader=FileSystemLoader(Path(__file__).parent / "templates"))
+templates = Environment(autoescape=True, loader=PackageLoader("rsserpent"))
 templates.globals["arrow"] = arrow
 
 
