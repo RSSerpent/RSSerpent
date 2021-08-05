@@ -1,3 +1,4 @@
+default_stages: [commit]
 fail_fast: true
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -57,4 +58,5 @@ repos:
     rev: v2.17.13
     hooks:
       - id: commitizen
+        name: Check Commit Message
         stages: [commit-msg]
