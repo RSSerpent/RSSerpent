@@ -1,5 +1,5 @@
 <p align="center">
-<img alt="RSSerpent" src="https://i.loli.net/2021/07/31/14nQw2XRFCPuLDN.png" width="200" />
+<img alt="RSSerpent" src="https://i.loli.net/2021/07/31/14nQw2XRFCPuLDN.png" width="250" />
 </p>
 
 [![python: 3.6.1+](https://img.shields.io/badge/python-^3.6.1-blue.svg)](https://www.python.org/downloads/)
