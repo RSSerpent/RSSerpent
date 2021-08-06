@@ -10,7 +10,8 @@
 
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/RSSerpent/RSSerpent/master.svg)](https://results.pre-commit.ci/latest/github/RSSerpent/RSSerpent/master)
 [![github ci status](https://img.shields.io/github/workflow/status/RSSerpent/RSSerpent/Test?label=test&logo=github&message=passed)](https://github.com/RSSerpent/RSSerpent/actions/workflows/test.yaml)
-[![codecov](https://codecov.io/gh/RSSerpent/RSSerpent/branch/master/graph/badge.svg?token=FQZ5OWOQRO)](https://codecov.io/gh/RSSerpent/RSSerpent)
+[![netlify docs status](https://img.shields.io/netlify/79df1100-5b19-4e0e-a441-aace58b6653f?label=docs&logo=netlify)](https://docs.rsserpent.com)
+[![codecov status](https://codecov.io/gh/RSSerpent/RSSerpent/branch/master/graph/badge.svg?token=FQZ5OWOQRO)](https://codecov.io/gh/RSSerpent/RSSerpent)
 
 [![chat on telegram](https://img.shields.io/badge/chat%20on-telegram-blue.svg)](https://t.me/rsserpent)
 
