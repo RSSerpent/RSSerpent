@@ -1,6 +1,7 @@
 # Introduction
 
 [![pypi: version](https://img.shields.io/pypi/v/rsserpent)](https://pypi.org/project/rsserpent/)
+[![downloads: per month](https://img.shields.io/pypi/dm/rsserpent)](https://pypi.org/project/rsserpent/)
 [![chat on telegram](https://img.shields.io/badge/chat%20on-telegram-blue.svg)](https://t.me/rsserpent)
 
 RSSerpent is an open-source software that create [RSS](https://en.wikipedia.org/wiki/RSS) feeds for websites that do not provide any.
@@ -19,4 +20,6 @@ The RSSerpent Project is heavily inspired by [RSSHub](https://github.com/DIYgod/
 
 ## People
 
-The RSSerpent Project is created by [@queensferry](https://github.com/queensferryme/), supported by various [project members](https://github.com/orgs/RSSerpent/people).
+The RSSerpent Project is created by [@queensferry](https://github.com/queensferryme/), supported by various [project members](https://github.com/orgs/RSSerpent/people) & [contributors](https://github.com/RSSerpent/RSSerpent/graphs/contributors).
+
+[![contributors](https://opencollective.com/RSSerpent/contributors.svg?avatarHeight=50)](https://github.com/RSSerpent/RSSerpent/graphs/contributors)
