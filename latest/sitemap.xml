@@ -1,62 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://rsserpent.netlify.app/latest/</loc>
+         <loc>https://docs.rsserpent.com/latest/</loc>
          <lastmod>2021-08-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rsserpent.netlify.app/latest/faq/</loc>
+         <loc>https://docs.rsserpent.com/latest/faq/</loc>
          <lastmod>2021-08-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rsserpent.netlify.app/latest/structure/</loc>
+         <loc>https://docs.rsserpent.com/latest/structure/</loc>
          <lastmod>2021-08-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rsserpent.netlify.app/latest/contribution/core/</loc>
+         <loc>https://docs.rsserpent.com/latest/contribution/core/</loc>
          <lastmod>2021-08-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rsserpent.netlify.app/latest/contribution/plugin/</loc>
+         <loc>https://docs.rsserpent.com/latest/contribution/plugin/</loc>
          <lastmod>2021-08-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rsserpent.netlify.app/latest/deployment/</loc>
+         <loc>https://docs.rsserpent.com/latest/deployment/</loc>
          <lastmod>2021-08-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rsserpent.netlify.app/latest/deployment/docker/</loc>
+         <loc>https://docs.rsserpent.com/latest/deployment/docker/</loc>
          <lastmod>2021-08-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rsserpent.netlify.app/latest/deployment/vercel/</loc>
+         <loc>https://docs.rsserpent.com/latest/deployment/vercel/</loc>
          <lastmod>2021-08-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rsserpent.netlify.app/latest/plugin/official/</loc>
+         <loc>https://docs.rsserpent.com/latest/plugin/official/</loc>
          <lastmod>2021-08-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rsserpent.netlify.app/latest/usage/parameter/</loc>
+         <loc>https://docs.rsserpent.com/latest/usage/parameter/</loc>
          <lastmod>2021-08-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rsserpent.netlify.app/latest/usage/router/</loc>
+         <loc>https://docs.rsserpent.com/latest/usage/router/</loc>
          <lastmod>2021-08-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rsserpent.netlify.app/latest/usage/rss/</loc>
+         <loc>https://docs.rsserpent.com/latest/usage/rss/</loc>
          <lastmod>2021-08-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
