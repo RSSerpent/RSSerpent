@@ -63,7 +63,7 @@ repo_name: RSSerpent/RSSerpent
 repo_url: https://github.com/RSSerpent/RSSerpent
 
 site_name: RSSerpent Docs
-site_url: https://rsserpent.netlify.app/
+site_url: https://docs.rsserpent.com/
 
 theme:
   favicon: 'https://i.loli.net/2021/07/31/LCsB3u2yInHfwak.png'
