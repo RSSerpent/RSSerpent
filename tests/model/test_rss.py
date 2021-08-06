@@ -29,10 +29,10 @@ class TestEnclosure:
         assert enclosure is not None
 
     @settings(max_examples=Times.SOME)
-    @given(type=infer, url=urls())
-    def test_default_length(self, type: str, url: str) -> None:
+    @given(type_=infer, url=urls())
+    def test_default_length(self, type_: str, url: str) -> None:
         """Test the default value of `length` in the `Enclosure` class."""
-        assert Enclosure(type=type, url=url).length == 0
+        assert Enclosure(type=type_, url=url).length == 0
 
 
 class TestGUID:

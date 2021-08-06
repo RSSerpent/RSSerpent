@@ -1,6 +1,8 @@
 [flake8]
 count = true
 ignore =
+    # A003: Class attribute "xxx" is shadowing a python builtin
+    A003,
     # D100: Missing docstring in public module
     D100,
     # D104: Missing docstring in public package
@@ -10,8 +12,17 @@ ignore =
     # D107: Missing docstring in __init__
     D107
 max-complexity = 6
-max-expression-complexity = 6
 max-line-length = 88
-per-file-ignores =
-    # F401: `module` imported but unused
-    __init__.py: F401
+
+## darglint
+strictness = long
+docstring-style = google
+
+## flake8-builtins
+class attribute "{0}" is shadowing a python builtin
+
+## flake8-docstrings
+docstring-convention = google
+
+## flake8-expression-complexity
+max-expression-complexity = 6

@@ -15,11 +15,7 @@ ProviderFn = Callable[..., Dict[str, Any]]
 
 
 class Persona(BaseModel):
-    """
-    Data model for personal information.
-
-    This could be used for documenting the author or maintainers of a certain plugin.
-    """
+    """Data model for plugin authors' personal information."""
 
     name: str
     link: HttpUrl
@@ -27,7 +23,7 @@ class Persona(BaseModel):
 
 
 class Plugin(BaseModel):
-    """Data model for RSSerpent plugins."""
+    """Data model for a RSSerpent plugin."""
 
     name: str
     author: Persona

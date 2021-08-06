@@ -30,8 +30,7 @@ class TestCacheKey:
         kwds=dictionaries(text(), primitive | lists(primitive), min_size=1),
     )
     def test(self, args: Tuple[Any, ...], kwds: Dict[str, Any]) -> None:
-        """
-        Test if the `CacheKey` class works properly.
+        """Test if the `CacheKey` class works properly.
 
         * `is_primitive`, `make`, `__eq__`, `__hash__`, `__init__`
         """

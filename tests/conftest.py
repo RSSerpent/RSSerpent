@@ -12,9 +12,7 @@ settings.load_profile(os.getenv("HYPOTHESIS_PROFILE", "default"))
 
 @dataclass
 class Times:
-    """
-    Data class for storing constants, specifying how many times a `hypothesis` \
-    test shoul run.
+    """Constants, specifying how many times a `hypothesis` test should run.
 
     * `ONCE` for tests that only need to be run once;
     * `SOME` for tests that are meant to be mildly tested;
