@@ -53,8 +53,8 @@ repos:
           - flake8-docstrings==1.6.0
           - flake8-eradicate==1.1.0
           - flake8-expression-complexity==0.0.9
-          - flake8-functions==0.0.6
           - flake8-print==4.0.0
+          - flake8-too-many==0.1.1
           - mypy-extensions==0.4.3  # required by flake8-functions
           - pep8-naming==0.12.0
           - typing-extensions==3.10.0.0  # required by flake8-functions

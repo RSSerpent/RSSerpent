@@ -18,11 +18,11 @@ max-line-length = 88
 strictness = long
 docstring-style = google
 
-## flake8-builtins
-class attribute "{0}" is shadowing a python builtin
-
 ## flake8-docstrings
 docstring-convention = google
 
 ## flake8-expression-complexity
 max-expression-complexity = 6
+
+# flake8-too-many
+max-function-arguments = 6
