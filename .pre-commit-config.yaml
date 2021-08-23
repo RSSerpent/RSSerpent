@@ -14,7 +14,7 @@ repos:
       - id: python-check-blanket-type-ignore
         name: 'Check Blanket "#type:ignore"'
   - repo: https://github.com/crate-ci/typos
-    rev: v1.1.6
+    rev: v1.1.7
     hooks:
       - id: typos
         name: Check Typos
