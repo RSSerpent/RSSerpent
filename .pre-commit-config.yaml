@@ -18,6 +18,7 @@ repos:
     hooks:
       - id: typos
         name: Check Typos
+        args: []
   - repo: https://github.com/psf/black
     rev: 21.7b0
     hooks:
