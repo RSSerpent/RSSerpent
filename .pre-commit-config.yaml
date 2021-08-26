@@ -37,10 +37,15 @@ repos:
         # As `mypy` runs in an isolated environment, it is necessary to manually specify
         # some libraries of the current (poetry) environment for `mypy` to work properly.
         additional_dependencies:
-          - hypothesis==6.14.5
+          - arrow==1.1.1
+          - fastapi==0.68.1
+          - httpx==0.19.0
+          - hypothesis==6.15.0
+          - importlib-metadata==4.7.1
+          - jinja2==3.0.1
+          - pydantic==1.8.2
           - pytest==6.2.4
-          - rsserpent==0.1.2
-          - types-dataclasses==0.1.5
+          - types-dataclasses==0.1.7
   - repo: https://github.com/PyCQA/flake8
     rev: 3.9.2
     hooks:
@@ -55,9 +60,7 @@ repos:
           - flake8-expression-complexity==0.0.9
           - flake8-print==4.0.0
           - flake8-too-many==0.1.1
-          - mypy-extensions==0.4.3  # required by flake8-functions
-          - pep8-naming==0.12.0
-          - typing-extensions==3.10.0.0  # required by flake8-functions
+          - pep8-naming==0.12.1
   - repo: https://github.com/commitizen-tools/commitizen
     rev: v2.18.0
     hooks:
