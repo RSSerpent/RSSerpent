@@ -6,11 +6,7 @@ ignore =
     # D100: Missing docstring in public module
     D100,
     # D104: Missing docstring in public package
-    D104,
-    # D105: Missing docstring in magic method
-    D105,
-    # D107: Missing docstring in __init__
-    D107
+    D104
 max-complexity = 6
 max-line-length = 88
 
@@ -24,5 +20,5 @@ docstring-convention = google
 ## flake8-expression-complexity
 max-expression-complexity = 6
 
-# flake8-too-many
+## flake8-too-many
 max-function-arguments = 6
