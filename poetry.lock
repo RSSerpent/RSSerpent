@@ -275,7 +275,7 @@ http2 = ["h2 (>=3,<5)"]
 
 [[package]]
 name = "hypothesis"
-version = "6.15.0"
+version = "6.17.0"
 description = "A library for property-based testing"
 category = "dev"
 optional = false
@@ -508,7 +508,7 @@ mkdocs-material = ">=5.0.0"
 
 [[package]]
 name = "mkdocs-static-i18n"
-version = "0.17"
+version = "0.19"
 description = "MkDocs i18n plugin using static translation markdown files"
 category = "dev"
 optional = false
@@ -848,7 +848,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6.1"
-content-hash = "f817c48914068ef96fab9351e699f10535d9b4e1c7a90e2c5b62e26881dbc2fd"
+content-hash = "d1234d71d4fa80ed0c524d1229f66c12477c7792968c5732d59db2e00869313b"
 
 [metadata.files]
 arrow = [
@@ -996,8 +996,8 @@ httpx = [
     {file = "httpx-0.19.0.tar.gz", hash = "sha256:92ecd2c00c688b529eda11cedb15161eaf02dee9116712f621c70d9a40b2cdd0"},
 ]
 hypothesis = [
-    {file = "hypothesis-6.15.0-py3-none-any.whl", hash = "sha256:23e853170e15d91b9cdc5c9695c5a512a9eef2d11073b46cd9cccebde939bc35"},
-    {file = "hypothesis-6.15.0.tar.gz", hash = "sha256:10699f595eebb9410fd902908aa13aece19be5c437b405092be34f60f69f7999"},
+    {file = "hypothesis-6.17.0-py3-none-any.whl", hash = "sha256:588f5ea6b075cd402bfe1573815c2f6003a3265c2e9e7a2774d556c16073dc6d"},
+    {file = "hypothesis-6.17.0.tar.gz", hash = "sha256:c79001c2f94788f18e1a1cae1292a8db4f588f3662b613d6a6455b9ea9bf31a1"},
 ]
 identify = [
     {file = "identify-2.2.13-py2.py3-none-any.whl", hash = "sha256:7199679b5be13a6b40e6e19ea473e789b11b4e3b60986499b1f589ffb03c217c"},
@@ -1121,7 +1121,7 @@ mkdocs-material-extensions = [
     {file = "mkdocs_material_extensions-1.0.1-py3-none-any.whl", hash = "sha256:d90c807a88348aa6d1805657ec5c0b2d8d609c110e62b9dce4daf7fa981fa338"},
 ]
 mkdocs-static-i18n = [
-    {file = "mkdocs-static-i18n-0.17.tar.gz", hash = "sha256:0637de8f1bf534efe70c627fa1045b8975cd12558e2a558b77d67c77b6aa7223"},
+    {file = "mkdocs-static-i18n-0.19.tar.gz", hash = "sha256:40268c0158d5e2432b2722aadd16539c9b3ae092c2c1bc4644c59dc11b1ae02c"},
 ]
 nodeenv = [
     {file = "nodeenv-1.6.0-py2.py3-none-any.whl", hash = "sha256:621e6b7076565ddcacd2db0294c0381e01fd28945ab36bcf00f41c5daf63bef7"},
