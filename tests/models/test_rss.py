@@ -5,7 +5,7 @@ from hypothesis.provisional import urls
 from hypothesis.strategies import builds, fixed_dictionaries, lists, none, text
 from pydantic import HttpUrl, ValidationError
 
-from rsserpent.model.rss import Category, Enclosure, Feed, GUID, Image, Item, Source
+from rsserpent.models.rss import Category, Enclosure, Feed, GUID, Image, Item, Source
 from tests.conftest import Times
 
 

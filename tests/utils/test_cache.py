@@ -14,7 +14,7 @@ from hypothesis.strategies import (
     tuples,
 )
 
-from rsserpent.util.cache import CacheKey, cached, cached_with
+from rsserpent.utils.cache import CacheKey, cached, cached_with
 from tests.conftest import Times
 
 

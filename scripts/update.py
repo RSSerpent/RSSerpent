@@ -7,7 +7,6 @@ import httpx
 
 
 # Update `.pre-commit-config.yaml`
-
 print("Updating .pre-commit-config.yaml")  # noqa: T001
 
 
