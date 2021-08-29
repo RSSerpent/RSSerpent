@@ -1,10 +1,10 @@
 from typing import Any, Dict
 
 
-path = "/_/example"
+path = "/_/example/basic/"
 
 
-def provider(_args: Dict[str, Any], _qs: Dict[str, str]) -> Dict[str, Any]:
+def provider() -> Dict[str, Any]:
     """Define a basic example data provider function."""
     return {
         "title": "Example",

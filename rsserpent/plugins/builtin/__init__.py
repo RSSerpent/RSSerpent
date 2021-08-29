@@ -1,5 +1,5 @@
 from ...models import Persona, Plugin
-from . import example
+from . import example, example_with_args
 
 
 plugin = Plugin(
@@ -11,5 +11,8 @@ plugin = Plugin(
     ),
     repository="https://github.com/RSSerpent/RSSerpent",
     prefix="/_",
-    routers={example.path: example.provider},
+    routers={
+        example.path: example.provider,
+        example_with_args.path: example_with_args.provider,
+    },
 )

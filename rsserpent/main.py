@@ -1,9 +1,13 @@
+from typing import Any, Dict
+
 import arrow
 from flask import Flask, render_template, request
 from werkzeug.wrappers import Response
 
 from .models import Feed
+from .models.plugin import ProviderFn
 from .plugins import plugins
+from .utils import fetch_data
 
 
 app = Flask(__name__)
@@ -20,9 +24,11 @@ def index() -> str:
 for plugin in plugins:
     for path, provider in plugin.routers.items():
 
-        def endpoint() -> Response:
+        def endpoint(
+            provider: ProviderFn = provider, **view_args: Dict[str, Any]
+        ) -> Response:
             """Return an RSS feed of XML format."""
-            data = provider(request.view_args or {}, dict(request.args))
+            data = fetch_data(provider, view_args, dict(request.args))
             content = render_template("rss.xml.jinja", data=Feed(**data), plugin=plugin)
             return Response(content, mimetype="application/xml")
 
