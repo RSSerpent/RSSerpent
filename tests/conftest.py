@@ -1,7 +1,11 @@
 import os
 from dataclasses import dataclass
 
+import pytest
 from hypothesis import settings
+from starlette.testclient import TestClient
+
+from rsserpent import app
 
 
 settings.register_profile("ci", max_examples=200)
@@ -22,3 +26,9 @@ class Times:
     ONCE = 1
     SOME = settings.default.max_examples // 3
     THOROUGH = settings.default.max_examples
+
+
+@pytest.fixture(scope="module")
+def client() -> TestClient:
+    """Share one test client across the whole module with `pytest.fixture`."""
+    return TestClient(app)
