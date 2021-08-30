@@ -1,8 +1,9 @@
 import inspect
 from inspect import Parameter
-from typing import Any, Dict
+from typing import Any, Awaitable, Callable, Dict
 
-from ..models.plugin import ProviderFn
+
+ProviderFn = Callable[..., Awaitable[Dict[str, Any]]]
 
 
 def convert(value: str, type_: type) -> Any:
@@ -12,7 +13,7 @@ def convert(value: str, type_: type) -> Any:
     return type_(value)
 
 
-def fetch_data(
+async def fetch_data(
     provider: ProviderFn, view_args: Dict[str, Any], qs: Dict[str, str]
 ) -> Any:
     """Fetch data by using the data provider function.
@@ -50,7 +51,7 @@ def fetch_data(
         # TODO: document this behavior
         else:
             raise NotImplementedError()  # pragma: no cover
-    return provider(**kwds)
+    return await provider(**kwds)
 
 
 def look_up_parameter_value(

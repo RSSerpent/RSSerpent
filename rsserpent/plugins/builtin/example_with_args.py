@@ -1,10 +1,10 @@
 from typing import Any, Dict
 
 
-path = "/_/example/<int:n>/"
+path = "/_/example/{n:int}"
 
 
-def provider(n: int) -> Dict[str, Any]:
+async def provider(n: int) -> Dict[str, Any]:
     """Define a example data provider function with arguments."""
     return {
         "title": "Example",

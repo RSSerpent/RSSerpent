@@ -2,7 +2,7 @@
 <img alt="RSSerpent" src="https://i.loli.net/2021/07/31/14nQw2XRFCPuLDN.png" width="250" />
 </p>
 
-[![python: 3.6.1+](https://img.shields.io/badge/python-^3.6.1-blue.svg)](https://www.python.org/downloads/)
+[![python: 3.6.2+](https://img.shields.io/badge/python->=3.6.2-blue.svg)](https://www.python.org/downloads/)
 [![mypy: checked](https://img.shields.io/badge/mypy-checked-blue.svg)](https://github.com/python/mypy)
 [![code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![pypi: version](https://img.shields.io/pypi/v/rsserpent)](https://pypi.org/project/rsserpent/)

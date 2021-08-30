@@ -1,7 +1,10 @@
-from typing import TYPE_CHECKING, Any, Callable, Dict, Optional
+import asyncio
+from typing import TYPE_CHECKING, Any, Dict, Optional
 
 from pydantic import BaseModel, validator
 from pydantic.class_validators import root_validator
+
+from ..utils.provider import ProviderFn
 
 
 if TYPE_CHECKING:
@@ -9,9 +12,6 @@ if TYPE_CHECKING:
     HttpUrl = str
 else:
     from pydantic import EmailStr, HttpUrl
-
-
-ProviderFn = Callable[..., Dict[str, Any]]
 
 
 class Persona(BaseModel):
@@ -55,7 +55,10 @@ class Plugin(BaseModel):
     def validate_routers(
         cls, routers: Dict[str, ProviderFn]  # noqa: N805
     ) -> Dict[str, ProviderFn]:
-        """Ensure `routers` is not empty."""
+        """Ensure `routers` is not empty & all provider functions are async."""
         if len(routers) < 1:
             raise ValueError("plugin must include at least one router.")
+        for provider in routers.values():
+            if not asyncio.iscoroutinefunction(provider):
+                raise ValueError("provider functions must be asynchronous.")
         return routers

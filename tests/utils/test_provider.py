@@ -1,13 +1,14 @@
 import math
 from typing import Any, Dict
 
+import pytest
 from hypothesis import given, infer, settings
 
 from rsserpent.utils import fetch_data
 from tests.conftest import Times
 
 
-def provider(
+async def provider(
     a: int, *, b: float, c: bool, d: int = 1, **_: Dict[str, Any]
 ) -> Dict[str, Any]:
     """Define an example data provider function for testing."""
@@ -16,11 +17,13 @@ def provider(
     return {"value": a - b + d}
 
 
+@pytest.mark.asyncio  # type: ignore[arg-type]
 @settings(max_examples=Times.SOME)
 @given(a=infer, b=infer, c=infer)
-def test_fetch_data(a: int, b: float, c: bool) -> None:
+async def test_fetch_data(a: int, b: float, c: bool) -> None:
     """Test if `fetch_data` works properly with different kinds of parameters."""
-    value = fetch_data(provider, {"a": str(a)}, {"b": str(b), "c": str(c)})["value"]
+    data = await fetch_data(provider, {"a": str(a)}, {"b": str(b), "c": str(c)})
+    value = data["value"]
     if c:
         assert value == a + b + 1 or math.isnan(value)
     else:

@@ -39,12 +39,12 @@ repos:
         # some libraries of the current (poetry) environment for `mypy` to work properly.
         additional_dependencies:
           - arrow==1.1.1
-          - flask==2.0.1
           - httpx==0.19.0
-          - hypothesis==6.17.0
-          - importlib-metadata==4.7.1
+          - hypothesis==6.17.1
+          - importlib-metadata==4.8.1
           - pydantic==1.8.2
           - pytest==6.2.4
+          - starlette==0.16.0
           - types-dataclasses==0.1.7
   - repo: https://github.com/PyCQA/flake8
     rev: 3.9.2
