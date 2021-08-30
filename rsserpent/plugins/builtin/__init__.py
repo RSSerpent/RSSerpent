@@ -16,3 +16,5 @@ plugin = Plugin(
         example_with_args.path: example_with_args.provider,
     },
 )
+
+__all__ = ("plugin",)

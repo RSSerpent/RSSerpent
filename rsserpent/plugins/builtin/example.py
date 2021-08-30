@@ -10,4 +10,5 @@ async def provider() -> Dict[str, Any]:
         "title": "Example",
         "link": "https://example.com",
         "description": "An example rsserpent plugin.",
+        "items": [{"title": "Example Article", "description": "Example Content"}],
     }

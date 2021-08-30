@@ -7,10 +7,9 @@ from starlette.requests import Request
 from starlette.routing import Route
 from starlette.templating import Jinja2Templates, _TemplateResponse as TemplateResponse
 
-from .models import Feed, Plugin
+from .models import Feed, Plugin, ProviderFn
 from .plugins import plugins
 from .utils import fetch_data
-from .utils.provider import ProviderFn
 
 
 templates = Jinja2Templates(directory=str(Path(__file__).parent / "templates"))

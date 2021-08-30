@@ -14,8 +14,7 @@ from hypothesis.strategies import (
 )
 from pydantic import validate_model
 
-from rsserpent.models.plugin import Persona, Plugin
-from rsserpent.utils.provider import ProviderFn
+from rsserpent.models.plugin import Persona, Plugin, ProviderFn
 from tests.conftest import Times
 
 

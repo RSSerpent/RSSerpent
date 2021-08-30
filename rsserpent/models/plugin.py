@@ -1,10 +1,8 @@
 import asyncio
-from typing import TYPE_CHECKING, Any, Dict, Optional
+from typing import TYPE_CHECKING, Any, Awaitable, Callable, Dict, Optional
 
 from pydantic import BaseModel, validator
 from pydantic.class_validators import root_validator
-
-from ..utils.provider import ProviderFn
 
 
 if TYPE_CHECKING:
@@ -12,6 +10,9 @@ if TYPE_CHECKING:
     HttpUrl = str
 else:
     from pydantic import EmailStr, HttpUrl
+
+
+ProviderFn = Callable[..., Awaitable[Dict[str, Any]]]
 
 
 class Persona(BaseModel):
