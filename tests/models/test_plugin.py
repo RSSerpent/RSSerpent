@@ -4,14 +4,7 @@ from typing import Any, Awaitable, Callable, Dict, Tuple
 
 from hypothesis import given, settings
 from hypothesis.provisional import urls
-from hypothesis.strategies import (
-    builds,
-    dictionaries,
-    from_regex,
-    functions,
-    just,
-    text,
-)
+from hypothesis.strategies import builds, dictionaries, functions, just, text
 from pydantic import validate_model
 
 from rsserpent.models.plugin import Persona, Plugin, ProviderFn
@@ -43,7 +36,6 @@ class TestPersona:
         assert "@" in persona.email
 
 
-# TODO: improve tests performance
 class TestPlugin:
     """Test the `Plugin` class."""
 
@@ -51,12 +43,14 @@ class TestPlugin:
     @given(
         builds(
             Plugin,
-            name=from_regex(r"^rsserpent-plugin-\w+"),
+            name=text().map(lambda s: f"rsserpent-plugin-{s}"),
             author=builds(Persona, link=urls()),
             repository=urls(),
             prefix=just("/prefix"),
             routers=dictionaries(
-                from_regex(r"^/prefix/\w+"), functions().map(force_async), min_size=1
+                text().map(lambda s: f"/prefix/{s}"),
+                functions().map(force_async),
+                min_size=1,
             ),
         )
     )
@@ -71,7 +65,9 @@ class TestPlugin:
         repository=urls(),
         prefix=just("/prefix"),
         routers=dictionaries(
-            from_regex(r"^/prefix/\w+"), functions().map(force_async), min_size=1
+            text().map(lambda s: f"/prefix/{s}"),
+            functions().map(force_async),
+            min_size=1,
         ),
     )
     def test_name_validation(
@@ -98,11 +94,11 @@ class TestPlugin:
 
     @settings(max_examples=Times.SOME)
     @given(
-        name=from_regex(r"^rsserpent-plugin-\w+"),
+        name=text().map(lambda s: f"rsserpent-plugin-{s}"),
         author=builds(Persona, link=urls()),
         repository=urls(),
         prefix=just("/prefix"),
-        routers=dictionaries(from_regex(r"^/prefix/\w+"), functions()),
+        routers=dictionaries(text().map(lambda s: f"/prefix/{s}"), functions()),
     )
     def test_routers_validation(
         self,
@@ -131,7 +127,7 @@ class TestPlugin:
 
     @settings(max_examples=Times.SOME)
     @given(
-        name=from_regex(r"^rsserpent-plugin-\w+"),
+        name=text().map(lambda s: f"rsserpent-plugin-{s}"),
         author=builds(Persona, link=urls()),
         repository=urls(),
         prefix=just("/prefix"),
