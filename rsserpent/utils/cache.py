@@ -1,4 +1,5 @@
 import os
+import threading
 import time
 from collections import OrderedDict
 from dataclasses import dataclass
@@ -100,6 +101,7 @@ class LRUCache(OrderedDict):  # type: ignore[type-arg]
     def __init__(self, maxsize: int) -> None:
         self.maxsize = maxsize if maxsize > 0 else float("inf")
         self.hits, self.misses = 0, 0
+        self.lock = threading.Lock()
         super().__init__()
 
     def __getitem__(self, key: CacheKey) -> Optional[CacheValue]:
@@ -125,14 +127,14 @@ class LRUCache(OrderedDict):  # type: ignore[type-arg]
         cache maximum capacity is reached, the first (thus least recently used) cache
         item is deleted.
         """
-        # TODO: add lock to ensure thread safety
-        if key in self:
-            self.move_to_end(key)
-        super().__setitem__(key, value)
-        self.misses += 1
-        if len(self) > self.maxsize:
-            # do not use `self.popitem`
-            del self[next(iter(self))]
+        with self.lock:
+            if key in self:
+                self.move_to_end(key)
+            super().__setitem__(key, value)
+            self.misses += 1
+            if len(self) > self.maxsize:
+                # do not use `self.popitem`
+                del self[next(iter(self))]
 
     @property
     def size(self) -> int:
@@ -173,14 +175,14 @@ def decorator(fn: AsyncFn, *, expire: int, maxsize: int) -> AsyncFn:
 
 @overload
 def cached(fn: AsyncFn) -> AsyncFn:
-    ...
+    ...  # pragma: no cover
 
 
 @overload
 def cached(
     *, expire: int = CACHE_EXPIRE, maxsize: int = 0
 ) -> Callable[[AsyncFn], AsyncFn]:
-    ...
+    ...  # pragma: no cover
 
 
 def cached(
