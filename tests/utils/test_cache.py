@@ -14,7 +14,7 @@ from hypothesis.strategies import (
     tuples,
 )
 
-from rsserpent.utils.cache import CacheKey, cached, cached_with
+from rsserpent.utils.cache import CacheKey, cached, get_cache
 from tests.conftest import Times
 
 
@@ -44,56 +44,71 @@ class TestCacheKey:
             assert key1 == object()
 
 
+@pytest.mark.asyncio  # type: ignore[arg-type]
 @settings(max_examples=Times.SOME)
 @given(n=integers(min_value=2, max_value=100))
-def test_cached(n: int) -> None:
+async def test_cached(n: int) -> None:
     """Test if `@cached` decorator works properly."""
 
     @cached
-    def fib(n: int) -> int:
-        return n if n < 2 else int(fib(n - 1) + fib(n - 2))
+    async def fib(n: int) -> int:
+        return n if n < 2 else await fib(n - 1) + await fib(n - 2)
 
-    assert fib(n) == fib(n - 1) + fib(n - 2)
-    assert fib.cache.hits == n
-    assert fib.cache.size == n + 1
-    assert fib.cache.misses == n + 1
+    assert await fib(n) == await fib(n - 1) + await fib(n - 2)
+
+    cache = get_cache(fib)
+    assert cache is not None
+    assert cache.hits == n
+    assert cache.size == n + 1
+    assert cache.misses == n + 1
 
 
+@pytest.mark.asyncio  # type: ignore[arg-type]
 @settings(max_examples=Times.ONCE)
 @given(n=integers(min_value=2, max_value=10), expire=integers(max_value=-1))
-def test_cached_with_expire(n: int, expire: int) -> None:
-    """Test if `@cached_with` decorator works properly, given parameter `expire`."""
+async def test_cached_with_expire(n: int, expire: int) -> None:
+    """Test if `@cached` decorator works properly, given parameter `expire`."""
 
-    @cached_with(expire=expire)
-    def fib(n: int) -> int:
-        return n if n < 2 else int(fib(n - 1) + fib(n - 2))
+    @cached(expire=expire)
+    async def fib(n: int) -> int:
+        return n if n < 2 else await fib(n - 1) + await fib(n - 2)
 
-    assert fib(n) == fib(n - 1) + fib(n - 2)
-    assert fib.cache.hits == 0
+    assert await fib(n) == await fib(n - 1) + await fib(n - 2)
+
+    cache = get_cache(fib)
+    assert cache is not None
+    assert cache.hits == 0
 
 
+@pytest.mark.asyncio  # type: ignore[arg-type]
 @settings(max_examples=Times.SOME)
 @given(data())
-def test_cached_with_maxsize(data: DataObject) -> None:
-    """Test if `@cached_with` decorator works properly, given parameter `maxsize`."""
+async def test_cached_with_maxsize(data: DataObject) -> None:
+    """Test if `@cached` decorator works properly, given parameter `maxsize`."""
     n = data.draw(integers(min_value=2, max_value=10))
 
     # cache size too small
     maxsize = data.draw(integers(min_value=1, max_value=n))
 
-    @cached_with(maxsize=maxsize)
-    def fib1(n: int) -> int:
-        return n if n < 2 else int(fib1(n - 1) + fib1(n - 2))
+    @cached(maxsize=maxsize)
+    async def fib1(n: int) -> int:
+        return n if n < 2 else await fib1(n - 1) + await fib1(n - 2)
 
-    assert fib1(n) == fib1(n - 1) + fib1(n - 2)
-    assert fib1.cache.size == maxsize
+    assert await fib1(n) == await fib1(n - 1) + await fib1(n - 2)
+
+    cache = get_cache(fib1)
+    assert cache is not None
+    assert cache.size == maxsize
 
     # cache size suffice
     maxsize = data.draw(integers(max_value=0) | integers(min_value=n + 1))
 
-    @cached_with(maxsize=maxsize)
-    def fib2(n: int) -> int:
-        return n if n < 2 else int(fib2(n - 1) + fib2(n - 2))
+    @cached(maxsize=maxsize)
+    async def fib2(n: int) -> int:
+        return n if n < 2 else await fib2(n - 1) + await fib2(n - 2)
 
-    assert fib2(n) == fib2(n - 1) + fib2(n - 2)
-    assert fib2.cache.size == n + 1
+    assert await fib2(n) == await fib2(n - 1) + await fib2(n - 2)
+
+    cache = get_cache(fib2)
+    assert cache is not None
+    assert cache.size == n + 1

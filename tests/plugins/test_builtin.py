@@ -12,7 +12,7 @@ def test_example() -> None:
     response = client.get("/_/example")
     assert response.status_code == 200
     assert response.headers["Content-Type"] == "application/xml"
-    assert "<item>" not in response.text
+    assert response.text.count("<item>") == 1
 
 
 @settings(max_examples=Times.SOME)

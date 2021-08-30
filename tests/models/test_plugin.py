@@ -25,7 +25,7 @@ def force_async(fn: Callable[..., Any]) -> Callable[..., Awaitable[Any]]:
     """
 
     @wraps(fn)
-    async def async_fn(*args: Tuple[Any], **kwds: Dict[str, Any]) -> Any:
+    async def async_fn(*args: Tuple[Any, ...], **kwds: Dict[str, Any]) -> Any:
         loop = asyncio.get_event_loop()
         partial_fn = partial(fn, *args, **kwds)
         return await loop.run_in_executor(None, partial_fn)
@@ -43,6 +43,7 @@ class TestPersona:
         assert "@" in persona.email
 
 
+# TODO: improve tests performance
 class TestPlugin:
     """Test the `Plugin` class."""
 

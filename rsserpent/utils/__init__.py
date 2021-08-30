@@ -1,5 +1,5 @@
-from .cache import cached, cached_with
+from .cache import cached
 from .provider import fetch_data
 
 
-__all__ = ("cached", "cached_with", "fetch_data")
+__all__ = ("cached", "fetch_data")

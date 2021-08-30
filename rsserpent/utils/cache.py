@@ -2,12 +2,26 @@ import os
 import time
 from collections import OrderedDict
 from dataclasses import dataclass
-from typing import Any, Callable, Dict, Optional, Tuple
+from functools import partial, wraps
+from typing import (
+    Any,
+    Awaitable,
+    Callable,
+    Dict,
+    Optional,
+    Tuple,
+    TypeVar,
+    Union,
+    cast,
+    overload,
+)
 
 
-__all__ = ("cached", "cached_with")
+__all__ = ("cached",)
 
 CACHE_EXPIRE = int(os.environ.get("CACHE_EXPIRE", 60 * 60))
+
+AsyncFn = TypeVar("AsyncFn", bound=Callable[..., Awaitable[Any]])
 
 
 class CacheKey:
@@ -74,45 +88,6 @@ class CacheValue:
     data: Any
 
 
-class CachedFn:
-    """Function whose results are (LRU) cached with a expiring timestamp.
-
-    Attributes:
-        cache: A LRUCache instance, key-value pairs.
-        expire: The time (in seconds) before a cache item expires.
-        fn: The original, decorated function.
-    """
-
-    __slots__ = ("cache", "expire", "fn")
-
-    def __init__(self, fn: Callable[..., Any], *, expire: int, maxsize: int) -> None:
-        self.cache = LRUCache(maxsize=maxsize)
-        self.expire = expire
-        self.fn = fn
-
-    def __call__(self, *args: Any, **kwds: Dict[str, Any]) -> Any:
-        """Delegate function calls to the original `fn`.
-
-        Cached results will be returned if cache hit, otherwise
-        (missing/expired) `fn` will be invoked and its result will be cached.
-
-        Args:
-            args: Positional arguments in function parameters.
-            kwds: Keyword arguments in function parameters.
-
-        Returns:
-            The (maybe cached) result of `self.fn(*args, **kwds)`.
-        """
-        key = CacheKey.make(args, kwds)
-        value = self.cache[key]
-        # cache miss/expired
-        if value is None:
-            result = self.fn(*args, **kwds)
-            self.cache[key] = CacheValue(expired=time.time() + self.expire, data=result)
-            return result
-        return value.data
-
-
 class LRUCache(OrderedDict):  # type: ignore[type-arg]
     """Least Recently Used (LRU) cache.
 
@@ -150,6 +125,7 @@ class LRUCache(OrderedDict):  # type: ignore[type-arg]
         cache maximum capacity is reached, the first (thus least recently used) cache
         item is deleted.
         """
+        # TODO: add lock to ensure thread safety
         if key in self:
             self.move_to_end(key)
         super().__setitem__(key, value)
@@ -164,13 +140,57 @@ class LRUCache(OrderedDict):  # type: ignore[type-arg]
         return super().__len__()
 
 
-def cached(fn: Callable[..., Any]) -> CachedFn:
-    """Cache function results."""
-    return CachedFn(fn, expire=CACHE_EXPIRE, maxsize=0)
+def decorator(fn: AsyncFn, *, expire: int, maxsize: int) -> AsyncFn:
+    cache = LRUCache(maxsize=maxsize)
+
+    @wraps(fn)
+    async def wrapper(*args: Tuple[Any, ...], **kwds: Dict[str, Any]) -> Any:
+        """Wrap the original async `fn`.
+
+        Cached results will be returned if cache hit, otherwise
+        (missing/expired) `fn` will be invoked and its result will be cached.
+
+        Args:
+            args: Positional arguments in function parameters.
+            kwds: Keyword arguments in function parameters.
+
+        Returns:
+            The (maybe cached) result of `self.fn(*args, **kwds)`.
+        """
+        key = CacheKey.make(args, kwds)
+        value = cache[key]
+        # cache miss/expired
+        if value is None:
+            result = await fn(*args, **kwds)
+            cache[key] = CacheValue(expired=time.time() + expire, data=result)
+            return result
+        return value.data
+
+    wrapper.__dict__["cache"] = cache
+    wrapper.__dict__["expire"] = expire
+    return cast(AsyncFn, wrapper)
 
 
-def cached_with(
+@overload
+def cached(fn: AsyncFn) -> AsyncFn:
+    ...
+
+
+@overload
+def cached(
     *, expire: int = CACHE_EXPIRE, maxsize: int = 0
-) -> Callable[[Callable[..., Any]], CachedFn]:
-    """Cache function results with customizable `expire` & `maxsize`."""
-    return lambda fn: CachedFn(fn, expire=expire, maxsize=maxsize)
+) -> Callable[[AsyncFn], AsyncFn]:
+    ...
+
+
+def cached(
+    fn: AsyncFn = None, *, expire: int = CACHE_EXPIRE, maxsize: int = 0
+) -> Union[AsyncFn, Callable[[AsyncFn], AsyncFn]]:
+    """Cache function results."""
+    if fn is not None:
+        return decorator(fn, expire=expire, maxsize=maxsize)
+    return partial(decorator, expire=expire, maxsize=maxsize)
+
+
+def get_cache(fn: AsyncFn) -> Optional[LRUCache]:
+    return fn.__dict__.get("cache")
