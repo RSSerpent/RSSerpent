@@ -14,13 +14,13 @@ repos:
       - id: python-check-blanket-type-ignore
         name: 'Check Blanket "#type:ignore"'
   - repo: https://github.com/crate-ci/typos
-    rev: v1.1.7
+    rev: dictgen-v0.1.1
     hooks:
       - id: typos
         name: Check Typos
         args: []
   - repo: https://github.com/psf/black
-    rev: 21.7b0
+    rev: 21.8b0
     hooks:
       - id: black
         name: Format Source Code
