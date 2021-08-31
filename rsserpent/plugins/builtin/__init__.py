@@ -1,5 +1,5 @@
 from ...models import Persona, Plugin
-from . import example, example_cached, example_with_args
+from . import example, example_cache, example_ratelimit, example_with_args
 
 
 plugin = Plugin(
@@ -13,7 +13,8 @@ plugin = Plugin(
     prefix="/_",
     routers={
         example.path: example.provider,
-        example_cached.path: example_cached.provider,
+        example_cache.path: example_cache.provider,
+        example_ratelimit.path: example_ratelimit.provider,
         example_with_args.path: example_with_args.provider,
     },
 )

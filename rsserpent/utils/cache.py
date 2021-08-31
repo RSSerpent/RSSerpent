@@ -101,7 +101,7 @@ class LRUCache(OrderedDict):  # type: ignore[type-arg]
     def __init__(self, maxsize: int) -> None:
         self.maxsize = maxsize if maxsize > 0 else float("inf")
         self.hits, self.misses = 0, 0
-        self.lock = threading.Lock()
+        self.lock = threading.RLock()
         super().__init__()
 
     def __getitem__(self, key: CacheKey) -> Optional[CacheValue]:
@@ -113,7 +113,7 @@ class LRUCache(OrderedDict):  # type: ignore[type-arg]
         if key not in self:
             return None
         value: CacheValue = super().__getitem__(key)
-        if value.expired < time.time():
+        if value.expired < time.monotonic():
             return None
         self.move_to_end(key)
         self.hits += 1
@@ -143,6 +143,7 @@ class LRUCache(OrderedDict):  # type: ignore[type-arg]
 
 
 def decorator(fn: AsyncFn, *, expire: int, maxsize: int) -> AsyncFn:
+    """Cache decorator."""
     cache = LRUCache(maxsize=maxsize)
 
     @wraps(fn)
@@ -157,14 +158,14 @@ def decorator(fn: AsyncFn, *, expire: int, maxsize: int) -> AsyncFn:
             kwds: Keyword arguments in function parameters.
 
         Returns:
-            The (maybe cached) result of `self.fn(*args, **kwds)`.
+            The (maybe cached) result of `fn(*args, **kwds)`.
         """
         key = CacheKey.make(args, kwds)
         value = cache[key]
         # cache miss/expired
         if value is None:
             result = await fn(*args, **kwds)
-            cache[key] = CacheValue(expired=time.time() + expire, data=result)
+            cache[key] = CacheValue(expired=time.monotonic() + expire, data=result)
             return result
         return value.data
 

@@ -1,19 +1,16 @@
 from typing import Any, Dict
 
-from ...utils import cached
+from ...utils import ratelimit
 
 
-count = 0
-path = "/_/example/cached"
+path = "/_/example/rl"
 
 
-@cached
+@ratelimit(calls=1)
 async def provider() -> Dict[str, Any]:
-    """Define a basic example data provider function with `@cached`."""
-    global count
-    count += 1
+    """Define a basic example data provider function with rate limit."""
     return {
-        "title": f"Example {count}",
+        "title": "Example",
         "link": "https://example.com",
         "description": "An example rsserpent plugin.",
         "items": [{"title": "Example Article", "description": "Example Content"}],
