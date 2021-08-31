@@ -18,6 +18,7 @@
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             height: 100vh;
             justify-content: flex-start;
+            overflow: auto;
             padding: 20vh 0;
             text-align: center;
         }
@@ -27,20 +28,40 @@
         main h1 {
             padding-bottom: 1em;
         }
+        main div {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            margin: 1em 0;
+            width: 44em;
+            text-align: left;
+        }
+        main div pre {
+            white-space: pre-wrap;
+        }
         main img {
+            filter: grayscale(1);
+            -webkit-filter: grayscale(1);
             max-width: 12em;
         }
         main p {
+            font-size: 1em;
             padding: .3em 0;
         }
     </style>
-    <title>RSSerpent</title>
+    <title>RSSerpent Crashed!</title>
 </head>
 <body>
     <main>
         <img alt="RSSerpent" src="https://i.loli.net/2021/07/31/iFROzwEJ4HagUNv.png" />
-        <h1>Welcome to <a href="https://github.com/RSSerpent/RSSerpent">RSSerpent</a>!</h1>
-        <p>🎉 RSSerpent is up & running at <a href="{{request.base_url}}">{{request.base_url}}</a></p>
+        <h1>Something is wrong with <a href="https://github.com/RSSerpent/RSSerpent">RSSerpent</a>...</h1>
+        <p>If you believe this is a bug 🐛 of RSSerpent, please create an <a href="https://github.com/RSSerpent/RSSerpent/issues/new">issue</a>.</p>
+        <div>
+            <p>Path: <code>{{request.path}}</code></p>
+            <p>Message: <code>{{exception | string}}</code></p>
+            <details>
+                <summary>Traceback:</summary>
+                <pre>{{traceback}}</pre>
+            </details>
+        </div>
         <p>
             <a href="https://docs.rsserpent.com">Document</a> |
             <a href="https://github.com/RSSerpent/RSSerpent/issues">Issue</a> |

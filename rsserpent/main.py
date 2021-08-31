@@ -1,4 +1,5 @@
 import os
+import traceback
 from pathlib import Path
 
 import arrow
@@ -15,6 +16,18 @@ from .utils import fetch_data
 templates = Jinja2Templates(directory=str(Path(__file__).parent / "templates"))
 templates.env.autoescape = True
 templates.env.globals["arrow"] = arrow
+
+
+async def exception_handler(request: Request, exception: Exception) -> TemplateResponse:
+    """Return an HTML web page for displaying the current exception."""
+    return templates.TemplateResponse(
+        "exception.html.jinja",
+        {
+            "exception": exception,
+            "request": request,
+            "traceback": traceback.format_exc(),
+        },
+    )
 
 
 async def index(request: Request) -> TemplateResponse:
@@ -44,4 +57,8 @@ for plugin in plugins:
         routes.append(Route(path, endpoint=endpoint))
 
 
-app = Starlette(debug=bool(os.environ.get("DEBUG")), routes=routes)
+app = Starlette(
+    debug=bool(os.environ.get("DEBUG")),
+    routes=routes,
+    exception_handlers={Exception: exception_handler},
+)
