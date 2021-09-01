@@ -1,4 +1,6 @@
 import os
+import re
+import sys
 import traceback
 from pathlib import Path
 
@@ -20,12 +22,15 @@ templates.env.globals["arrow"] = arrow
 
 async def exception_handler(request: Request, exception: Exception) -> TemplateResponse:
     """Return an HTML web page for displaying the current exception."""
+    tb = traceback.format_exc()
+    for path in sys.path:
+        tb, _ = re.subn(fr'(?<=File "){re.escape(path)}[/\\]', "", tb)
     return templates.TemplateResponse(
         "exception.html.jinja",
         {
             "exception": exception,
             "request": request,
-            "traceback": traceback.format_exc(),
+            "traceback": tb,
         },
     )
 
