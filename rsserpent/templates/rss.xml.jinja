@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>{{ data.title }}</title>
+        <link>{{ data.link }}</link>
+        <atom:link href="{{ request.url }}" rel="self" type="application/rss+xml" />
+        <description>{{ data.description }}</description>
+
+        {% if data.language %}
+        <language>{{ data.language }}</language>
+        {% endif %}
+
+        {% if data.copyright %}
+        <copyright>{{ data.copyright }}</copyright>
+        {% endif %}
+
+        {% if data.managing_editor %}
+        <managingEditor>{{ data.managing_editor }}</managingEditor>
+        {% else %}
+        <managingEditor>
+            {{ plugin.author.email }} ({{ plugin.author.name }})
+        </managingEditor>
+        {% endif %}
+
+        {% if data.web_master %}
+        <webMaster>{{ data.web_master }}</webMaster>
+        {% else %}
+        <webMaster>{{ plugin.author.email }} ({{ plugin.author.name }})</webMaster>
+        {% endif %}
+
+        {% set now = arrow.utcnow() %}
+        {% if data.pub_date %}
+        <pubDate>{{ arrow.get(data.pub_date).format(arrow.FORMAT_RFC822) }}</pubDate>
+        {% else %}}
+        <pubDate>{{ now.format(arrow.FORMAT_RFC822) }}</pubDate>
+        {% endif %}
+
+        {% if data.last_build_date %}
+        <lastBuildDate>
+            {{ arrow.get(data.last_build_date).format(arrow.FORMAT_RFC822) }}
+        </lastBuildDate>
+        {% else %}}
+        <lastBuildDate>{{ now.format(arrow.FORMAT_RFC822) }}</lastBuildDate>
+        {% endif %}
+
+        {% if data.categories %}
+            {% for category in data.categories %}
+                {% if category.domain %}
+                <category domain="{{ category.domain }}">{{ category.name }}</category>
+                {% else %}
+                <category>{{ category.name }}</category>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
+        {% if data.generator %}
+        <generator>{{ data.generator }}</generator>
+        {% endif %}
+
+        {% if data.docs %}
+        <docs>{{ data.docs }}</docs>
+        {% endif %}
+
+        {% if data.ttl %}
+        <ttl>{{ data.ttl }}</ttl>
+        {% endif %}
+
+        {% if data.image %}
+        <image>
+            <url>{{ data.image.url }}</url>
+            <title>{{ data.image.title }}</title>
+            <link>{{ data.image.link }}</link>
+            {% if data.image.width %}
+            <width>{{ data.image.width }}</width>
+            {% endif %}
+            {% if data.image.height %}
+            <height>{{ data.image.height }}</height>
+            {% endif %}
+            {% if data.image.description %}
+            <description>{{ data.image.description }}</description>
+            {% endif %}
+        </image>
+        {% endif %}
+
+        {% if data.items %}
+            {% for item in data.items %}
+            <item>
+                {% if item.title %}
+                <title>{{ item.title }}</title>
+                {% endif %}
+                {% if item.link %}
+                <link>{{ item.link }}</link>
+                {% endif %}
+                {% if item.description %}
+                <description>{{ item.description }}</description>
+                {% endif %}
+                {% if item.author %}
+                <author>{{ item.author }}</author>
+                {% endif %}
+                {% if item.categories %}
+                    {% for category in item.categories %}
+                        {% if category.domain %}
+                        <category domain="{{ category.domain }}">
+                            {{ category.name }}
+                        </category>
+                        {% else %}
+                        <category>{{ category.name }}</category>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+                {% if item.comments %}
+                <comments>{{ item.comments }}</comments>
+                {% endif %}
+                {% if item.enclosure %}
+                <enclosure
+                    url="{{ item.enclosure.url }}"
+                    length="{{ item.enclosure.length }}"
+                    type="{{ item.enclosure.type }}" />
+                {% endif %}
+                {% if item.guid %}
+                <guid isPermaLink="{{ item.guid.is_perma_link }}">
+                    {{ item.guid.value }}
+                </guid>
+                {% endif %}
+                {% if item.pub_date %}
+                <pubDate>{{ arrow.get(item.pub_date).format(arrow.FORMAT_RFC822) }}</pubDate>
+                {% else %}
+                <pubDate>{{ now.format(arrow.FORMAT_RFC822) }}</pubDate>
+                {% endif %}
+                {% if item.source %}
+                    {% if item.source.url %}
+                    <source url="{{ item.source.url }}">{{ item.source.name }}</source>
+                    {% else %}
+                    <source>{{ item.source.name }}</source>
+                    {% endif %}
+                {% endif %}
+            </item>
+            {% endfor %}
+        {% endif %}
+    </channel>
+</rss>
