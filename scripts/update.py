@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# noqa: T001
 
 import os
 import re
@@ -6,8 +7,10 @@ import re
 import httpx
 
 
-# Update `.pre-commit-config.yaml`
-print("Updating .pre-commit-config.yaml")  # noqa: T001
+# Update .pre-commit-config.yaml
+pre_commit_config = ".pre-commit-config.yaml"
+
+print(f"Updating {pre_commit_config}")
 
 
 def get_package_latest_version(package_name: str) -> str:
@@ -17,17 +20,21 @@ def get_package_latest_version(package_name: str) -> str:
     return latest_version
 
 
-with open(".pre-commit-config.yaml") as file:
+with open(pre_commit_config) as file:
     text = file.read()
 
 for match in re.findall(r"[\w-]+==[\d\w.]+", text):
     package_name, current_version = match.split("==")
     latest_version = get_package_latest_version(package_name)
-    text = re.sub(
-        f"{package_name}=={current_version}", f"{package_name}=={latest_version}", text
-    )
+    if current_version != latest_version:
+        print(f"{package_name} {current_version} --> {latest_version}")
+        text = re.sub(
+            f"{package_name}=={current_version}",
+            f"{package_name}=={latest_version}",
+            text,
+        )
 
-with open(".pre-commit-config.yaml", "w") as file:
+with open(pre_commit_config, "w") as file:
     file.write(text)
 
 

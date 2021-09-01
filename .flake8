@@ -1,14 +1,17 @@
 [flake8]
 count = true
 ignore =
-    # A003: Class attribute "xxx" is shadowing a python builtin
+    # A003: class attribute "xxx" is shadowing a python builtin
     A003,
-    # D100: Missing docstring in public module
+    # D100: missing docstring in public module
     D100,
-    # D104: Missing docstring in public package
+    # D104: missing docstring in public package
     D104
 max-complexity = 6
 max-line-length = 88
+per-file-ignores:
+    # T001: print found
+    scripts/update.py: T001
 
 ## darglint
 strictness = long
