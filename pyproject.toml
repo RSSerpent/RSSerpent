@@ -43,7 +43,6 @@ exclude_lines = [
 
 [tool.isort]
 balanced_wrapping = true
-classes = ["GUID"]
 combine_as_imports = true
 lines_after_imports = 2
 profile = "black"

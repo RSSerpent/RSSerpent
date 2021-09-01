@@ -5,7 +5,7 @@ from hypothesis.provisional import urls
 from hypothesis.strategies import builds, fixed_dictionaries, lists, none, text
 from pydantic import HttpUrl, ValidationError
 
-from rsserpent.models.rss import Category, Enclosure, Feed, GUID, Image, Item, Source
+from rsserpent.models.rss import Category, Enclosure, Feed, Guid, Image, Item, Source
 from tests.conftest import Times
 
 
@@ -39,8 +39,8 @@ class TestGUID:
     """Test the `GUID` class."""
 
     @settings(max_examples=Times.ONCE)
-    @given(builds(GUID))
-    def test(self, guid: GUID) -> None:
+    @given(builds(Guid))
+    def test(self, guid: Guid) -> None:
         """Test if the `GUID` class works properly."""
         assert guid is not None
 
@@ -48,7 +48,7 @@ class TestGUID:
     @given(value=infer)
     def test_default_is_perma_link(self, value: str) -> None:
         """Test the default value of `is_perma_link` in the `GUID` class."""
-        assert GUID(value=value).is_perma_link is True
+        assert Guid(value=value).is_perma_link is True
 
 
 class TestImage:
@@ -96,7 +96,7 @@ class TestItem:
             categories=lists(fixed_dictionaries({"name": text()})) | none(),
             comments=urls() | none(),
             enclosure=builds(Enclosure, url=urls()) | none(),
-            guid=builds(GUID) | none(),
+            guid=builds(Guid) | none(),
             pub_date=infer,
             source=builds(Source, url=urls() | none()) | none(),
         )

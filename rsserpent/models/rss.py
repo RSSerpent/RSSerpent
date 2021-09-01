@@ -26,7 +26,7 @@ class Enclosure(BaseModel):
     url: AnyUrl
 
 
-class GUID(BaseModel):
+class Guid(BaseModel):
     """Data model for the `<guid>` field in an RSS 2.0 feed."""
 
     is_perma_link: bool = True
@@ -61,7 +61,7 @@ class Item(BaseModel):
     categories: Optional[List[Category]]
     comments: Optional[HttpUrl]
     enclosure: Optional[Enclosure]
-    guid: Optional[GUID]
+    guid: Optional[Guid]
     pub_date: Optional[datetime]
     source: Optional[Source]
 
