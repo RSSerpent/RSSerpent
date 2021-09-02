@@ -1,0 +1,8 @@
+.github/
+dist/
+tests/
+.pre-commit-config.yaml
+README.md
+README.zh.md
+Dockerfile
+mypy.ini
