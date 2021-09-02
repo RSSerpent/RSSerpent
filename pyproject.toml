@@ -12,8 +12,10 @@ httpx = "^0.19.0"
 importlib-metadata = "^4.5.0"
 pydantic = {extras = ["email"], version = "^1.8.2"}
 starlette = {extras = ["full"], version = "^0.16.0"}
+lxml = {extras = ["cssselect"], version = "^4.6.3"}
 
 [tool.poetry.dev-dependencies]
+lxml-stubs = "^0.2.0"
 pre-commit = "^2.13.0"
 uvicorn = "^0.15.0"
 # testing
