@@ -1,8 +1,32 @@
 .github/
-dist/
 tests/
 .pre-commit-config.yaml
 README.md
 README.zh.md
 Dockerfile
 mypy.ini
+
+# whl
+dist/
+
+# Docs
+site/
+
+# IDE
+.idea/
+.vscode/
+
+# Misc
+.env
+.envrc
+__pycache__/
+
+# Test
+.coverage
+.hypothesis/
+.pytest_cache/
+coverage.xml
+
+# Toolchain
+.mypy_cache/
+.python-version
