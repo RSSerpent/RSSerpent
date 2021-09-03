@@ -40,23 +40,31 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: docker/metadata-action@v3
+        id: meta
+        with:
+          images: queensferry/rsserpent, ghcr.io/rsserpent/rsserpent
       - uses: docker/build-push-action@v2
         with:
           cache-from: type=gha, scope=${{ github.workflow }}
           cache-to: type=gha, scope=${{ github.workflow }}
           load: true
           tags: rsserpent:master
+          labels: ${{ steps.meta.outputs.labels }}
       - name: "Minify Docker Images with `docker-slim`"
         run: |
           curl https://downloads.dockerslim.com/releases/1.36.3/dist_linux.tar.gz -o ds.tar.gz
           tar -xzvf ds.tar.gz --strip-component=1 && mv docker-slim* /usr/local/bin/
           docker-slim build \
             --include-path /home/app/.local/lib/python3.9/site-packages/certifi/cacert.pem \
-            --tag queensferry/rsserpent:master \
-            --tag ghcr.io/rsserpent/rsserpent:master \
+            --tag rsserpent.slim:master \
             rsserpent:master
+          for tag in `echo "${{ steps.meta.outputs.tags }}"`; do
+            docker tag rsserpent.slim:master $tag
+          done
       - name: "Push Docker Images"
-        if: ${{ github.repository == 'RSSerpent/RSSerpent' }}
+        if: ${{ github.repository == 'RSSerpent/RSSerpent' && github.event_name != 'pull_request' }}
         run: |
-          docker push queensferry/rsserpent:master
-          docker push ghcr.io/rsserpent/rsserpent:master
+          for tag in `echo "${{ steps.meta.outputs.tags }}"`; do
+            docker push $tag
+          done
