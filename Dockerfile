@@ -2,7 +2,7 @@ FROM python:3.9-alpine
 
 # Setup
 RUN addgroup -S app && adduser -S app -G app
-RUN apk add --no-cache curl
+RUN apk add --no-cache curl gcc libc-dev libxslt libxslt-dev
 USER app
 
 # Copy
@@ -20,7 +20,7 @@ RUN poetry config virtualenvs.create false && \
 
 # Cleanup
 USER root
-RUN apk del curl
+RUN apk del --no-cache curl gcc libc-dev libxslt-dev
 RUN yes | poetry cache clear --all .
 USER app
 

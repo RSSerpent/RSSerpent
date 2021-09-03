@@ -3,14 +3,18 @@ name: Build Docker Image
 on:
   pull_request:
     paths:
+      - '.dockerignore'
       - '.github/workflows/docker.yaml'
+      - 'Dockerfile'
       - 'poetry.lock'
       - 'rsserpent/**'
   push:
     branches:
       - 'master'
     paths:
+      - '.dockerignore'
       - '.github/workflows/docker.yaml'
+      - 'Dockerfile'
       - 'poetry.lock'
       - 'rsserpent/**'
     tags:
