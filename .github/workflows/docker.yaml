@@ -27,7 +27,15 @@ jobs:
       - uses: actions/checkout@v2
       - uses: docker/setup-qemu-action@v1
       - uses: docker/setup-buildx-action@v1
-      - uses: docker/login-action@v1
+      - name: "Login to Docker Hub"
+        if: ${{ github.repository == 'RSSerpent/RSSerpent' }}
+        uses: docker/login-action@v1
+        with:
+          username: queensferry
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: "Login to GitHub Container Registry"
+        if: ${{ github.repository == 'RSSerpent/RSSerpent' }}
+        uses: docker/login-action@v1
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
@@ -37,11 +45,18 @@ jobs:
           cache-from: type=gha, scope=${{ github.workflow }}
           cache-to: type=gha, scope=${{ github.workflow }}
           load: true
-          tags: ghcr.io/rsserpent/rsserpent:master
-      - run: docker images
-      - name: "Minify Docker Image with `docker-slim`"
+          tags: rsserpent:master
+      - name: "Minify Docker Images with `docker-slim`"
         run: |
           curl https://downloads.dockerslim.com/releases/1.36.3/dist_linux.tar.gz -o ds.tar.gz
           tar -xzvf ds.tar.gz --strip-component=1 && mv docker-slim* /usr/local/bin/
-          docker-slim build --include-path /home/app/.local/lib/python3.9/site-packages/certifi/cacert.pem --tag ghcr.io/rsserpent/rsserpent:master ghcr.io/rsserpent/rsserpent:master
+          docker-slim build \
+            --include-path /home/app/.local/lib/python3.9/site-packages/certifi/cacert.pem \
+            --tag queensferry/rsserpent:master \
+            --tag ghcr.io/rsserpent/rsserpent:master \
+            rsserpent:master
+      - name: "Push Docker Images"
+        if: ${{ github.repository == 'RSSerpent/RSSerpent' }}
+        run: |
+          docker push queensferry/rsserpent:master
           docker push ghcr.io/rsserpent/rsserpent:master
