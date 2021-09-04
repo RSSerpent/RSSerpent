@@ -16,7 +16,7 @@ lxml = {extras = ["cssselect"], version = "^4.6.3"}
 
 [tool.poetry.dev-dependencies]
 lxml-stubs = "^0.2.0"
-pre-commit = "^2.13.0"
+pre-commit = "^2.15.0"
 uvicorn = "^0.15.0"
 # testing
 hypothesis = "^6.14.0"
