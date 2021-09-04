@@ -48,9 +48,9 @@ jobs:
         with:
           cache-from: type=gha, scope=${{ github.workflow }}
           cache-to: type=gha, scope=${{ github.workflow }}
+          labels: ${{ steps.meta.outputs.labels }}
           load: true
           tags: rsserpent:master
-          labels: ${{ steps.meta.outputs.labels }}
       - name: "Minify Docker Images with `docker-slim`"
         run: |
           curl https://downloads.dockerslim.com/releases/1.36.3/dist_linux.tar.gz -o ds.tar.gz
@@ -68,3 +68,10 @@ jobs:
           for tag in `echo "${{ steps.meta.outputs.tags }}"`; do
             docker push $tag
           done
+      - uses: bots-house/ghcr-delete-image-action@main
+        if: ${{ github.repository == 'RSSerpent/RSSerpent' }}
+        with:
+          owner: rsserpent
+          name: rsserpent
+          token: ${{ secrets.PAT_TOKEN }}
+          untagged-keep-latest: 10
