@@ -43,14 +43,13 @@ jobs:
       - uses: docker/metadata-action@v3
         id: meta
         with:
-          images: queensferry/rsserpent,ghcr.io/rsserpent/rsserpent
+          images: queensferry/rsserpent, ghcr.io/rsserpent/rsserpent
       - uses: docker/build-push-action@v2
         with:
-          cache-from: type=gha,scope=${{ github.workflow }}
-          cache-to: type=gha,scope=${{ github.workflow }}
+          cache-from: type=gha, scope=${{ github.workflow }}
+          cache-to: type=gha, scope=${{ github.workflow }}
           labels: ${{ steps.meta.outputs.labels }}
           load: true
-          platforms: linux/amd64,linux/arm64,linux/arm/v7
           tags: rsserpent:master
       - name: "Minify Docker Images with `docker-slim`"
         run: |
