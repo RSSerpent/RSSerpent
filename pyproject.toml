@@ -27,7 +27,7 @@ pytest-cov = "^2.12.1"
 mike = "^1.0.1"
 mkdocs = "^1.2.1"
 mkdocs-git-revision-date-plugin = "^0.3.1"
-mkdocs-material = "^7.1.9"
+mkdocs-material = "^7.2.6"
 mkdocs-static-i18n = "^0.19"
 
 [tool.black]
