@@ -38,30 +38,30 @@ repos:
         # As `mypy` runs in an isolated environment, it is necessary to manually specify
         # some libraries of the current (poetry) environment for `mypy` to work properly.
         additional_dependencies:
-          - arrow==1.1.1
-          - httpx==0.19.0
-          - hypothesis==6.17.4
-          - importlib-metadata==4.8.1
-          - lxml-stubs==0.2.0
-          - pydantic==1.8.2
-          - pytest==6.2.5
-          - starlette==0.16.0
-          - types-dataclasses==0.1.7
+          - arrow
+          - httpx
+          - hypothesis
+          - importlib-metadata
+          - lxml-stubs
+          - pydantic
+          - pytest
+          - starlette
+          - types-dataclasses
   - repo: https://github.com/PyCQA/flake8
     rev: 3.9.2
     hooks:
       - id: flake8
         name: Lint
         additional_dependencies:
-          - darglint==1.8.0
-          - flake8-bugbear==21.4.3
-          - flake8-builtins==1.5.3
-          - flake8-docstrings==1.6.0
-          - flake8-eradicate==1.1.0
-          # - flake8-expression-complexity==0.0.9
-          - flake8-print==4.0.0
-          - flake8-too-many==0.1.1
-          - pep8-naming==0.12.1
+          - darglint
+          - flake8-bugbear
+          - flake8-builtins
+          - flake8-docstrings
+          - flake8-eradicate
+          # - flake8-expression-complexity
+          - flake8-print
+          - flake8-too-many
+          - pep8-naming
   - repo: https://github.com/commitizen-tools/commitizen
     rev: v2.18.0
     hooks:
