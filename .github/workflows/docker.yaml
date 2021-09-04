@@ -7,6 +7,7 @@ on:
       - '.github/workflows/docker.yaml'
       - 'Dockerfile'
       - 'poetry.lock'
+      - 'pyproject.toml'
       - 'rsserpent/**'
   push:
     branches:
@@ -16,6 +17,7 @@ on:
       - '.github/workflows/docker.yaml'
       - 'Dockerfile'
       - 'poetry.lock'
+      - 'pyproject.toml'
       - 'rsserpent/**'
     tags:
       - '*.*.*'
@@ -23,18 +25,20 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
+    env:
+      NOT_FORK_AND_NOT_PR: ${{ github.repository == 'RSSerpent/RSSerpent' && github.event_name != 'pull_request' }}
     steps:
       - uses: actions/checkout@v2
       - uses: docker/setup-qemu-action@v1
       - uses: docker/setup-buildx-action@v1
       - name: "Login to Docker Hub"
-        if: ${{ github.repository == 'RSSerpent/RSSerpent' }}
+        if: ${{ env.NOT_FORK_AND_NOT_PR }}
         uses: docker/login-action@v1
         with:
           username: queensferry
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: "Login to GitHub Container Registry"
-        if: ${{ github.repository == 'RSSerpent/RSSerpent' }}
+        if: ${{ env.NOT_FORK_AND_NOT_PR }}
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
@@ -43,11 +47,11 @@ jobs:
       - uses: docker/metadata-action@v3
         id: meta
         with:
-          images: queensferry/rsserpent, ghcr.io/rsserpent/rsserpent
+          images: queensferry/rsserpent,ghcr.io/rsserpent/rsserpent
       - uses: docker/build-push-action@v2
         with:
-          cache-from: type=gha, scope=${{ github.workflow }}
-          cache-to: type=gha, scope=${{ github.workflow }}
+          cache-from: type=gha,scope=${{ github.workflow }}
+          cache-to: type=gha,scope=${{ github.workflow }}
           labels: ${{ steps.meta.outputs.labels }}
           load: true
           tags: rsserpent:master
@@ -63,20 +67,20 @@ jobs:
             docker tag rsserpent.slim:master $tag
           done
       - name: "Push Docker Images"
-        if: ${{ github.repository == 'RSSerpent/RSSerpent' && github.event_name != 'pull_request' }}
+        if: ${{ env.NOT_FORK_AND_NOT_PR }}
         run: |
           for tag in `echo "${{ steps.meta.outputs.tags }}"`; do
             docker push $tag
           done
       - uses: bots-house/ghcr-delete-image-action@main
-        if: ${{ github.repository == 'RSSerpent/RSSerpent' }}
+        if: ${{ env.NOT_FORK_AND_NOT_PR }}
         with:
           owner: rsserpent
           name: rsserpent
           token: ${{ secrets.PAT_TOKEN }}
           untagged-keep-latest: 10
       - uses: peter-evans/dockerhub-description@v2
-        if: ${{ github.repository == 'RSSerpent/RSSerpent' }}
+        if: ${{ env.NOT_FORK_AND_NOT_PR }}
         with:
           username: queensferry
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
