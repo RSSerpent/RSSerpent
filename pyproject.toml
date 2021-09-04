@@ -24,7 +24,7 @@ pytest = "^6.2.4"
 pytest-asyncio = "^0.15.1"
 pytest-cov = "^2.12.1"
 # documentation
-mike = "^1.0.1"
+mike = "^1.1.0"
 mkdocs = "^1.2.1"
 mkdocs-git-revision-date-plugin = "^0.3.1"
 mkdocs-material = "^7.1.9"
