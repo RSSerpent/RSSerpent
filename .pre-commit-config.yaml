@@ -13,6 +13,10 @@ repos:
         name: Check Blanket "#noqa"
       - id: python-check-blanket-type-ignore
         name: 'Check Blanket "#type:ignore"'
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v2.25.0
+    hooks:
+      - id: pyupgrade
   - repo: https://github.com/crate-ci/typos
     rev: v1.1.8
     hooks:
