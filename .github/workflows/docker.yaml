@@ -23,7 +23,7 @@ on:
       - '*.*.*'
 
 jobs:
-  run:
+  build:
     runs-on: ubuntu-latest
     env:
       NOT_FORK_AND_NOT_PR: ${{ github.repository == 'RSSerpent/RSSerpent' && github.event_name != 'pull_request' }}
@@ -55,12 +55,12 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           load: true
           tags: rsserpent:master
-      - name: "Minify Docker Images with `docker-slim`"
+      - name: "Minify Docker Image with `docker-slim`"
         run: |
           curl https://downloads.dockerslim.com/releases/1.36.3/dist_linux.tar.gz -o ds.tar.gz
           tar -xzvf ds.tar.gz --strip-component=1 && mv docker-slim* /usr/local/bin/
           docker-slim build \
-            --include-path /home/app/.local/lib/python3.9/site-packages/certifi/cacert.pem \
+            --include-path /home/app/.local/lib/python3.9/site-packages/ \
             --tag rsserpent.slim:master \
             rsserpent:master
           for tag in `echo "${{ steps.meta.outputs.tags }}"`; do
@@ -86,3 +86,17 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
           repository: queensferry/rsserpent
           short-description: ${{ github.event.repository.description }}
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    services:
+      rsserpent:
+        image: ghcr.io/rsserpent/rsserpent:master
+        ports:
+          - 8000:8000
+    steps:
+      - name: "Test Docker Image"
+        run: |
+          # don't remove this line (f**k i wish i know why)
+          sleep 10
+          curl localhost:8000 | grep "RSSerpent is up & running"

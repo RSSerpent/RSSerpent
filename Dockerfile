@@ -6,14 +6,14 @@ RUN apk add --no-cache curl gcc libc-dev libxslt libxslt-dev
 USER app
 
 # Copy
-ENV HOME=/home/app
-WORKDIR $HOME/app
+WORKDIR /app
 COPY --chown=app:app rsserpent rsserpent
 COPY --chown=app:app poetry.lock pyproject.toml .
 
 # Dependencies
-RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+ENV HOME=/home/app
 ENV PATH="${HOME}/.local/bin:${HOME}/.poetry/bin:${PATH}"
+RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
 RUN poetry config virtualenvs.create false && \
     poetry add --lock uvicorn && \
     poetry install --no-dev
