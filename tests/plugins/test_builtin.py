@@ -1,5 +1,3 @@
-import time
-
 import pytest
 from hypothesis import given, settings
 from hypothesis.strategies import integers
@@ -19,20 +17,17 @@ def test_example(client: TestClient) -> None:
     assert response.text.count("<item>") == 1
 
 
-def test_example_cached(client: TestClient, monkeypatch: pytest.MonkeyPatch) -> None:
+def test_example_cached(client: TestClient) -> None:
     """Test the `/_example/cache` route."""
-    monkeypatch.setattr(time, "time", lambda: 0)
-
     response1 = client.get("/_/example/cache")
     response2 = client.get("/_/example/cache")
-    assert response1.text == response2.text
     assert "<title>Example 1</title>" in response1.text
+    assert "<title>Example 1</title>" in response2.text
 
     cache = get_cache(example_cache.provider)
     if cache is not None:
         cache.clear()
     response3 = client.get("/_/example/cache")
-    assert response1.text != response3.text
     assert "<title>Example 2</title>" in response3.text
 
 
