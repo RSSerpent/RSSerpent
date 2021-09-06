@@ -60,6 +60,7 @@ repos:
           - darglint
           - flake8-bugbear
           - flake8-builtins
+          - flake8-datetimez
           - flake8-docstrings
           - flake8-eradicate
           # - flake8-expression-complexity
