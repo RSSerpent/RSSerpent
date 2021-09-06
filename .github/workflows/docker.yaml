@@ -21,6 +21,7 @@ on:
       - 'rsserpent/**'
     tags:
       - '*.*.*'
+  workflow_dispatch:
 
 jobs:
   build:

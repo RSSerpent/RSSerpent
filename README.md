@@ -3,15 +3,18 @@
 </p>
 
 [![python: 3.6.2+](https://img.shields.io/badge/python->=3.6.2-blue.svg)](https://www.python.org/downloads/)
-[![mypy: checked](https://img.shields.io/badge/mypy-checked-blue.svg)](https://github.com/python/mypy)
 [![code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![mypy: checked](https://img.shields.io/badge/mypy-checked-blue.svg)](https://github.com/python/mypy)
+
 [![pypi: version](https://img.shields.io/pypi/v/rsserpent)](https://pypi.org/project/rsserpent/)
-[![downloads: per month](https://img.shields.io/pypi/dm/rsserpent)](https://pypi.org/project/rsserpent/)
+[![pypi downloads: per month](https://img.shields.io/pypi/dm/rsserpent)](https://pypi.org/project/rsserpent/)
+[![docker: version](https://img.shields.io/docker/v/queensferry/rsserpent/latest?label=docker&sort=semver)](https://hub.docker.com/r/queensferry/rsserpent)
+[![docker: image size](https://img.shields.io/docker/image-size/queensferry/rsserpent/latest)](https://hub.docker.com/r/queensferry/rsserpent)
 
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/RSSerpent/RSSerpent/master.svg)](https://results.pre-commit.ci/latest/github/RSSerpent/RSSerpent/master)
-[![github ci status](https://img.shields.io/github/workflow/status/RSSerpent/RSSerpent/Test?label=test&logo=github&message=passed)](https://github.com/RSSerpent/RSSerpent/actions/workflows/test.yaml)
-[![netlify docs status](https://img.shields.io/netlify/79df1100-5b19-4e0e-a441-aace58b6653f?label=docs&logo=netlify)](https://docs.rsserpent.com)
+[![github test status](https://img.shields.io/github/workflow/status/RSSerpent/RSSerpent/Test?label=test&logo=github&message=passed)](https://github.com/RSSerpent/RSSerpent/actions/workflows/test.yaml)
 [![codecov status](https://codecov.io/gh/RSSerpent/RSSerpent/branch/master/graph/badge.svg?token=FQZ5OWOQRO)](https://codecov.io/gh/RSSerpent/RSSerpent)
+[![github docker status](https://img.shields.io/github/workflow/status/RSSerpent/RSSerpent/Build%20Docker%20Image?label=docker&logo=docker)](https://github.com/RSSerpent/RSSerpent/actions/workflows/docker.yaml)
 
 [![chat on telegram](https://img.shields.io/badge/chat%20on-telegram-blue.svg)](https://t.me/rsserpent)
 
