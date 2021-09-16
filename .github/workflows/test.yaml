@@ -51,7 +51,7 @@ jobs:
       - name: "Generate Coverage Report"
         run: poetry run pytest --cov --cov-report=xml -n auto
       - name: "Upload to Codecov.io"
-        if: ${{ github.repository == 'RSSerpent/RSSerpent' && github.event_name != 'pull_request' }}
+        if: github.repository == 'RSSerpent/RSSerpent' && github.event_name != 'pull_request'
         uses: codecov/codecov-action@v2
         with:
           fail_ci_if_error: true
