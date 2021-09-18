@@ -8,7 +8,7 @@ USER app
 # Copy
 WORKDIR /app
 COPY --chown=app:app rsserpent rsserpent
-COPY --chown=app:app poetry.lock pyproject.toml .
+COPY --chown=app:app poetry.lock pyproject.toml README.md ./
 
 # Dependencies
 ENV HOME=/home/app
