@@ -9,9 +9,6 @@ ignore =
     D104
 max-complexity = 6
 max-line-length = 88
-per-file-ignores:
-    # T001: print found
-    scripts/update.py: T001
 
 ## darglint
 strictness = long
@@ -19,9 +16,3 @@ docstring-style = google
 
 ## flake8-docstrings
 docstring-convention = google
-
-## flake8-expression-complexity
-max-expression-complexity = 6
-
-## flake8-too-many
-max-function-arguments = 6

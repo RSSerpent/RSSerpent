@@ -8,7 +8,6 @@ site/
 # Misc
 .env
 .envrc
-__pycache__/
 
 # Test
 .coverage
@@ -19,4 +18,5 @@ coverage.xml
 # Toolchain
 .mypy_cache/
 .python-version
+__pycache__/
 dist/

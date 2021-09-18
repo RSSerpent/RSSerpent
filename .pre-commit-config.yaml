@@ -17,6 +17,7 @@ repos:
     rev: v2.26.0
     hooks:
       - id: pyupgrade
+        name: Upgrade Python Syntax
   - repo: https://github.com/crate-ci/typos
     rev: dictgen-v0.1.1
     hooks:
@@ -58,10 +59,11 @@ repos:
           - darglint
           - flake8-bugbear
           - flake8-builtins
+          - flake8-comprehensions
           - flake8-datetimez
+          - flake8-debugger
           - flake8-docstrings
           - flake8-eradicate
-          # - flake8-expression-complexity
           - flake8-print
           - flake8-too-many
           - pep8-naming
