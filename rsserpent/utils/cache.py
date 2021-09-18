@@ -187,7 +187,7 @@ def cached(
 
 
 def cached(
-    fn: AsyncFn = None, *, expire: int = CACHE_EXPIRE, maxsize: int = 0
+    fn: Optional[AsyncFn] = None, *, expire: int = CACHE_EXPIRE, maxsize: int = 0
 ) -> Union[AsyncFn, Callable[[AsyncFn], AsyncFn]]:
     """Cache function results."""
     if fn is not None:
