@@ -1,6 +1,7 @@
-from datetime import datetime
 from typing import TYPE_CHECKING, Any, Dict, List, Optional
 
+import arrow
+from arrow import Arrow
 from pydantic import BaseModel, Field, root_validator
 
 
@@ -62,8 +63,11 @@ class Item(BaseModel):
     comments: Optional[HttpUrl]
     enclosure: Optional[Enclosure]
     guid: Optional[Guid]
-    pub_date: Optional[datetime]
+    pub_date: Optional[Arrow]
     source: Optional[Source]
+
+    class Config:  # noqa: D106
+        arbitrary_types_allowed = True
 
     @root_validator
     def validate(  # type: ignore[override]
@@ -97,11 +101,14 @@ class Feed(BaseModel):
     copyright: Optional[str]
     managing_editor: Optional[str]
     web_master: Optional[str]
-    pub_date: Optional[datetime] = Field(default_factory=datetime.utcnow)
-    last_build_date: Optional[datetime] = Field(default_factory=datetime.utcnow)
+    pub_date: Optional[Arrow] = Field(default_factory=arrow.utcnow)
+    last_build_date: Optional[Arrow] = Field(default_factory=arrow.utcnow)
     categories: Optional[List[Category]]
     generator: Optional[str] = __package__.split(".")[0]
     docs: Optional[HttpUrl] = "https://www.rssboard.org/rss-specification"
     ttl: Optional[int] = 60
     image: Optional[Image]
     items: Optional[List[Item]]
+
+    class Config:  # noqa: D106
+        arbitrary_types_allowed = True

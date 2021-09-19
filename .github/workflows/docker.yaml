@@ -7,7 +7,6 @@ on:
       - '.github/workflows/docker.yaml'
       - 'Dockerfile'
       - 'poetry.lock'
-      - 'pyproject.toml'
       - 'rsserpent/**'
   push:
     branches:
@@ -17,7 +16,6 @@ on:
       - '.github/workflows/docker.yaml'
       - 'Dockerfile'
       - 'poetry.lock'
-      - 'pyproject.toml'
       - 'rsserpent/**'
     tags:
       - '*.*.*'

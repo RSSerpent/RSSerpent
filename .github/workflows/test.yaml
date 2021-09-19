@@ -44,10 +44,7 @@ jobs:
           pip install --upgrade pip
           pip install --user poetry
           poetry config virtualenvs.in-project true
-      - name: "Install Dependencies"
-        run: |
           poetry install
-          poetry run pip install git+https://github.com/RSSerpent/rsserpent-plugin-example.git
       - name: "Generate Coverage Report"
         run: poetry run pytest --cov --cov-report=xml -n auto
       - name: "Upload to Codecov.io"

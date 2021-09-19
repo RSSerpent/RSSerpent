@@ -1,5 +1,6 @@
 from typing import Optional
 
+import arrow
 from hypothesis import given, infer, settings
 from hypothesis.provisional import urls
 from hypothesis.strategies import builds, fixed_dictionaries, lists, none, text
@@ -97,7 +98,7 @@ class TestItem:
             comments=urls() | none(),
             enclosure=builds(Enclosure, url=urls()) | none(),
             guid=builds(Guid) | none(),
-            pub_date=infer,
+            pub_date=builds(arrow.utcnow) | none(),
             source=builds(Source, url=urls() | none()) | none(),
         )
     )
@@ -129,8 +130,8 @@ class TestFeed:
             copyright=infer,
             managing_editor=infer,
             web_master=infer,
-            pub_date=infer,
-            last_build_date=infer,
+            pub_date=builds(arrow.utcnow) | none(),
+            last_build_date=builds(arrow.utcnow) | none(),
             categories=lists(fixed_dictionaries({"name": text()})) | none(),
             generator=infer,
             docs=urls() | none(),

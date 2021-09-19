@@ -30,17 +30,17 @@
 
         {% set now = arrow.utcnow() %}
         {% if data.pub_date %}
-        <pubDate>{{ arrow.get(data.pub_date).format(arrow.FORMAT_RFC822) }}</pubDate>
+        <pubDate>{{ data.pub_date.format(arrow.FORMAT_RSS) }}</pubDate>
         {% else %}}
-        <pubDate>{{ now.format(arrow.FORMAT_RFC822) }}</pubDate>
+        <pubDate>{{ now.format(arrow.FORMAT_RSS) }}</pubDate>
         {% endif %}
 
         {% if data.last_build_date %}
         <lastBuildDate>
-            {{ arrow.get(data.last_build_date).format(arrow.FORMAT_RFC822) }}
+            {{ data.last_build_date.format(arrow.FORMAT_RSS) }}
         </lastBuildDate>
         {% else %}}
-        <lastBuildDate>{{ now.format(arrow.FORMAT_RFC822) }}</lastBuildDate>
+        <lastBuildDate>{{ now.format(arrow.FORMAT_RSS) }}</lastBuildDate>
         {% endif %}
 
         {% if data.categories %}
@@ -123,9 +123,9 @@
                 </guid>
                 {% endif %}
                 {% if item.pub_date %}
-                <pubDate>{{ arrow.get(item.pub_date).format(arrow.FORMAT_RFC822) }}</pubDate>
+                <pubDate>{{ item.pub_date.format(arrow.FORMAT_RSS) }}</pubDate>
                 {% else %}
-                <pubDate>{{ now.format(arrow.FORMAT_RFC822) }}</pubDate>
+                <pubDate>{{ now.format(arrow.FORMAT_RSS) }}</pubDate>
                 {% endif %}
                 {% if item.source %}
                     {% if item.source.url %}
