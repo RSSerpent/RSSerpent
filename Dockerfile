@@ -4,6 +4,7 @@ FROM python:3.9-alpine
 WORKDIR /app
 COPY rsserpent rsserpent
 COPY requirements.txt ./
+COPY scripts/docker-entrypoint.sh /
 
 # Dependencies
 RUN pip install -r requirements.txt && \
@@ -12,4 +13,5 @@ RUN pip install -r requirements.txt && \
 
 # Run
 EXPOSE 8000
+ENTRYPOINT [ "/docker-entrypoint.sh" ]
 CMD [ "uvicorn", "rsserpent:app", "--host", "0.0.0.0" ]
