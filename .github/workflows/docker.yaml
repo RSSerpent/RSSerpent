@@ -26,6 +26,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: "Run Poetry Export"
+        run: |
+          pip install --upgrade pip
+          pip install --user poetry
+          poetry export -o requirements.txt --without-hashes
       - uses: docker/setup-qemu-action@v1
       - uses: docker/setup-buildx-action@v1
       - name: "Login to Docker Hub"
@@ -54,26 +59,11 @@ jobs:
         with:
           cache-from: type=gha,scope=${{ github.workflow }}
           cache-to: type=gha,scope=${{ github.workflow }}
+          context: .
           labels: ${{ steps.meta.outputs.labels }}
-          load: true
-          tags: rsserpent:master
-      - name: "Minify Docker Image with `docker-slim`"
-        run: |
-          curl https://downloads.dockerslim.com/releases/1.36.3/dist_linux.tar.gz -o ds.tar.gz
-          tar -xzvf ds.tar.gz --strip-component=1 && mv docker-slim* /usr/local/bin/
-          docker-slim build \
-            --include-path /home/app/.local/lib/python3.9/site-packages/ \
-            --tag rsserpent.slim:master \
-            rsserpent:master
-          for tag in `echo "${{ steps.meta.outputs.tags }}"`; do
-            docker tag rsserpent.slim:master $tag
-          done
-      - name: "Push Docker Images"
-        if: github.repository == 'RSSerpent/RSSerpent' && github.event_name != 'pull_request'
-        run: |
-          for tag in `echo "${{ steps.meta.outputs.tags }}"`; do
-            docker push $tag
-          done
+          platforms: linux/amd64,linux/arm64,linux/arm/v7
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
       - uses: bots-house/ghcr-delete-image-action@main
         if: github.repository == 'RSSerpent/RSSerpent' && github.event_name != 'pull_request'
         with:

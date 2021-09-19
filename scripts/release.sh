@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 poetry version $1
 version=$(poetry version --short)

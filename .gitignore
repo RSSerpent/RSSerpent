@@ -20,3 +20,4 @@ coverage.xml
 .python-version
 __pycache__/
 dist/
+requirements.txt
