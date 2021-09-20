@@ -67,6 +67,7 @@ repos:
           - flake8-print
           - flake8-too-many
           - pep8-naming
+          - tryceratops
   - repo: https://github.com/commitizen-tools/commitizen
     rev: v2.18.1
     hooks:

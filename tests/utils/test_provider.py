@@ -17,7 +17,7 @@ async def provider(
     return {"value": a - b + d}
 
 
-@pytest.mark.asyncio  # type: ignore[arg-type]
+@pytest.mark.asyncio
 @settings(max_examples=Times.SOME)
 @given(a=infer, b=infer, c=infer)
 async def test_fetch_data(a: int, b: float, c: bool) -> None:

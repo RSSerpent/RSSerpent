@@ -10,7 +10,9 @@ AsyncFn = TypeVar("AsyncFn", bound=Callable[..., Awaitable[Any]])
 class RateLimitError(Exception):
     """Exception for function rate limit exceeded."""
 
-    pass
+    def __init__(self, fn: str, called: int, max_calls: int) -> None:
+        """Populate `RateLimitError` error message."""
+        super().__init__(f"function {fn} ratelimit exceeded ({called} > {max_calls}).")
 
 
 def decorator(fn: AsyncFn, *, calls: int, period: float) -> AsyncFn:
@@ -47,8 +49,7 @@ def decorator(fn: AsyncFn, *, calls: int, period: float) -> AsyncFn:
             # raise if rate limit exceeded
             if called > max_calls:
                 raise RateLimitError(
-                    f"function {fn.__module__}.{fn.__name__} rate limit exceeded "
-                    f"({called} > {max_calls})."
+                    f"{fn.__module__}.{fn.__name__}", called, max_calls
                 )
             return await fn(*args, **kwds)
 

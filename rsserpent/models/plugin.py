@@ -15,6 +15,15 @@ else:
 ProviderFn = Callable[..., Awaitable[Dict[str, Any]]]
 
 
+class PluginModelError(ValueError):
+    """Exception for `Plugin` model validation error."""
+
+    plugin_name_prefix = 'plugin names must start with "rsserpent-plugin-".'
+    provider_not_async = "provider functions must be asynchronous."
+    router_path_prefix = "all path in `routers` must starts with `prefix`."
+    router_not_empty = "plugin must include at least one router."
+
+
 class Persona(BaseModel):
     """Data model for plugin authors' personal information."""
 
@@ -42,14 +51,14 @@ class Plugin(BaseModel):
         assert prefix is not None and routers is not None
         for path in routers:
             if not path.startswith(prefix):
-                raise ValueError("all path in `routers` must starts with `prefix`.")
+                raise PluginModelError(PluginModelError.router_path_prefix)
         return values
 
     @validator("name")
     def validate_name(cls, name: str) -> str:  # noqa: N805
         r"""Ensure any plugin name starts with `"rsserpent-plugin-"`."""
         if not name.startswith("rsserpent-plugin-"):
-            raise ValueError('plugin names must start with "rsserpent-plugin-".')
+            raise PluginModelError(PluginModelError.plugin_name_prefix)
         return name
 
     @validator("routers")
@@ -58,8 +67,8 @@ class Plugin(BaseModel):
     ) -> Dict[str, ProviderFn]:
         """Ensure `routers` is not empty & all provider functions are async."""
         if len(routers) < 1:
-            raise ValueError("plugin must include at least one router.")
+            raise PluginModelError(PluginModelError.router_not_empty)
         for provider in routers.values():
             if not asyncio.iscoroutinefunction(provider):
-                raise ValueError("provider functions must be asynchronous.")
+                raise PluginModelError(PluginModelError.provider_not_async)
         return routers

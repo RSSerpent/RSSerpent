@@ -12,6 +12,12 @@ else:
     from pydantic import AnyUrl, HttpUrl
 
 
+class RSSModelError(ValueError):
+    """Exception for `Feed` model validation error."""
+
+    title_or_description = "at least one of <title> or <description> must be present."
+
+
 class Category(BaseModel):
     """Data model for the `<category>` field in an RSS 2.0 feed."""
 
@@ -76,9 +82,7 @@ class Item(BaseModel):
         """Ensure at least one of `<title>` or `<description>` is present."""
         title, description = values.get("title"), values.get("description")
         if title is None and description is None:
-            raise ValueError(
-                "at least one of <title> or <description> must be present."
-            )
+            raise RSSModelError(RSSModelError.title_or_description)
         return values
 
 
