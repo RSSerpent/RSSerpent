@@ -50,7 +50,6 @@ lines_after_imports = 2
 profile = "black"
 
 ["pyproject.toml".tool.nitpick]
-style = "gh://RSSerpent/RSSerpent/styles/main.toml"
 cache = "1 day"
 
 

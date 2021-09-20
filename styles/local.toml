@@ -1,3 +1,2 @@
 ["pyproject.toml".tool.nitpick]
-style = ["./styles/main.toml", "./styles/local.toml"]
 cache = "never"
