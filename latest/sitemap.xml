@@ -2,62 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.rsserpent.com/latest/</loc>
-         <lastmod>2021-09-19</lastmod>
+         <lastmod>2021-09-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.rsserpent.com/latest/faq/</loc>
-         <lastmod>2021-09-19</lastmod>
+         <lastmod>2021-09-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.rsserpent.com/latest/structure/</loc>
-         <lastmod>2021-09-19</lastmod>
+         <lastmod>2021-09-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.rsserpent.com/latest/contribution/core/</loc>
-         <lastmod>2021-09-19</lastmod>
+         <lastmod>2021-09-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.rsserpent.com/latest/contribution/plugin/</loc>
-         <lastmod>2021-09-19</lastmod>
+         <lastmod>2021-09-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.rsserpent.com/latest/deployment/</loc>
-         <lastmod>2021-09-19</lastmod>
+         <lastmod>2021-09-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.rsserpent.com/latest/deployment/docker/</loc>
-         <lastmod>2021-09-19</lastmod>
+         <lastmod>2021-09-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.rsserpent.com/latest/deployment/vercel/</loc>
-         <lastmod>2021-09-19</lastmod>
+         <lastmod>2021-09-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.rsserpent.com/latest/plugin/official/</loc>
-         <lastmod>2021-09-19</lastmod>
+         <lastmod>2021-09-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.rsserpent.com/latest/usage/parameter/</loc>
-         <lastmod>2021-09-19</lastmod>
+         <lastmod>2021-09-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.rsserpent.com/latest/usage/router/</loc>
-         <lastmod>2021-09-19</lastmod>
+         <lastmod>2021-09-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.rsserpent.com/latest/usage/rss/</loc>
-         <lastmod>2021-09-19</lastmod>
+         <lastmod>2021-09-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
