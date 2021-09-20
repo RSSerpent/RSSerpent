@@ -48,6 +48,7 @@ repos:
           - importlib-metadata
           - pydantic
           - pytest
+          - pytest-asyncio
           - starlette
           - types-dataclasses
   - repo: https://github.com/PyCQA/flake8
@@ -68,6 +69,11 @@ repos:
           - flake8-too-many
           - pep8-naming
           - tryceratops
+  - repo: https://github.com/andreoliwa/nitpick
+    rev: v0.27.0
+    hooks:
+      - id: nitpick-check
+        name: Nitpick Check
   - repo: https://github.com/commitizen-tools/commitizen
     rev: v2.18.1
     hooks:

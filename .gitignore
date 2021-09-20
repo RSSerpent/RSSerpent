@@ -16,6 +16,7 @@ site/
 coverage.xml
 
 # Toolchain
+.cache/
 .mypy_cache/
 .python-version
 __pycache__/
