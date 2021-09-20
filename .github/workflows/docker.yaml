@@ -60,7 +60,7 @@ jobs:
           context: .
           labels: ${{ steps.meta.outputs.labels }}
           platforms: linux/amd64,linux/arm64,linux/arm/v7
-          push: true
+          push: ${{ github.repository == 'RSSerpent/RSSerpent' && github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
       - uses: bots-house/ghcr-delete-image-action@main
         if: github.repository == 'RSSerpent/RSSerpent' && github.event_name != 'pull_request'
