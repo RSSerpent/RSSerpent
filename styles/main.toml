@@ -1,2 +1,113 @@
+# Files
+[nitpick.files.present]
+".editorconfig" = ""
+".flake8" = ""
+".gitignore" = ""
+".pre-commit-config.yaml" = ""
+"mypy.ini" = ""
+"poetry.lock" = ""
+"pyproject.toml" = ""
+"tests/" = ""
+
+
+# Flake8
+[".flake8".flake8]
+count = true
+max-line-length = 88
+## darglint
+strictness = "long"
+docstring-style = "google"
+## flake8-docstrings
+docstring-convention = "google"
+
+
+# Mypy
+["mypy.ini".mypy]
+plugins = "pydantic.mypy"
+pretty = true
+python_version = "3.6"
+show_error_codes = true
+strict = true
+
+["mypy.ini".pydantic-mypy]
+init_forbid_extra = true
+init_typed = true
+warn_required_dynamic_aliases = true
+warn_untyped_fields = true
+
+# Pyproject.toml
 ["pyproject.toml".tool.poetry.dependencies]
 python = "^3.6.2"
+
+["pyproject.toml".tool.black]
+include = '\.pyi?$'
+target-version = ["py36", "py37", "py38", "py39"]
+
+["pyproject.toml".tool.isort]
+balanced_wrapping = true
+combine_as_imports = true
+lines_after_imports = 2
+profile = "black"
+
+["pyproject.toml".tool.nitpick]
+style = "gh://RSSerpent/RSSerpent/styles/main.toml"
+cache = "1 day"
+
+
+# Pre-Commit
+[".pre-commit-config.yaml"]
+default_stages = ["commit"]
+
+[[".pre-commit-config.yaml".repos]]
+yaml = """
+  - repo: https://github.com/andreoliwa/nitpick
+    hooks:
+      - id: nitpick-check
+        always_run: true
+        pass_filenames: false
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    hooks:
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+  - repo: https://github.com/pre-commit/pygrep-hooks
+    hooks:
+      - id: python-check-blanket-noqa
+      - id: python-check-blanket-type-ignore
+  - repo: https://github.com/asottile/pyupgrade
+    hooks:
+      - id: pyupgrade
+  - repo: https://github.com/crate-ci/typos
+    hooks:
+      - id: typos
+        args: []
+  - repo: https://github.com/psf/black
+    hooks:
+      - id: black
+  - repo: https://github.com/pycqa/isort
+    hooks:
+      - id: isort
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    hooks:
+      - id: mypy
+        args: []
+  - repo: https://github.com/PyCQA/flake8
+    hooks:
+      - id: flake8
+        additional_dependencies:
+          - darglint
+          - flake8-bugbear
+          - flake8-builtins
+          - flake8-comprehensions
+          - flake8-datetimez
+          - flake8-debugger
+          - flake8-docstrings
+          - flake8-eradicate
+          - flake8-print
+          - flake8-too-many
+          - pep8-naming
+          - tryceratops
+  - repo: https://github.com/commitizen-tools/commitizen
+    hooks:
+      - id: commitizen
+        stages: [commit-msg]
+"""

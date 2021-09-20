@@ -3,7 +3,6 @@ name: Build Docker Image
 on:
   pull_request:
     paths:
-      - '.dockerignore'
       - '.github/workflows/docker.yaml'
       - 'Dockerfile'
       - 'poetry.lock'
@@ -12,7 +11,6 @@ on:
     branches:
       - 'master'
     paths:
-      - '.dockerignore'
       - '.github/workflows/docker.yaml'
       - 'Dockerfile'
       - 'poetry.lock'

@@ -75,7 +75,7 @@ lines_after_imports = 2
 profile = "black"
 
 [tool.nitpick]
-style = "./styles/main.toml"
+style = ["./styles/main.toml", "./styles/local.toml"]
 cache = "never"
 
 [build-system]
