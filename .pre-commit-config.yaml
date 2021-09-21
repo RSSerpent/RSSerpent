@@ -1,3 +1,6 @@
+ci:
+  autofix_commit_msg: "ci: pre-commit auto fixes"
+  autoupdate_commit_msg: "ci: pre-commit auto update"
 default_stages: [commit]
 fail_fast: true
 repos:

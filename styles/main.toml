@@ -57,6 +57,10 @@ cache = "1 day"
 [".pre-commit-config.yaml"]
 default_stages = ["commit"]
 
+[".pre-commit-config.yaml".ci]
+autofix_commit_msg = "ci: pre-commit auto fixes"
+autoupdate_commit_msg = "ci: pre-commit auto update"
+
 [[".pre-commit-config.yaml".repos]]
 yaml = """
   - repo: https://github.com/andreoliwa/nitpick
