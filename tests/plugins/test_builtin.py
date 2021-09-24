@@ -45,6 +45,14 @@ def test_example_httpx(client: TestClient) -> None:
     assert IPvAnyAddress.validate(match.group(1)) is not None
 
 
+def test_example_pyquery(client: TestClient) -> None:
+    """Test the `/_/example/pyquery` route."""
+    response = client.get("/_/example/pyquery")
+    assert response.status_code == 200
+    assert response.headers["Content-Type"] == "application/xml"
+    assert "<title>Herman Melville - Moby-Dick</title>" in response.text
+
+
 def test_example_ratelimit(client: TestClient) -> None:
     """Test the `/_example/rl` route."""
     assert client.get("/_/example/rl").status_code == 200
