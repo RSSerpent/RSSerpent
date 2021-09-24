@@ -32,6 +32,8 @@ keywords = ["rss"]
 [tool.poetry.dependencies]
 python = "^3.6.2"
 arrow = "^1.1.1"
+fake-useragent = "^0.1.11"
+httpx = "^0.19.0"
 importlib-metadata = "^4.5.0"
 Jinja2 = "^3.0.1"
 pydantic = {extras = ["email"], version = "^1.8.2"}

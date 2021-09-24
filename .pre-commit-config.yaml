@@ -54,6 +54,7 @@ repos:
         # some libraries of the current (poetry) environment for `mypy` to work properly.
         additional_dependencies:
           - arrow
+          - httpx
           - hypothesis
           - importlib-metadata
           - pydantic

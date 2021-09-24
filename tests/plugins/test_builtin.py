@@ -1,6 +1,9 @@
+import re
+
 import pytest
 from hypothesis import given, settings
 from hypothesis.strategies import integers
+from pydantic import IPvAnyAddress
 from starlette.testclient import TestClient
 
 from rsserpent.plugins.builtin import example_cache
@@ -18,7 +21,7 @@ def test_example(client: TestClient) -> None:
 
 
 def test_example_cached(client: TestClient) -> None:
-    """Test the `/_example/cache` route."""
+    """Test the `/_/example/cache` route."""
     response1 = client.get("/_/example/cache")
     response2 = client.get("/_/example/cache")
     assert "<title>Example 1</title>" in response1.text
@@ -29,6 +32,17 @@ def test_example_cached(client: TestClient) -> None:
         cache.clear()
     response3 = client.get("/_/example/cache")
     assert "<title>Example 2</title>" in response3.text
+
+
+def test_example_httpx(client: TestClient) -> None:
+    """Test the `/_/example/httpx` route."""
+    response = client.get("/_/example/httpx")
+    assert response.status_code == 200
+    assert response.headers["Content-Type"] == "application/xml"
+
+    match = re.search("<title>(.*)</title>", response.text)
+    assert match is not None
+    assert IPvAnyAddress.validate(match.group(1)) is not None
 
 
 def test_example_ratelimit(client: TestClient) -> None:
