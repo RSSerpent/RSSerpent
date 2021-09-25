@@ -2,9 +2,25 @@ from typing import Any
 
 import httpx
 from fake_useragent import UserAgent  # type: ignore[import]
+from pyppeteer import launch
+from pyppeteer.page import Page
 
 
 ua = UserAgent()
+
+
+class Browser:
+    """Wrap `pyppeteer.browser.Browser` as a context manager."""
+
+    async def __aenter__(self) -> Page:
+        """Enter the context manager."""
+        self.browser = await launch(headless=True)
+        self.page = await self.browser.newPage()
+        return self.page
+
+    async def __aexit__(self, *args: Any) -> None:
+        """Leave the context manager."""
+        await self.browser.close()
 
 
 class HTTPClient(httpx.AsyncClient):

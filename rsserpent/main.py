@@ -35,6 +35,15 @@ async def exception_handler(request: Request, exception: Exception) -> TemplateR
     )
 
 
+def startup() -> None:
+    """Install Chromium on start-up."""
+    if sys.platform == "linux":
+        os.environ["PYPPETEER_HOME"] = "/tmp"
+    from pyppeteer.command import install
+
+    install()
+
+
 async def index(request: Request) -> TemplateResponse:
     """Return the index HTML web page."""
     return templates.TemplateResponse("index.html.jinja", {"request": request})
@@ -64,6 +73,7 @@ for plugin in plugins:
 
 app = Starlette(
     debug=bool(os.environ.get("DEBUG")),
-    routes=routes,
     exception_handlers={Exception: exception_handler},
+    on_startup=[startup],
+    routes=routes,
 )
