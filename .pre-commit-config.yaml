@@ -24,7 +24,7 @@ repos:
       - id: python-check-blanket-type-ignore
         name: 'Check Blanket "#type:ignore"'
   - repo: https://github.com/asottile/pyupgrade
-    rev: v2.26.0
+    rev: v2.28.0
     hooks:
       - id: pyupgrade
         name: Upgrade Python Syntax
@@ -81,7 +81,7 @@ repos:
           - pep8-naming
           - tryceratops
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v2.18.1
+    rev: v2.19.0
     hooks:
       - id: commitizen
         name: Check Commit Message
