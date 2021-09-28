@@ -14,7 +14,9 @@ class Browser:
 
     async def __aenter__(self) -> Page:
         """Enter the context manager."""
-        self.browser = await launch(headless=True)
+        self.browser = await launch(
+            handleSIGHUP=False, handleSIGINT=False, handleSIGTERM=False, headless=True
+        )
         self.page = await self.browser.newPage()
         return self.page
 
