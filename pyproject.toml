@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "rsserpent"
-version = "0.1.4-alpha.1"
+version = "0.1.4"
 
 authors = ["Queensferry <queensferry.me@gmail.com>"]
 description = "🐍 This snake helps you reconnect the Web, with RSS feeds!"
