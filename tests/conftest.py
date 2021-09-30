@@ -6,11 +6,13 @@ from hypothesis import settings
 from starlette.testclient import TestClient
 
 from rsserpent import app
+from rsserpent.main import startup
 
+
+startup()
 
 settings.register_profile("ci", deadline=500, max_examples=200)
 settings.register_profile("default", max_examples=50)
-
 settings.load_profile(os.getenv("HYPOTHESIS_PROFILE", "default"))
 
 
