@@ -34,7 +34,7 @@ The RSSerpent Project is heavily inspired by [RSSHub](https://github.com/DIYgod/
 
 ## Sponsors
 
-<a href="https://linktr.ee/rss3" target="_blank"><img alt="rss3" src="https://rss3.io/assets/images/Logo.svg" width="200" /></a>
+<a href="https://linktr.ee/rss3" target="_blank"><img alt="rss3" src="https://rss3.io/img/logo.e8745341.svg" width="200" /></a>
 
 # People
 

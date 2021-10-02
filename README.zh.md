@@ -32,7 +32,7 @@ RSSerpent 项目是在 [RSSHub](https://github.com/DIYgod/RSSHub) 的启发下�
 
 ## 赞助商
 
-<a href="https://linktr.ee/rss3" target="_blank"><img alt="rss3" src="https://rss3.io/assets/images/Logo.svg" width="200" /></a>
+<a href="https://linktr.ee/rss3" target="_blank"><img alt="rss3" src="https://rss3.io/img/logo.e8745341.svg" width="200" /></a>
 
 # 成员
 
