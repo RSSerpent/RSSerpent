@@ -69,8 +69,6 @@ yaml = """
   - repo: https://github.com/andreoliwa/nitpick
     hooks:
       - id: nitpick-check
-        always_run: true
-        pass_filenames: false
   - repo: https://github.com/pre-commit/pre-commit-hooks
     hooks:
       - id: end-of-file-fixer
@@ -99,19 +97,6 @@ yaml = """
   - repo: https://github.com/PyCQA/flake8
     hooks:
       - id: flake8
-        additional_dependencies:
-          - darglint
-          - flake8-bugbear
-          - flake8-builtins
-          - flake8-comprehensions
-          - flake8-datetimez
-          - flake8-debugger
-          - flake8-docstrings
-          - flake8-eradicate
-          - flake8-print
-          - flake8-too-many
-          - pep8-naming
-          - tryceratops
   - repo: https://github.com/commitizen-tools/commitizen
     hooks:
       - id: commitizen
