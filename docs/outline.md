@@ -1,4 +1,4 @@
-# Structure
+# Outline
 
 The Documentation is structured as follows:
 
