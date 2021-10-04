@@ -32,6 +32,7 @@ nav:
     - usage/parameter.md
   - Deployment:
     - deployment/index.md
+    - deployment/deta.md
     - deployment/docker.md
     - deployment/vercel.md
   - Contribution:
