@@ -15,6 +15,7 @@ extra:
     provider: mike
 
 markdown_extensions:
+  - admonition
   - attr_list
   - toc:
       permalink: true
@@ -35,6 +36,7 @@ nav:
     - deployment/deta.md
     - deployment/docker.md
     - deployment/vercel.md
+    - deployment/plugin.md
   - Contribution:
     - contribution/core.md
     - contribution/plugin.md
