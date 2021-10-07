@@ -17,6 +17,9 @@ extra:
 markdown_extensions:
   - admonition
   - attr_list
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
   - toc:
       permalink: true
       slugify: !!python/name:pymdownx.slugs.uslugify
