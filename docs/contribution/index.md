@@ -37,6 +37,9 @@ RSSerpent is written in the [Python](https://www.python.org) programming languag
 !!!note
     If you need to manage multiple versions of Python on your system, checkout [pyenv](https://github.com/pyenv/pyenv).
 
+!!!note
+    If you are using Windows, you will need to set the environment variable `PYTHONIOENCODING=utf8`.
+
 !!!warning
     Currently RSSerpent does **not** support Python 3.10.
 
