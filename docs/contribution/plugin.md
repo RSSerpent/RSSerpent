@@ -1,54 +1,8 @@
 # Plugin
 
-## Set Up
+## Scaffold
 
-RSSerpent is written in the [Python](https://www.python.org) programming language. You must have a valid Python (>= 3.6.2, < 3.10) installation on your system in order to get RSSerpent up & run. The most universal way to install Python is to grab a installer from the official Python [download page](https://www.python.org/downloads/). An alternative approach is to install via a package manager:
-
-=== "Linux"
-    ```bash
-    # Arch
-    sudo pacman -S python
-    # Debian/Ubuntu
-    sudo apt update
-    sudo apt install python3 python3-pip
-    ```
-
-=== "macOS"
-    ```bash
-    # Homebrew
-    brew install python
-    # MacPorts
-    sudo port selfupdate
-    sudo port install python
-    ```
-
-=== "Windows"
-    ```bash
-    # Chocolatey
-    choco install python
-    # Scoop
-    scoop install python
-    ```
-
-!!!note
-    If you need to manage multiple versions of Python on your system, checkout [pyenv](https://github.com/pyenv/pyenv).
-
-!!!warning
-    Currently RSSerpent does **not** support Python 3.10.
-
-[Poetry](https://python-poetry.org/) is a modern Python packaging and dependency management tool and is used by RSSerpent. Install `poetry` with:
-
-=== "Unix"
-    ```bash
-    curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -
-    ```
-
-=== "Windows"
-    ```bash
-    (Invoke-WebRequest -Uri https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py -UseBasicParsing).Content | python -
-    ```
-
-You will also need [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/installation.html) for quickly scaffolding an RSSerpent plugin, by using the official plugin [template](https://github.com/RSSerpent/template).
+You will need [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/installation.html) for quickly scaffolding an RSSerpent plugin, by using the official plugin [template](https://github.com/RSSerpent/template).
 
 ```bash
 pip install --user cookiecutter
@@ -57,11 +11,6 @@ brew install cookiecutter
 # or on Debian/Ubuntu
 sudo apt install cookiecutter
 ```
-
-!!!note
-    Make sure you have [git](https://git-scm.com/) installed too.
-
-## Scaffold
 
 Now it's time to scaffold you project! In your terminal, start a new session and run:
 
@@ -178,3 +127,6 @@ Lint.....................................................................Passed
 !!!note
     In `pre-commit` hooks we run [black](https://github.com/psf/black), [isort](https://github.com/pycqa/isort) for source code formatting, [mypy](https://github.com/python/mypy) for type checking, and [flake8](https://github.com/PyCQA/flake8) for linting.
     We also run [**nitpick**](https://github.com/andreoliwa/nitpick), which contains a set of recommended [configurations](https://github.com/RSSerpent/RSSerpent/blob/master/styles/main.toml) for black/isort/mypy/flake8 etc from the upstream.
+
+!!!warning
+    If no pre-commit hooks are triggered (that's to say, you didn't lines of checks marked with either *Passed* or *Failed*, as shown above) when you do `git commit`, you can manually install the pre-commit hooks with `pre-commit install -t pre-commit -t commit-msg`.

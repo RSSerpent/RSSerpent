@@ -1,54 +1,8 @@
 # 插件
 
-## 安装工具
+## 搭建项目
 
-RSSerpent 使用 [Python](https://www.python.org) 编程语言编写。因此，你需要在你的系统上安装 Python（>= 3.6.2，< 3.10）才能运行 RSSerpent。最通用的 Python 安装方式就是到 Python 官方[下载页面](https://www.python.org/downloads/)去下载一个安装包。当然，你也可以通过包管理器来安装：
-
-=== "Linux"
-    ```bash
-    # Arch
-    sudo pacman -S python
-    # Debian/Ubuntu
-    sudo apt update
-    sudo apt install python3 python3-pip
-    ```
-
-=== "macOS"
-    ```bash
-    # Homebrew
-    brew install python
-    # MacPorts
-    sudo port selfupdate
-    sudo port install python
-    ```
-
-=== "Windows"
-    ```bash
-    # Chocolatey
-    choco install python
-    # Scoop
-    scoop install python
-    ```
-
-!!!note
-    如果你需要在系统上安装多个 Python 版本，请考虑使用 [pyenv](https://github.com/pyenv/pyenv)。
-
-!!!warning
-    目前 RSSerpent **尚不**支持 Python 3.10。
-
-[Poetry](https://python-poetry.org/) 是一个现代化的 Python 打包和依赖管理工具，RSSerpent 目前使用 Poetry 来管理项目依赖。请使用如下命令安装 Poetry：
-
-=== "Unix"
-    ```bash
-    curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -
-    ```
-
-=== "Windows"
-    ```bash
-    (Invoke-WebRequest -Uri https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py -UseBasicParsing).Content | python -
-    ```
-
-你还需要安装 [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/installation.html)，以便能使用官方插件[模板](https://github.com/RSSerpent/template)来快速搭建一个 RSSerpent 插件项目。
+首先，你需要安装 [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/installation.html)，以便能使用官方插件[模板](https://github.com/RSSerpent/template)来快速搭建一个 RSSerpent 插件项目。
 
 ```bash
 pip install --user cookiecutter
@@ -57,11 +11,6 @@ brew install cookiecutter
 # or on Debian/Ubuntu
 sudo apt install cookiecutter
 ```
-
-!!!note
-    确保你的系统上也安装了 [git](https://git-scm.com/)。
-
-## 搭建项目
 
 现在可以开始搭建项目了！在你的终端里，打开一个新的会话页面并执行：
 
@@ -179,3 +128,6 @@ Lint.....................................................................Passed
 !!!note
     我们在 `pre-commit` 钩子中运行了 [black](https://github.com/psf/black)/[isort](https://github.com/pycqa/isort) 代码格式化, [mypy](https://github.com/python/mypy) 类型检查，以及 [flake8](https://github.com/PyCQA/flake8) 代码风格检查。
     我们还运行了 [**nitpick**](https://github.com/andreoliwa/nitpick) 这个钩子：它包含了一系列 RSSerpent 官方推荐的 black/isort/mypy/flake8 等开发工具的[配置](https://github.com/RSSerpent/RSSerpent/blob/master/styles/main.toml)，希望插件开发者能够遵守。
+
+!!!warning
+    如果你在执行 `git commit` 时，没有触发任何 pre-commit 钩子（也就是说，没有看到如上标记有 *Passed* 通过或 *Failed* 失败的若干行检查），你可以运行 `pre-commit install -t pre-commit -t commit-msg` 来手动安装 pre-commit 钩子。

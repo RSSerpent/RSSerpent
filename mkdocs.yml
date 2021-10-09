@@ -41,6 +41,7 @@ nav:
     - deployment/vercel.md
     - deployment/plugin.md
   - Contribution:
+    - contribution/environment.md
     - contribution/core.md
     - contribution/plugin.md
   - Plugin:
