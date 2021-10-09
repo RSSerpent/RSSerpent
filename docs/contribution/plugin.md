@@ -1,5 +1,10 @@
 # Plugin
 
+!!!note
+    Make sure you have read [Environment](environment.md) before continuing.
+
+Learn to create a RSSerpent plugin project from scratch through this tutorial.
+
 ## Scaffold
 
 You will need [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/installation.html) for quickly scaffolding an RSSerpent plugin, by using the official plugin [template](https://github.com/RSSerpent/template).
@@ -107,7 +112,7 @@ git push origin
 !!!note
     Commit messages should be in accordance with the [Conventional Commits](https://www.conventionalcommits.org/) specification.
 
-When you run `git commit`, a set of `pre-commit` hooks will be triggered. Make sure you pass the checks before actually pushing to GitHub. You could also run the checks manually:
+When you run `git commit`, a set of pre-commit hooks will be triggered. Make sure you pass the checks before actually pushing to GitHub. You could also run the checks manually:
 
 ```
 ➜ pre-commit run --all-files
@@ -125,8 +130,8 @@ Lint.....................................................................Passed
 ```
 
 !!!note
-    In `pre-commit` hooks we run [black](https://github.com/psf/black), [isort](https://github.com/pycqa/isort) for source code formatting, [mypy](https://github.com/python/mypy) for type checking, and [flake8](https://github.com/PyCQA/flake8) for linting.
+    In pre-commit hooks we run [black](https://github.com/psf/black), [isort](https://github.com/pycqa/isort) for source code formatting, [mypy](https://github.com/python/mypy) for type checking, and [flake8](https://github.com/PyCQA/flake8) for linting.
     We also run [**nitpick**](https://github.com/andreoliwa/nitpick), which contains a set of recommended [configurations](https://github.com/RSSerpent/RSSerpent/blob/master/styles/main.toml) for black/isort/mypy/flake8 etc from the upstream.
 
 !!!warning
-    If no pre-commit hooks are triggered (that's to say, you didn't lines of checks marked with either *Passed* or *Failed*, as shown above) when you do `git commit`, you can manually install the pre-commit hooks with `pre-commit install -t pre-commit -t commit-msg`.
+    If no pre-commit hooks are triggered (that's to say, you didn't see lines of checks marked with either *Passed* or *Failed*, as shown above) when you do `git commit`, you can manually install the pre-commit hooks with `pre-commit install -t pre-commit -t commit-msg`.

@@ -31,7 +31,7 @@ nav:
     - outline.md
     - faq.md
   - Usage:
-    - usage/rss.md
+    - usage/index.md
     - usage/router.md
     - usage/parameter.md
   - Deployment:
@@ -41,11 +41,11 @@ nav:
     - deployment/vercel.md
     - deployment/plugin.md
   - Contribution:
-    - contribution/environment.md
+    - contribution/index.md
     - contribution/core.md
     - contribution/plugin.md
   - Plugin:
-    - plugin/official.md
+    - plugin/index.md
 
 plugins:
   - git-revision-date

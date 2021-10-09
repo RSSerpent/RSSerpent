@@ -1,5 +1,10 @@
 # 插件
 
+!!!note
+    请确保你此前已阅读过[环境](environment.md)。
+
+通过阅读本教程，你将学会如何从头搭建一个 RSSerpent 插件项目。
+
 ## 搭建项目
 
 首先，你需要安装 [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/installation.html)，以便能使用官方插件[模板](https://github.com/RSSerpent/template)来快速搭建一个 RSSerpent 插件项目。
@@ -108,7 +113,7 @@ git push origin
 !!!note
     提交信息（commit message）应该遵循 [Conventional Commits](https://www.conventionalcommits.org/) 规范。
 
-当你运行 `git commit` 提交时，你会自动触发一系列 `pre-commit` 钩子，这些钩子会对你的代码等进行检查。请确保你将改动推送到 GitHub 前已成功通过所有检查。你也可以执行如下命令来手动进行检查：
+当你运行 `git commit` 提交时，你会自动触发一系列 pre-commit 钩子，这些钩子会对你的代码等进行检查。请确保你将改动推送到 GitHub 前已成功通过所有检查。你也可以执行如下命令来手动进行检查：
 
 ```
 ➜ pre-commit run --all-files
@@ -126,7 +131,7 @@ Lint.....................................................................Passed
 ```
 
 !!!note
-    我们在 `pre-commit` 钩子中运行了 [black](https://github.com/psf/black)/[isort](https://github.com/pycqa/isort) 代码格式化, [mypy](https://github.com/python/mypy) 类型检查，以及 [flake8](https://github.com/PyCQA/flake8) 代码风格检查。
+    我们在 pre-commit 钩子中运行了 [black](https://github.com/psf/black)/[isort](https://github.com/pycqa/isort) 代码格式化, [mypy](https://github.com/python/mypy) 类型检查，以及 [flake8](https://github.com/PyCQA/flake8) 代码风格检查。
     我们还运行了 [**nitpick**](https://github.com/andreoliwa/nitpick) 这个钩子：它包含了一系列 RSSerpent 官方推荐的 black/isort/mypy/flake8 等开发工具的[配置](https://github.com/RSSerpent/RSSerpent/blob/master/styles/main.toml)，希望插件开发者能够遵守。
 
 !!!warning
