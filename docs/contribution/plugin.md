@@ -1,7 +1,7 @@
 # Plugin
 
 !!!note
-    Make sure you have read [Environment](environment.md) before continuing.
+    Make sure you have read [Environment](index.md) before continuing.
 
 Learn to create a RSSerpent plugin project from scratch through this tutorial.
 

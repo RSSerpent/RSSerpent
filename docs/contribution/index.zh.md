@@ -1,6 +1,6 @@
 # 环境
 
-无论你是想向 RSSerpent [核心](https://github.com/RSSerpent/RSSerpent)、或是任一 RSSerpent 官方/社区[插件](../plugin/official.md)做贡献，你都需要阅读并依从本文档的指示，来搭建一个开发环境。
+无论你是想向 RSSerpent [核心](https://github.com/RSSerpent/RSSerpent)、或是任一 RSSerpent 官方/社区[插件](../plugin/index.md)做贡献，你都需要阅读并依从本文档的指示，来搭建一个开发环境。
 
 ## Python
 

@@ -1,6 +1,6 @@
 # Environment
 
-Whether you are contributing the RSSerpent [core](https://github.com/RSSerpent/RSSerpent), or any of the official & community RSSerpent [plugins](../plugin/official.md), you need to follow this tutorial to set up a basic development environment.
+Whether you are contributing the RSSerpent [core](https://github.com/RSSerpent/RSSerpent), or any of the official & community RSSerpent [plugins](../plugin/index.md), you need to follow this tutorial to set up a basic development environment.
 
 ## Python
 

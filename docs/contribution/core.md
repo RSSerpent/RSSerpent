@@ -1,7 +1,7 @@
 # Core
 
 !!!note
-    Make sure you have read [Environment](environment.md) before continuing.
+    Make sure you have read [Environment](index.md) before continuing.
 
 If you are contributing to the RSSerpent core (or any existing RSerpent plugin project), read this tutorial to understand the general workflow.
 
