@@ -65,5 +65,5 @@ RSSerpent 使用 [Python](https://www.python.org) 编程语言编写。因此，
 ## 接下来…
 
 - 如果你想要向 RSSerpent 核心、或者任一已有的 RSSerpent 插件做贡献，请参考[核心](core.md)；
-- 如果你想要新建一个 RSSerpent 插件项目，请参考[插件](plugin.md)；
+- 如果你想要新建一个 RSSerpent 插件项目，请参考[插件](./plugin/index.md)；
 - 如果你想在经济上支持 RSSerpent 项目，请移步 [Open Collective](https://opencollective.com/rsserpent) 或[爱发电](https://afdian.net/@rsserpent)。

@@ -43,7 +43,9 @@ nav:
   - Contribution:
     - contribution/index.md
     - contribution/core.md
-    - contribution/plugin.md
+    - Plugin:
+      - contribution/plugin/index.md
+      - contribution/plugin/data.md
   - Plugin:
     - plugin/index.md
 
@@ -76,6 +78,8 @@ theme:
   favicon: 'https://i.loli.net/2021/07/31/LCsB3u2yInHfwak.png'
   features:
     - header.autohide
+    # - navigation.indexes
+    - navigation.expand
     - navigation.tabs
     - navigation.top
   icon:

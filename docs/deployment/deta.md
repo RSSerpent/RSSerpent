@@ -38,6 +38,6 @@ Open that domain in your browser. If you see the *"Welcome to RSSerpent!"* messa
 
 ## Miscellany
 
-If you wish to add RSSerpent plugins, read [Install Plugins](plugin.md).
+If you wish to add RSSerpent plugins, read [Install Plugins](./plugin.md).
 
 If you need a custom domain, read Deta's [document](https://docs.deta.sh/docs/micros/custom_domains).

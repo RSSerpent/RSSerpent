@@ -38,6 +38,6 @@ GitHub 会使用你的访问令牌来将你的 RSSerpent 实例自动部署到 D
 
 ## 其他事项
 
-如果你需要新增 RSSerpent 插件，请阅读[安装插件](plugin.md)。
+如果你需要新增 RSSerpent 插件，请阅读[安装插件](./plugin.md)。
 
 如果你需要自定义域名，请阅读 Deta [文档](https://docs.deta.sh/docs/micros/custom_domains)。

@@ -1,4 +1,4 @@
-# Plugin
+# Creating Plugins
 
 !!!note
     Make sure you have read [Environment](index.md) before continuing.
@@ -7,7 +7,7 @@ Learn to create a RSSerpent plugin project from scratch through this tutorial.
 
 ## Scaffold
 
-You will need [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/installation.html) for quickly scaffolding an RSSerpent plugin, by using the official plugin [template](https://github.com/RSSerpent/template).
+You will need to install [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/installation.html) for quickly scaffolding an RSSerpent plugin, by using the official plugin [template](https://github.com/RSSerpent/template).
 
 ```bash
 pip install --user cookiecutter
@@ -41,7 +41,7 @@ After that, we'll automatically create a directory `rsserpent-plugin-xxx/` with 
 
 You will need a [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment) to start developing. We recommend using [Visual Studio Code](https://code.visualstudio.com/), or VSCode for short. Use VSCode to open the directory you just created using `cookiecutter`. You may be prompted to install some recommended VSCode plugins.
 
-An RSSerpent plugin is mostly a collection of [routers](../usage/router.md), and each router is a `path` string accompanied by a data `provider` function.
+An RSSerpent plugin is mostly a collection of [routers](/usage/router.md), and each router is a `path` string accompanied by a data `provider` function.
 
 ```python
 from typing import Any, Dict

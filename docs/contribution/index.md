@@ -65,5 +65,5 @@ After successful installation, you need to run `python -V` (or `python3 -V`) to 
 ## Further Steps
 
 - If you are contributing to the RSSerpent core, or an existing RSSerpent plugin project, please refer to [Core](core.md);
-- If you are starting a new RSSerpent plugin project, please refer to [Plugin](plugin.md);
+- If you are starting a new RSSerpent plugin project, please refer to [Plugin](./plugin/index.md);
 - If you'd like to financially support the RSSerpent project, check out [Open Collective](https://opencollective.com/rsserpent) or [爱发电](https://afdian.net/@rsserpent).

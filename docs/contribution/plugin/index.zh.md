@@ -1,4 +1,4 @@
-# 插件
+# 创建插件
 
 !!!note
     请确保你此前已阅读过[环境](index.md)。
@@ -41,7 +41,7 @@ email [queensferryme@example.com]:
 
 我们推荐你使用 [Visual Studio Code](https://code.visualstudio.com/)（简称 VSCode）这一集成开发环境（IDE）进行插件开发。使用 VSCode 打开你刚刚创建的文件夹，VSCode 可能会提示你安装一些推荐的 VSCode 插件。安装完成后，你就可以开始开发 RSSerpent 插件了。
 
-RSSerpent 插件的主要部分就是一系列[路由](../usage/router.md)，每个路由都包含一个 `path` 字符串和一个数据提供函数 `provider`。
+RSSerpent 插件的主要部分就是一系列[路由](/usage/router.md)，每个路由都包含一个 `path` 字符串和一个数据提供函数 `provider`。
 
 ```python
 from typing import Any, Dict
