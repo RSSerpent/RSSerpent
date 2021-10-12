@@ -45,11 +45,10 @@ starlette = "^0.16.0"
 pre-commit = "^2.15.0"
 uvicorn = "^0.15.0"
 # testing
-coverage = {extras = ["toml"], version = "^6.0"}
 hypothesis = "^6.23.0"
 pytest = "^6.2.4"
 pytest-asyncio = "^0.15.1"
-pytest-cov = "^2.12.1"
+pytest-cov = "^3.0.0"
 pytest-randomly = "^3.10.1"
 pytest-xdist = "^2.4.0"
 requests = "^2.26.0"
@@ -58,7 +57,7 @@ mike = "^1.1.0"
 mkdocs = "^1.2.1"
 mkdocs-git-revision-date-plugin = "^0.3.1"
 mkdocs-material = "^7.3.0"
-mkdocs-static-i18n = "^0.19"
+mkdocs-static-i18n = "^0.21"
 
 [tool.black]
 include = '\.pyi?$'
