@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import re
+import subprocess
 from typing import Optional
 
 import httpx
@@ -37,3 +38,4 @@ if __name__ == "__main__":
         )
     with open(filename, "w") as file:
         file.write(text)
+    subprocess.run(["poetry", "run", "pre-commit", "autoupdate"])
