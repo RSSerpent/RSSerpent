@@ -5,7 +5,7 @@ default_stages: [commit]
 fail_fast: true
 repos:
   - repo: https://github.com/andreoliwa/nitpick
-    rev: v0.27.0
+    rev: v0.28.0
     hooks:
       - id: nitpick-check
         name: Nitpick Check
@@ -24,23 +24,23 @@ repos:
       - id: python-check-blanket-type-ignore
         name: 'Check Blanket "#type:ignore"'
   - repo: https://github.com/asottile/pyupgrade
-    rev: v2.29.0
+    rev: v2.29.1
     hooks:
       - id: pyupgrade
         name: Upgrade Python Syntax
   - repo: https://github.com/crate-ci/typos
-    rev: typos-v0.7.4
+    rev: v1.3.1
     hooks:
       - id: typos
         name: Check Typos
         args: []
   - repo: https://github.com/psf/black
-    rev: 21.9b0
+    rev: 21.12b0
     hooks:
       - id: black
         name: Format Source Code
   - repo: https://github.com/pycqa/isort
-    rev: 5.9.3
+    rev: 5.10.1
     hooks:
       - id: isort
         name: Sort Imports
@@ -53,33 +53,33 @@ repos:
         # As `mypy` runs in an isolated environment, it is necessary to manually specify
         # some libraries of the current (poetry) environment for `mypy` to work properly.
         additional_dependencies:
-          - arrow==1.2.0
-          - httpx==0.19.0
-          - hypothesis==6.23.2
-          - importlib-metadata==4.8.1
+          - arrow==1.2.1
+          - httpx==0.21.1
+          - hypothesis==6.30.1
+          - importlib-metadata==4.8.2
           - pydantic==1.8.2
           - pytest==6.2.5
-          - pytest-asyncio==0.15.1
-          - starlette==0.16.0
-          - types-dataclasses==0.1.7
+          - pytest-asyncio==0.16.0
+          - starlette==0.17.1
+          - types-dataclasses==0.6.1
   - repo: https://github.com/PyCQA/flake8
     rev: 3.9.2
     hooks:
       - id: flake8
         name: Lint
         additional_dependencies:
-          - darglint==1.8.0
-          - flake8-bugbear==21.9.2
+          - darglint==1.8.1
+          - flake8-bugbear==21.11.29
           - flake8-builtins==1.5.3
           - flake8-comprehensions==3.7.0
           - flake8-datetimez==20.10.0
           - flake8-debugger==4.0.0
           - flake8-docstrings==1.6.0
-          - flake8-eradicate==1.1.0
+          - flake8-eradicate==1.2.0
           - flake8-print==4.0.0
           - flake8-too-many==0.1.2
           - pep8-naming==0.12.1
-          - tryceratops==0.6.0
+          - tryceratops==1.0.0
   - repo: https://github.com/commitizen-tools/commitizen
     rev: v2.20.0
     hooks:
