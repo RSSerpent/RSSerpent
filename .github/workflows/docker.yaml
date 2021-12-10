@@ -59,6 +59,7 @@ jobs:
           cache-to: type=gha,scope=${{ github.workflow }}
           context: .
           labels: ${{ steps.meta.outputs.labels }}
+          platforms: linux/amd64,linux/arm64
           push: ${{ github.repository == 'RSSerpent/RSSerpent' && github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
       - uses: bots-house/ghcr-delete-image-action@main
