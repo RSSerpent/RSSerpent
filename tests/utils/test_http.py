@@ -1,9 +1,6 @@
-import pytest
-
 from rsserpent.utils.http import Browser, HTTPClient
 
 
-@pytest.mark.asyncio
 async def test_browser() -> None:
     """Test if the `Browser` context manager works properly."""
     async with Browser() as browser:
@@ -11,7 +8,6 @@ async def test_browser() -> None:
         assert "Herman Melville - Moby-Dick" in await browser.content()
 
 
-@pytest.mark.asyncio
 async def test_http_client() -> None:
     """Test if the `http_client` context manager works properly."""
     url = "https://httpbin.org/get"

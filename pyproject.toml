@@ -30,24 +30,24 @@ keywords = ["rss"]
 
 
 [tool.poetry.dependencies]
-python = "^3.6.2"
+python = "^3.7.0"
 arrow = "^1.1.1"
 fake-useragent = "^0.1.11"
 httpx = "^0.21.1"
 importlib-metadata = "^4.5.0"
 Jinja2 = "^3.0.1"
 pydantic = {extras = ["email"], version = "^1.8.2"}
-pyppeteer = "^0.2.6"
+pyppeteer = "^1.0.2"
 pyquery = "^1.4.3"
 starlette = "^0.17.1"
 
 [tool.poetry.dev-dependencies]
 pre-commit = "^2.15.0"
-uvicorn = "^0.15.0"
+uvicorn = "^0.16.0"
 # testing
 hypothesis = "^6.23.0"
 pytest = "^6.2.4"
-pytest-asyncio = "^0.16.0"
+pytest-asyncio = "^0.17.0"
 pytest-cov = "^3.0.0"
 pytest-randomly = "^3.10.1"
 pytest-xdist = "^2.4.0"
@@ -56,11 +56,11 @@ requests = "^2.26.0"
 mkdocs = "^1.2.1"
 mkdocs-git-revision-date-plugin = "^0.3.1"
 mkdocs-material = "^8.0.4"
-mkdocs-static-i18n = "^0.22"
+mkdocs-static-i18n = "^0.31"
 
 [tool.black]
 include = '\.pyi?$'
-target-version = ["py36", "py37", "py38", "py39"]
+target-version = ["py37"]
 
 [tool.coverage.run]
 include = ["rsserpent/*"]
@@ -77,9 +77,29 @@ combine_as_imports = true
 lines_after_imports = 2
 profile = "black"
 
+[tool.mypy]
+plugins = ["pydantic.mypy"]
+pretty = true
+python_version = 3.7
+show_error_codes = true
+strict = true
+
+[[tool.mypy.overrides]]
+module = ["pyppeteer.*", "pyquery.*"]
+ignore_missing_imports = true
+
 [tool.nitpick]
 style = ["./styles/main.toml", "./styles/local.toml"]
 cache = "never"
+
+[tool.pydantic-mypy]
+init_forbid_extra = true
+init_typed = true
+warn_required_dynamic_aliases = true
+warn_untyped_fields = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

@@ -25,7 +25,7 @@ docstring-convention = "google"
 ["mypy.ini".mypy]
 plugins = "pydantic.mypy"
 pretty = true
-python_version = "3.6"
+python_version = "3.7"
 show_error_codes = true
 strict = true
 
@@ -40,11 +40,11 @@ warn_untyped_fields = true
 
 # Pyproject.toml
 ["pyproject.toml".tool.poetry.dependencies]
-python = "^3.6.2"
+python = "^3.7.0"
 
 ["pyproject.toml".tool.black]
 include = '\.pyi?$'
-target-version = ["py36", "py37", "py38", "py39"]
+target-version = ["py37"]
 
 ["pyproject.toml".tool.isort]
 balanced_wrapping = true

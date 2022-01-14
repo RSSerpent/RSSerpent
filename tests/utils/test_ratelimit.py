@@ -11,7 +11,6 @@ async def rick() -> str:
     return "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 
 
-@pytest.mark.asyncio
 async def test_ratelimit(monkeypatch: pytest.MonkeyPatch) -> None:
     """Test if `@ratelimit` decorator works properly."""
     for _ in range(3):
