@@ -23,8 +23,8 @@ def test_example(client: TestClient) -> None:
 def test_example_cached(client: TestClient) -> None:
     """Test the `/_/example/cache` route."""
     response1 = client.get("/_/example/cache")
-    response2 = client.get("/_/example/cache")
     assert "<title>Example 1</title>" in response1.text
+    response2 = client.get("/_/example/cache")
     assert "<title>Example 1</title>" in response2.text
 
     cache = get_cache(example_cache.provider)
@@ -62,10 +62,10 @@ def test_example_pyquery(client: TestClient) -> None:
 
 
 def test_example_ratelimit(client: TestClient) -> None:
-    """Test the `/_example/rl` route."""
-    assert client.get("/_/example/rl").status_code == 200
+    """Test the `/_example/ratelimit` route."""
+    assert client.get("/_/example/ratelimit").status_code == 200
     with pytest.raises(RateLimitError):
-        client.get("/_/example/rl")
+        client.get("/_/example/ratelimit")
 
 
 @settings(max_examples=Times.SOME)

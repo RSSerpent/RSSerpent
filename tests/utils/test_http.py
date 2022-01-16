@@ -15,4 +15,4 @@ async def test_http_client() -> None:
         response = await client.get(url)
         data = response.json()
     assert response.status_code == 200
-    assert {"Host", "Referer", "User-Agent"}.issubset(set(data["headers"]))
+    assert url.startswith(data["headers"]["Referer"])

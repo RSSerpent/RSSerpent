@@ -7,11 +7,11 @@ from hypothesis.provisional import urls
 from hypothesis.strategies import builds, dictionaries, functions, just, text
 from pydantic import validate_model
 
-from rsserpent.models.plugin import Persona, Plugin, ProviderFn
+from rsserpent.models.plugin import Persona, Plugin, PluginModelError, ProviderFn
 from tests.conftest import Times
 
 
-def force_async(fn: Callable[..., Any]) -> Callable[..., Awaitable[Any]]:
+def to_async(fn: Callable[..., Any]) -> Callable[..., Awaitable[Any]]:
     """Convert a synchronous function to an async one.
 
     Derived from https://stackoverflow.com/a/50450553.
@@ -26,47 +26,18 @@ def force_async(fn: Callable[..., Any]) -> Callable[..., Awaitable[Any]]:
     return async_fn
 
 
-class TestPersona:
-    """Test the `Persona` class."""
-
-    @settings(max_examples=Times.SOME)
-    @given(builds(Persona, link=urls()))
-    def test(self, persona: Persona) -> None:
-        """Test if the `Persona` class works properly."""
-        assert "@" in persona.email
-
-
 class TestPlugin:
     """Test the `Plugin` class."""
-
-    @settings(max_examples=Times.ONCE)
-    @given(
-        builds(
-            Plugin,
-            name=text().map(lambda s: f"rsserpent-plugin-{s}"),
-            author=builds(Persona, link=urls()),
-            repository=urls(),
-            prefix=just("/prefix"),
-            routers=dictionaries(
-                text().map(lambda s: f"/prefix/{s}"),
-                functions().map(force_async),
-                min_size=1,
-            ),
-        )
-    )
-    def test(self, plugin: Plugin) -> None:
-        """Test if the `Plugin` class works properly."""
-        assert plugin is not None
 
     @settings(max_examples=Times.SOME)
     @given(
         name=text(),
-        author=builds(Persona, link=urls()),
+        author=builds(Persona),
         repository=urls(),
         prefix=just("/prefix"),
         routers=dictionaries(
             text().map(lambda s: f"/prefix/{s}"),
-            functions().map(force_async),
+            functions().map(to_async),
             min_size=1,
         ),
     )
@@ -90,15 +61,17 @@ class TestPlugin:
             },
         )
         assert e is not None
-        assert 'plugin names must start with "rsserpent-plugin-".' in str(e)
+        assert PluginModelError.unexpected_plugin_name in str(e)
 
     @settings(max_examples=Times.SOME)
     @given(
         name=text().map(lambda s: f"rsserpent-plugin-{s}"),
-        author=builds(Persona, link=urls()),
+        author=builds(Persona),
         repository=urls(),
         prefix=just("/prefix"),
-        routers=dictionaries(text().map(lambda s: f"/prefix/{s}"), functions()),
+        routers=dictionaries(
+            text().map(lambda s: f"/prefix/{s}"), functions(), min_size=1
+        ),
     )
     def test_routers_validation(
         self,
@@ -120,18 +93,28 @@ class TestPlugin:
             },
         )
         assert e is not None
-        if len(routers) == 0:
-            assert "plugin must include at least one router." in str(e)
-        else:
-            assert "provider functions must be asynchronous." in str(e)
+        assert PluginModelError.provider_not_async in str(e)
+
+        _, _, e = validate_model(
+            Plugin,
+            {
+                "name": name,
+                "author": author,
+                "repository": repository,
+                "prefix": prefix,
+                "routers": {},
+            },
+        )
+        assert e is not None
+        assert PluginModelError.empty_router in str(e)
 
     @settings(max_examples=Times.SOME)
     @given(
         name=text().map(lambda s: f"rsserpent-plugin-{s}"),
-        author=builds(Persona, link=urls()),
+        author=builds(Persona),
         repository=urls(),
         prefix=just("/prefix"),
-        routers=dictionaries(text(), functions().map(force_async), min_size=1),
+        routers=dictionaries(text(), functions().map(to_async), min_size=1),
     )
     def test_validation(
         self,
@@ -153,4 +136,4 @@ class TestPlugin:
             },
         )
         assert e is not None
-        assert "all path in `routers` must starts with `prefix`." in str(e)
+        assert PluginModelError.unexpected_router_path in str(e)

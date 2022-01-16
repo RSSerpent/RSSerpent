@@ -15,7 +15,9 @@ else:
 class RSSModelError(ValueError):
     """Exception for `Feed` model validation error."""
 
-    title_or_description = "at least one of <title> or <description> must be present."
+    empty_title_and_description = (
+        "at least one of <title> or <description> must be present."
+    )
 
 
 class Category(BaseModel):
@@ -82,7 +84,7 @@ class Item(BaseModel):
         """Ensure at least one of `<title>` or `<description>` is present."""
         title, description = values.get("title"), values.get("description")
         if title is None and description is None:
-            raise RSSModelError(RSSModelError.title_or_description)
+            raise RSSModelError(RSSModelError.empty_title_and_description)
         return values
 
 

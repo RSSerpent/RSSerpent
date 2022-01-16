@@ -35,7 +35,7 @@ class HTTPClient(httpx.AsyncClient):
         """Set default Host/Referer/User-Agent for requests."""
         request = super().build_request(*args, **kwds)
         url = request.url
-        request.headers.setdefault("host", url.host)
-        request.headers.setdefault("referer", f"{url.scheme}://{url.host}")
-        request.headers.setdefault("user-agent", ua.random)
+        request.headers.setdefault("Host", url.host)
+        request.headers.setdefault("Referer", f"{url.scheme}://{url.host}")
+        request.headers.setdefault("User-Agent", ua.random)
         return request

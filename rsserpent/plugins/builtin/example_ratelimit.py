@@ -3,7 +3,7 @@ from typing import Any, Dict
 from ...utils import ratelimit
 
 
-path = "/_/example/rl"
+path = "/_/example/ratelimit"
 
 
 @ratelimit(calls=1)
@@ -13,5 +13,5 @@ async def provider() -> Dict[str, Any]:
         "title": "Example",
         "link": "https://example.com",
         "description": "An example rsserpent plugin.",
-        "items": [{"title": "Example Article", "description": "Example Content"}],
+        "items": [{"title": "Example Title", "description": "Example Description"}],
     }

@@ -4,6 +4,8 @@ from functools import partial, wraps
 from typing import Any, Awaitable, Callable, Dict, Tuple, TypeVar, cast
 
 
+RATELIMIT_PERIOD = 3600
+
 AsyncFn = TypeVar("AsyncFn", bound=Callable[..., Awaitable[Any]])
 
 
@@ -56,7 +58,9 @@ def decorator(fn: AsyncFn, *, calls: int, period: float) -> AsyncFn:
     return cast(AsyncFn, wrapper)
 
 
-def ratelimit(*, calls: int, period: float = 3600) -> Callable[[AsyncFn], AsyncFn]:
+def ratelimit(
+    *, calls: int, period: float = RATELIMIT_PERIOD
+) -> Callable[[AsyncFn], AsyncFn]:
     """Rate limit function calls.
 
     Args:

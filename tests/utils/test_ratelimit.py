@@ -19,5 +19,6 @@ async def test_ratelimit(monkeypatch: pytest.MonkeyPatch) -> None:
         await rick()
 
     current_time = time.monotonic()
-    monkeypatch.setattr(time, "monotonic", lambda: current_time + 100)
-    assert "dQw4w9WgXcQ" in await rick()
+    with monkeypatch.context() as m:
+        m.setattr(time, "monotonic", lambda: current_time + 100)
+        assert "dQw4w9WgXcQ" in await rick()

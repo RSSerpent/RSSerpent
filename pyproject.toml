@@ -45,6 +45,7 @@ starlette = "^0.17.1"
 pre-commit = "^2.15.0"
 uvicorn = "^0.16.0"
 # testing
+coverage-conditional-plugin = "^0.5.0"
 hypothesis = "^6.23.0"
 pytest = "^6.2.4"
 pytest-asyncio = "^0.17.0"
@@ -64,12 +65,16 @@ target-version = ["py37"]
 
 [tool.coverage.run]
 include = ["rsserpent/*"]
+plugins = ["coverage_conditional_plugin"]
 
 [tool.coverage.report]
 exclude_lines = [
     "if TYPE_CHECKING:",
     "pragma: no cover"
 ]
+
+[tool.coverage.coverage_conditional_plugin.rules]
+is_not_linux = "sys_platform != 'linux'"
 
 [tool.isort]
 balanced_wrapping = true

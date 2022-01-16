@@ -38,7 +38,7 @@ async def exception_handler(request: Request, exception: Exception) -> TemplateR
 def startup() -> None:
     """Install Chromium on start-up."""
     if sys.platform == "linux":
-        os.environ["PYPPETEER_HOME"] = "/tmp"
+        os.environ["PYPPETEER_HOME"] = "/tmp"  # pragma: is_not_linux
     from pyppeteer.command import install
 
     install()

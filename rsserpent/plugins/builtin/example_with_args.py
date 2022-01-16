@@ -11,7 +11,7 @@ async def provider(n: int) -> Dict[str, Any]:
         "link": "https://example.com",
         "description": "An example rsserpent plugin.",
         "items": [
-            {"title": f"Example Article {i}", "description": f"Example Content {i}"}
+            {"title": f"Example Title {i}", "description": f"Example Description {i}"}
             for i in range(1, n + 1)
         ],
     }

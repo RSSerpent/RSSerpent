@@ -1,8 +1,10 @@
 import os
 from dataclasses import dataclass
 
+import pydantic
 import pytest
-from hypothesis import settings
+from hypothesis import settings, strategies
+from hypothesis.provisional import urls
 from starlette.testclient import TestClient
 
 from rsserpent import app
@@ -14,6 +16,8 @@ startup()
 settings.register_profile("ci", deadline=500, max_examples=200)
 settings.register_profile("default", max_examples=50)
 settings.load_profile(os.getenv("HYPOTHESIS_PROFILE", "default"))
+
+strategies.register_type_strategy(pydantic.HttpUrl, urls())
 
 
 @dataclass
