@@ -16,7 +16,7 @@ RSSerpent 项目是在 [RSSHub](https://github.com/DIYgod/RSSHub) 的启发下�
 
 ## 赞助商
 
-[![rss3](https://rss3.io/img/logo.e8745341.svg){ width=200 }](https://linktr.ee/rss3)
+[![rss3](https://rss3.io/assets/logo.4b7645bd.svg){ width=200 }](https://linktr.ee/rss3)
 
 ## 成员
 

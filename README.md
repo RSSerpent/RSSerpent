@@ -34,10 +34,8 @@ The RSSerpent Project is heavily inspired by [RSSHub](https://github.com/DIYgod/
 
 ## Sponsors
 
-<a href="https://linktr.ee/rss3" target="_blank"><img alt="rss3" src="https://rss3.io/img/logo.e8745341.svg" width="200" /></a>
+<a href="https://linktr.ee/rss3" target="_blank"><img alt="rss3" src="https://rss3.io/assets/logo.4b7645bd.svg" width="200" /></a>
 
 # People
 
 The RSSerpent Project is created by [@queensferry](https://github.com/queensferryme/), supported by various [project members](https://github.com/orgs/RSSerpent/people) & [contributors](https://github.com/RSSerpent/RSSerpent/graphs/contributors).
-
-[![contributors](https://opencollective.com/RSSerpent/contributors.svg?avatarHeight=50)](https://github.com/RSSerpent/RSSerpent/graphs/contributors)

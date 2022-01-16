@@ -32,10 +32,8 @@ RSSerpent 项目是在 [RSSHub](https://github.com/DIYgod/RSSHub) 的启发下�
 
 ## 赞助商
 
-<a href="https://linktr.ee/rss3" target="_blank"><img alt="rss3" src="https://rss3.io/img/logo.e8745341.svg" width="200" /></a>
+<a href="https://linktr.ee/rss3" target="_blank"><img alt="rss3" src="https://rss3.io/assets/logo.4b7645bd.svg" width="200" /></a>
 
 # 成员
 
 RSSerpent 项目的创建者是 [@queensferry](https://github.com/queensferryme/)，还有许多其他热心的[项目成员](https://github.com/orgs/RSSerpent/people)和[贡献者](https://github.com/RSSerpent/RSSerpent/graphs/contributors)支撑着这个项目。
-
-[![contributors](https://opencollective.com/RSSerpent/contributors.svg?avatarHeight=50)](https://github.com/RSSerpent/RSSerpent/graphs/contributors)
