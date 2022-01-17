@@ -21,17 +21,19 @@ jobs:
           pip install --user poetry
           poetry config virtualenvs.in-project true
       - name: "Check Version for Pre-releases"
-        id: check-version
         run: |
-          [[ "$(poetry version --short)" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || echo "IS_PRE_RELEASE=true" >> $GITHUB_ENV
+          [[ "$(poetry version --short)" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] ||
+          echo "IS_PRE_RELEASE=true" >> $GITHUB_ENV
+      - name: "Generate Release Note"
+        run: awk "/^## $(poetry version --short)/{mark=1;next}/^## /{mark=0}mark" CHANGELOG.md > RELEASE.md
       - name: "Build Project"
         run: poetry build
       - name: "Create Release on GitHub"
-        uses: ncipollo/release-action@v1
+        uses: softprops/action-gh-release@v1
         with:
-          allowUpdates: true
-          artifacts: "dist/*"
-          token: ${{ secrets.GITHUB_TOKEN }}
+          body_path: RELEASE.md
+          files: dist/*
+          fail_on_unmatched_files: true
           prerelease: ${{ env.IS_PRE_RELEASE }}
       - name: "Publish to PyPI"
         if: github.repository == 'RSSerpent/RSSerpent'

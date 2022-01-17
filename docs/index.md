@@ -21,5 +21,3 @@ The RSSerpent Project is heavily inspired by [RSSHub](https://github.com/DIYgod/
 ## People
 
 The RSSerpent Project is created by [@queensferry](https://github.com/queensferryme/), supported by various [project members](https://github.com/orgs/RSSerpent/people) & [contributors](https://github.com/RSSerpent/RSSerpent/graphs/contributors).
-
-[![contributors](https://opencollective.com/RSSerpent/contributors.svg?avatarHeight=50)](https://github.com/RSSerpent/RSSerpent/graphs/contributors)

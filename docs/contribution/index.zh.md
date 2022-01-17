@@ -40,9 +40,6 @@ RSSerpent 使用 [Python](https://www.python.org) 编程语言编写。因此，
 !!!note
     如果你使用 Windows 系统，你还需要设置环境变量 `PYTHONIOENCODING=utf8`。
 
-!!!warning
-    目前 RSSerpent **尚不**支持 Python 3.10。
-
 成功安装以后，你需要运行 `python -V`（或者 `python3 -V`）来确认 Python 的版本。这是因为有些包管理器默认安装的 Python 版本不一定受 RSSerpent 支持。如遇此种情况，请参考包管理器的相关文档来安装受 RSSerpent 支持的 Python 版本。
 
 !!!note

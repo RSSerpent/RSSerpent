@@ -3,6 +3,8 @@
 poetry version $1
 version=$(poetry version --short)
 
+sed -i "" -e "s/Unreleased/$version/" CHANGELOG.md
+
 git diff HEAD
 
 printf "The current release version is $version.\n"
