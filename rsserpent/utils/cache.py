@@ -38,6 +38,7 @@ class CacheKey:
         hashvalue: The hashed value of function parameters.
     """
 
+    __sentinel__ = object()
     __slots__ = "hashvalue"
 
     def __init__(self, key: Tuple[Any, ...]) -> None:
@@ -68,9 +69,13 @@ class CacheKey:
         # positional arguments
         for argument in args:
             key.append(argument)
+            key.append(type(argument))
         # keyword arguments
-        for pair in sorted(kwds.items()):
-            key.append(pair)
+        if kwds:
+            key.append(cls.__sentinel__)
+            for _, argument in sorted(kwds.items()):
+                key.append(argument)
+                key.append(type(argument))
         return CacheKey(tuple(key))
 
 

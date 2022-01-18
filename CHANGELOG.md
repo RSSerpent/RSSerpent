@@ -6,14 +6,18 @@
 
 - Drop Python 3.6 and support Python 3.10
 
-### Features 🎉
+### Bug Fixes 🐛
 
-- Multi-platform Docker build, for `linux/amd64` and `linux/arm64`
+- `CacheKey` is now typed (`3` -> `(3, int)`, `3.0` -> `(3.0, float)`) and positional/keyword arguments are guarded by a sentinel `object()` (#74)
 
 ### Documentation 📖
 
 - Contribution guides, for contributing to the RSSerpent core or creating a RSSerpent plugin
 - Deployment guides, for self-hosting RSSerpent instances on [Deta](https://www.deta.sh/) and [Heroku](https://www.heroku.com/)
+
+### Features 🎉
+
+- Multi-platform Docker build, for `linux/amd64` and `linux/arm64`
 
 ## 0.1.4
 
