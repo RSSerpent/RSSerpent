@@ -11,7 +11,6 @@ from hypothesis.strategies import (
     integers,
     lists,
     text,
-    tuples,
 )
 
 from rsserpent.utils.cache import CacheKey, cached, get_cache
@@ -26,20 +25,19 @@ class TestCacheKey:
 
     @settings(max_examples=Times.THOROUGH)
     @given(
-        args=tuples(primitive, primitive, primitive, lists(primitive)),
-        kwds=dictionaries(text(), primitive | lists(primitive), min_size=1),
+        args=lists(primitive).map(tuple),
+        kwds=dictionaries(text(), primitive),
     )
     def test(self, args: Tuple[Any, ...], kwds: Dict[str, Any]) -> None:
         """Test if the `CacheKey` class works properly.
 
-        * `is_primitive`, `make`, `__eq__`, `__hash__`, `__init__`
+        * `make`, `__eq__`, `__hash__`, `__init__`
         """
         key1 = CacheKey.make(args, kwds)
-        key2 = CacheKey.make(
-            tuple(arg for arg in args if CacheKey.is_primitive(arg)),
-            {k: v for k, v in kwds.items() if CacheKey.is_primitive(v)},
-        )
+        key2 = CacheKey.make(args, kwds)
+        key3 = CacheKey.make(args + (0,), kwds)
         assert key1 == key2
+        assert key1 != key3
         with pytest.raises(NotImplementedError):
             assert key1 == object()
 

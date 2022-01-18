@@ -104,6 +104,7 @@ warn_required_dynamic_aliases = true
 warn_untyped_fields = true
 
 [tool.pytest.ini_options]
+addopts = "--cov"
 asyncio_mode = "auto"
 
 [build-system]

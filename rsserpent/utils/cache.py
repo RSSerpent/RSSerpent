@@ -51,11 +51,6 @@ class CacheKey:
     def __hash__(self) -> int:
         return self.hashvalue
 
-    @staticmethod
-    def is_primitive(o: object) -> bool:
-        """Determine whether an object is of primitive type."""
-        return type(o) in (bool, float, int, str)
-
     @classmethod
     def make(cls, args: Tuple[Any, ...], kwds: Dict[str, Any]) -> "CacheKey":
         """Create a `CacheKey` instance from any function parameters.
@@ -72,12 +67,10 @@ class CacheKey:
         key = []
         # positional arguments
         for argument in args:
-            if cls.is_primitive(argument):
-                key.append(argument)
+            key.append(argument)
         # keyword arguments
         for pair in sorted(kwds.items()):
-            if cls.is_primitive(pair[1]):
-                key.append(pair)
+            key.append(pair)
         return CacheKey(tuple(key))
 
 
