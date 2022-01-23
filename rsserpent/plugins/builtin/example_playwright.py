@@ -5,7 +5,7 @@ from pyquery import PyQuery
 from ...utils import Browser
 
 
-path = "/_/example/pyppeteer"
+path = "/_/example/playwright"
 
 
 async def provider() -> Dict[str, Any]:

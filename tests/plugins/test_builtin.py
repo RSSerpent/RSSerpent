@@ -45,9 +45,9 @@ def test_example_httpx(client: TestClient) -> None:
     assert IPvAnyAddress.validate(match.group(1)) is not None
 
 
-def test_example_pyppeteer(client: TestClient) -> None:
-    """Test the `/_/example/pyppeteer` route."""
-    response = client.get("/_/example/pyppeteer")
+def test_example_playwright(client: TestClient) -> None:
+    """Test the `/_/example/playwright` route."""
+    response = client.get("/_/example/playwright")
     assert response.status_code == 200
     assert response.headers["Content-Type"] == "application/xml"
     assert "<title>Herman Melville - Moby-Dick</title>" in response.text

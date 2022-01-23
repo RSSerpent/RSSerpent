@@ -36,8 +36,8 @@ fake-useragent = "^0.1.11"
 httpx = "^0.21.1"
 importlib-metadata = "^4.5.0"
 Jinja2 = "^3.0.1"
+playwright = "^1.18.1"
 pydantic = {extras = ["email"], version = "^1.8.2"}
-pyppeteer = "^1.0.2"
 pyquery = "^1.4.3"
 starlette = "^0.17.1"
 
@@ -90,7 +90,7 @@ show_error_codes = true
 strict = true
 
 [[tool.mypy.overrides]]
-module = ["pyppeteer.*", "pyquery.*"]
+module = ["pyquery.*"]
 ignore_missing_imports = true
 
 [tool.nitpick]

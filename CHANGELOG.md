@@ -18,6 +18,7 @@
 ### Features 🎉
 
 - Multi-platform Docker build, for `linux/amd64` and `linux/arm64`
+- Replace `pyppeteer` with `playwright` (#76)
 
 ## 0.1.4
 

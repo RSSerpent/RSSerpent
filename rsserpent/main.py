@@ -1,5 +1,6 @@
 import os
 import re
+import subprocess
 import sys
 import traceback
 from pathlib import Path
@@ -38,10 +39,8 @@ async def exception_handler(request: Request, exception: Exception) -> TemplateR
 def startup() -> None:
     """Install Chromium on start-up."""
     if sys.platform == "linux":
-        os.environ["PYPPETEER_HOME"] = "/tmp"  # pragma: is_not_linux
-    from pyppeteer.command import install
-
-    install()
+        os.environ["PLAYWRIGHT_BROWSERS_PATH"] = "/tmp"  # pragma: is_not_linux
+    subprocess.run("playwright install chromium".split())
 
 
 async def index(request: Request) -> TemplateResponse:

@@ -41,7 +41,7 @@ description = dom("div > p").text()
 
 In worse situations, HTTP is simply not enough. Many modern websites are loaded with JavaScript, and the true content of the website won't be rendered unless you are running in a genuine browser environment with a JavaScript engine. In this case, you need a browser emulator.
 
-[Pyppeteer](https://github.com/pyppeteer/pyppeteer) is a powerful browser automation library and it's bundled with RSSerpent. RSSerpent also provides a convenient wrapper on top of pyppeteer:
+[Playwright](https://github.com/microsoft/playwright-python) is a powerful browser automation library and it's bundled with RSSerpent. RSSerpent also provides a convenient wrapper on top of playwright:
 
 ```python
 from pyquery import PyQuery

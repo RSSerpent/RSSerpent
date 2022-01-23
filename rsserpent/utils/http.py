@@ -2,8 +2,8 @@ from typing import Any
 
 import httpx
 from fake_useragent import UserAgent  # type: ignore[import]
-from pyppeteer import launch
-from pyppeteer.page import Page
+from playwright.async_api import async_playwright
+from playwright.async_api._generated import Page
 
 
 ua = UserAgent(
@@ -13,19 +13,18 @@ ua = UserAgent(
 
 
 class Browser:
-    """Wrap `pyppeteer.browser.Browser` as a context manager."""
+    """Wrap playwright browser as a context manager."""
 
     async def __aenter__(self) -> Page:
         """Enter the context manager."""
-        self.browser = await launch(
-            handleSIGHUP=False, handleSIGINT=False, handleSIGTERM=False, headless=True
-        )
-        self.page = await self.browser.newPage()
-        return self.page
+        self.context = await async_playwright().start()
+        self.browser = await self.context.chromium.launch()
+        return await self.browser.new_page()
 
-    async def __aexit__(self, *args: Any) -> None:
+    async def __aexit__(self, *_: Any) -> None:
         """Leave the context manager."""
         await self.browser.close()
+        self.context.stop()
 
 
 class HTTPClient(httpx.AsyncClient):

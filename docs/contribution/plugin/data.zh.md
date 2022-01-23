@@ -41,7 +41,7 @@ description = dom("div > p").text()
 
 在更糟糕的情况下，你需要比 HTTP 协议更强大的武器。许多现代化的网站都大量的使用 JavaScript，因此只有当你在一个真正的、带有 JavaScript 引擎的浏览器环境中打开网页，你才能看到网站的内容被渲染出来。对付这种源网站，你需要使用浏览器模拟。
 
-[Pyppeteer](https://github.com/pyppeteer/pyppeteer) 是一个强大的浏览器自动化框架，且也默认被置入 RSSerpent。RSSerpent 对 pyppeteer 做了一个简单的包装以方便你使用：
+[Playwright](https://github.com/microsoft/playwright-python) 是一个强大的浏览器自动化框架，且也默认被置入 RSSerpent。RSSerpent 对 playwright 做了一个简单的包装以方便你使用：
 
 ```python
 from pyquery import PyQuery
