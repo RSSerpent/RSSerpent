@@ -25,13 +25,13 @@ repos:
       - id: pyupgrade
         name: Upgrade Python Syntax
   - repo: https://github.com/crate-ci/typos
-    rev: v1.3.4
+    rev: typos-v0.8.5
     hooks:
       - id: typos
         name: Check Typos
         args: []
   - repo: https://github.com/psf/black
-    rev: 21.12b0
+    rev: 22.1.0
     hooks:
       - id: black
         name: Format Source Code
@@ -78,7 +78,7 @@ repos:
           - pep8-naming==0.12.1
           - tryceratops==1.0.1
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v2.20.3
+    rev: v2.20.5
     hooks:
       - id: commitizen
         name: Check Commit Message
