@@ -25,7 +25,7 @@ async def exception_handler(request: Request, exception: Exception) -> TemplateR
     """Return an HTML web page for displaying the current exception."""
     tb = traceback.format_exc()
     for path in sys.path:
-        tb, _ = re.subn(fr'(?<=File "){re.escape(path)}[/\\]', "", tb)
+        tb, _ = re.subn(rf'(?<=File "){re.escape(path)}[/\\]', "", tb)
     return templates.TemplateResponse(
         "exception.html.jinja",
         {
