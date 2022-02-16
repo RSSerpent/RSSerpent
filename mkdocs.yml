@@ -1,11 +1,4 @@
 extra:
-  alternate:
-    - name: English
-      link: ''
-      lang: en
-    - name: 中文
-      link: zh/
-      lang: zh
   social:
     - icon: fontawesome/brands/github-alt
       link: https://github.com/RSSerpent/RSSerpent
@@ -53,7 +46,7 @@ plugins:
   - i18n:
       default_language: en
       languages:
-        en: english
+        en: English
         zh: 中文
       material_alternate: true
       nav_translations:
