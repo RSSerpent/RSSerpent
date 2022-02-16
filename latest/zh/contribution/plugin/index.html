@@ -15,7 +15,7 @@
     
     
       
-        <title>创建插件 - RSSerpent Docs</title>
+        <title>插件 - RSSerpent Docs</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#创建插件" class="md-skip">
+        <a href="#插件" class="md-skip">
           跳转至
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              创建插件
+              插件
             
           </span>
         </div>
@@ -271,15 +271,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link md-tabs__link--active">
+      <a href="../" class="md-tabs__link">
         贡献
       </a>
     </li>
@@ -594,14 +592,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -650,14 +646,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" data-md-state="indeterminate" type="checkbox" id="__nav_4_3" checked>
       
       
       
@@ -678,66 +672,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          创建插件
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        创建插件
+    <li class="md-nav__item">
+      <a href="../../../contribution/plugin/index.md" class="md-nav__link">
+        None
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#搭建项目" class="md-nav__link">
-    搭建项目
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#进行开发" class="md-nav__link">
-    进行开发
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#发布插件" class="md-nav__link">
-    发布插件
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -838,35 +777,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#搭建项目" class="md-nav__link">
-    搭建项目
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#进行开发" class="md-nav__link">
-    进行开发
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#发布插件" class="md-nav__link">
-    发布插件
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -877,125 +787,12 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/RSSerpent/RSSerpent/edit/master/docs/contribution/plugin/index.zh.md" title="编辑此页" class="md-content__button md-icon">
+<a href="https://github.com/RSSerpent/RSSerpent/edit/master/docs/contribution/plugin.zh.md" title="编辑此页" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
-<h1 id="创建插件">创建插件<a class="headerlink" href="#创建插件" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>请确保你此前已阅读过<a href="./">环境</a>。</p>
-</div>
-<p>通过阅读本教程，你将学会如何从头搭建一个 RSSerpent 插件项目。</p>
-<h2 id="搭建项目">搭建项目<a class="headerlink" href="#搭建项目" title="Permanent link">&para;</a></h2>
-<p>首先，你需要安装 <a href="https://cookiecutter.readthedocs.io/en/stable/installation.html">cookiecutter</a>，以便能使用官方插件<a href="https://github.com/RSSerpent/template">模板</a>来快速搭建一个 RSSerpent 插件项目。</p>
-<div class="highlight"><pre><span></span><code>pip install --user cookiecutter
-<span class="c1"># or on macOS</span>
-brew install cookiecutter
-<span class="c1"># or on Debian/Ubuntu</span>
-sudo apt install cookiecutter
-</code></pre></div>
-<p>现在可以开始搭建项目了！在你的终端里，打开一个新的会话页面并执行：</p>
-<div class="highlight"><pre><span></span><code>cookiecutter gh:rsserpent/template
-</code></pre></div>
-<p>这个命令首先会从 GitHub 下载 RSSerpent 官方插件模板，随后会提示你填写一些信息（从上往下依次是插件名、插件描述、作者名、作者主页链接、作者邮箱）：</p>
-<div class="highlight"><pre><span></span><code>plugin [rsserpent-plugin-xxx]:
-description [An rsserpent plugin for xxx.]:
-username [queensferryme]:
-link [https://github.com/queensferryme]:
-email [queensferryme@example.com]:
-</code></pre></div>
-<p>方括号 <code>[...]</code> 之间的文本时对应字段的默认值，你可以按下回车键接受默认值，也可以自己在冒号后输入内容。你的个人信息（<em>邮箱地址</em>等）只会被用来填充项目模板，你也可以选择不填写并保持匿名。</p>
-<p>填写完成后，我们会为你自动创建一个名为 <code>rsserpent-plugin-xxx/</code> 的文件夹，里面包含了所有基本项目配置。然后还会使用 <code>poetry</code> 安装项目依赖，并安装 <a href="https://pre-commit.com/">pre-commit</a> 钩子 —— 取决于你的网络连接质量，这一步可能需要数分钟不等。</p>
-<h2 id="进行开发">进行开发<a class="headerlink" href="#进行开发" title="Permanent link">&para;</a></h2>
-<p>我们推荐你使用 <a href="https://code.visualstudio.com/">Visual Studio Code</a>（简称 VSCode）这一集成开发环境（IDE）进行插件开发。使用 VSCode 打开你刚刚创建的文件夹，VSCode 可能会提示你安装一些推荐的 VSCode 插件。安装完成后，你就可以开始开发 RSSerpent 插件了。</p>
-<p>RSSerpent 插件的主要部分就是一系列<a href="/usage/router.md">路由</a>，每个路由都包含一个 <code>path</code> 字符串和一个数据提供函数 <code>provider</code>。</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span>
-
-
-<span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;/path/to/route&quot;</span>
-
-
-<span class="k">async</span> <span class="k">def</span> <span class="nf">provider</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-    <span class="k">return</span> <span class="p">{</span>
-        <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Example&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;link&quot;</span><span class="p">:</span> <span class="s2">&quot;https://example.com&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;An example rsserpent plugin.&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;items&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Title&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Description&quot;</span><span class="p">}],</span>
-    <span class="p">}</span>
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>你可以在<a href="https://github.com/RSSerpent/RSSerpent/tree/master/rsserpent/plugins/builtin">这里</a>找到更多路由范例。</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>数据提供函数 <code>provider</code> 必须是 <strong>async</strong> 函数，并且不能包含 <a href="https://docs.python.org/3/faq/programming.html#faq-positional-only-arguments">position-only arguments</a>。</p>
-</div>
-<p>字符串 <code>path</code> 定义了一个路径，用户可以从这个路径来访问到 RSS 订阅链接；数据提供函数 <code>provider</code> 则负责提供相应的数据，这些数据会被用于创建可订阅的 RSS 内容并呈现给用户。作为插件开发者，你还需要将路由注册到 <code>rsserpent_plugin_xxx/__init__.py</code>：</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">route1</span><span class="p">,</span> <span class="n">route2</span><span class="p">,</span> <span class="n">route3</span>
-
-
-<span class="n">plugin</span> <span class="o">=</span> <span class="n">Plugin</span><span class="p">(</span>
-    <span class="c1"># ...</span>
-    <span class="n">routers</span><span class="o">=</span><span class="p">{</span>
-        <span class="n">route1</span><span class="o">.</span><span class="n">path</span><span class="p">:</span> <span class="n">route1</span><span class="o">.</span><span class="n">provider</span><span class="p">,</span>
-        <span class="n">route2</span><span class="o">.</span><span class="n">path</span><span class="p">:</span> <span class="n">route2</span><span class="o">.</span><span class="n">provider</span><span class="p">,</span>
-        <span class="n">route3</span><span class="o">.</span><span class="n">path</span><span class="p">:</span> <span class="n">route3</span><span class="o">.</span><span class="n">provider</span><span class="p">,</span>
-    <span class="p">},</span>
-<span class="p">)</span>
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Poetry 将你的项目依赖安装在一个隔离的<a href="https://virtualenv.pypa.io/">虚拟环境</a>中。因此，你需要使用 <code>poetry shell</code> 或 <code>source $(poetry env info -p)/bin/activate</code> 命令来激活虚拟环境，才可以使用虚拟环境中的 <code>pre-commit</code>，<code>pytest</code>，<code>uvicorn</code> 等命令行工具。</p>
-</div>
-<p>在终端里执行 <code>uvicorn --reload rsserpent:app</code>，你就能在本地启动一个 RSSerpent 实例。你可以在浏览器中打开这个实例，用以调试你的插件。</p>
-<div class="highlight"><pre><span></span><code>➜ uvicorn --reload rsserpent:app
-INFO:     Will watch for changes in these directories: [&#39;/path/to/your/directory&#39;]
-INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process [30920] using statreload
-INFO:     Started server process [30922]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>强烈推荐插件作者编写测试，以确保你的插件能更鲁棒、没有错误。测试需要编写在 <code>tests/</code> 文件夹中，并使用 <code>pytest</code> 命令来运行。</p>
-</div>
-<h2 id="发布插件">发布插件<a class="headerlink" href="#发布插件" title="Permanent link">&para;</a></h2>
-<p>当你在本地对插件进行了足够多的改动后，请确保你讲这些改动提交（commit）并推送（push）到 GitHub。这样子，你插件的用户才能使用到你的最新工作成果。</p>
-<div class="highlight"><pre><span></span><code>git add --all
-git commit -m <span class="s2">&quot;&lt;type&gt;: &lt;description&gt;&quot;</span>
-git push origin
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>提交信息（commit message）应该遵循 <a href="https://www.conventionalcommits.org/">Conventional Commits</a> 规范。</p>
-</div>
-<p>当你运行 <code>git commit</code> 提交时，你会自动触发一系列 pre-commit 钩子，这些钩子会对你的代码等进行检查。请确保你将改动推送到 GitHub 前已成功通过所有检查。你也可以执行如下命令来手动进行检查：</p>
-<div class="highlight"><pre><span></span><code>➜ pre-commit run --all-files
-Nitpick Check............................................................Passed
-Fix End of Files.........................................................Passed
-Trim Trailing Whitespace.................................................Passed
-Check Blanket &quot;#noqa&quot;....................................................Passed
-Check Blanket &quot;#type:ignore&quot;.............................................Passed
-Upgrade Python Syntax....................................................Passed
-Check Typos..............................................................Passed
-Format Source Code.......................................................Passed
-Sort Imports.............................................................Passed
-Type Check...............................................................Passed
-Lint.....................................................................Passed
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>我们在 pre-commit 钩子中运行了 <a href="https://github.com/psf/black">black</a>/<a href="https://github.com/pycqa/isort">isort</a> 代码格式化, <a href="https://github.com/python/mypy">mypy</a> 类型检查，以及 <a href="https://github.com/PyCQA/flake8">flake8</a> 代码风格检查。
-我们还运行了 <a href="https://github.com/andreoliwa/nitpick"><strong>nitpick</strong></a> 这个钩子：它包含了一系列 RSSerpent 官方推荐的 black/isort/mypy/flake8 等开发工具的<a href="https://github.com/RSSerpent/RSSerpent/blob/master/styles/main.toml">配置</a>，希望插件开发者能够遵守。</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>如果你在执行 <code>git commit</code> 时，没有触发任何 pre-commit 钩子（也就是说，没有看到如上标记有 <em>Passed</em> 通过或 <em>Failed</em> 失败的若干行检查），你可以运行 <code>pre-commit install -t pre-commit -t commit-msg</code> 来手动安装 pre-commit 钩子。</p>
-</div>
+<h1 id="插件">插件<a class="headerlink" href="#插件" title="Permanent link">&para;</a></h1>
 
   <hr>
 <div class="md-source-file">
@@ -1020,41 +817,6 @@ Lint.....................................................................Passed
       </main>
       
         <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="页脚">
-      
-        
-        <a href="../core/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 核心" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                上一页
-              </span>
-              核心
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="data/" class="md-footer__link md-footer__link--next" aria-label="下一页: 获取数据" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              获取数据
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

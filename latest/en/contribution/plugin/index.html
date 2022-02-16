@@ -15,7 +15,7 @@
     
     
       
-        <title>Creating Plugins - RSSerpent Docs</title>
+        <title>Plugin - RSSerpent Docs</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#creating-plugins" class="md-skip">
+        <a href="#plugin" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Creating Plugins
+              Plugin
             
           </span>
         </div>
@@ -271,15 +271,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link md-tabs__link--active">
+      <a href="../" class="md-tabs__link">
         Contribution
       </a>
     </li>
@@ -594,14 +592,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -650,14 +646,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" data-md-state="indeterminate" type="checkbox" id="__nav_4_3" checked>
       
       
       
@@ -678,66 +672,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Creating Plugins
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Creating Plugins
+    <li class="md-nav__item">
+      <a href="../../../contribution/plugin/index.md" class="md-nav__link">
+        None
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#scaffold" class="md-nav__link">
-    Scaffold
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#develop" class="md-nav__link">
-    Develop
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#publish" class="md-nav__link">
-    Publish
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -838,35 +777,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#scaffold" class="md-nav__link">
-    Scaffold
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#develop" class="md-nav__link">
-    Develop
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#publish" class="md-nav__link">
-    Publish
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -877,125 +787,12 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/RSSerpent/RSSerpent/edit/master/docs/contribution/plugin/index.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/RSSerpent/RSSerpent/edit/master/docs/contribution/plugin.md" title="Edit this page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
-<h1 id="creating-plugins">Creating Plugins<a class="headerlink" href="#creating-plugins" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Make sure you have read <a href="./">Environment</a> before continuing.</p>
-</div>
-<p>Learn to create a RSSerpent plugin project from scratch through this tutorial.</p>
-<h2 id="scaffold">Scaffold<a class="headerlink" href="#scaffold" title="Permanent link">&para;</a></h2>
-<p>You will need to install <a href="https://cookiecutter.readthedocs.io/en/stable/installation.html">cookiecutter</a> for quickly scaffolding an RSSerpent plugin, by using the official plugin <a href="https://github.com/RSSerpent/template">template</a>.</p>
-<div class="highlight"><pre><span></span><code>pip install --user cookiecutter
-<span class="c1"># or on macOS</span>
-brew install cookiecutter
-<span class="c1"># or on Debian/Ubuntu</span>
-sudo apt install cookiecutter
-</code></pre></div>
-<p>Now it's time to scaffold you project! In your terminal, start a new session and run:</p>
-<div class="highlight"><pre><span></span><code>cookiecutter gh:rsserpent/template
-</code></pre></div>
-<p>This will download the official RSSerpent plugin <a href="https://github.com/RSSerpent/template">template</a> from GitHub. You will then be prompted to fill in some information:</p>
-<div class="highlight"><pre><span></span><code>plugin [rsserpent-plugin-xxx]:
-description [An rsserpent plugin for xxx.]:
-username [queensferryme]:
-link [https://github.com/queensferryme]:
-email [queensferryme@example.com]:
-</code></pre></div>
-<p>The message between the brackets <code>[...]</code> are default values for respective fields, you may press <code>Enter</code> to accept or type in your own choice. You personal information (<em>email</em> etc.) will only be used for rendering the template. You could always remain anonymous if you'd like to.</p>
-<p>After that, we'll automatically create a directory <code>rsserpent-plugin-xxx/</code> with all the necessary project configurations for you. We will also install project dependencies (through <code>poetry</code>) and <a href="https://pre-commit.com/">pre-commit</a> hooks, which may take minutes depending on your network connection.</p>
-<h2 id="develop">Develop<a class="headerlink" href="#develop" title="Permanent link">&para;</a></h2>
-<p>You will need a <a href="https://en.wikipedia.org/wiki/Integrated_development_environment">IDE</a> to start developing. We recommend using <a href="https://code.visualstudio.com/">Visual Studio Code</a>, or VSCode for short. Use VSCode to open the directory you just created using <code>cookiecutter</code>. You may be prompted to install some recommended VSCode plugins.</p>
-<p>An RSSerpent plugin is mostly a collection of <a href="/usage/router.md">routers</a>, and each router is a <code>path</code> string accompanied by a data <code>provider</code> function.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span>
-
-
-<span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;/path/to/route&quot;</span>
-
-
-<span class="k">async</span> <span class="k">def</span> <span class="nf">provider</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-    <span class="k">return</span> <span class="p">{</span>
-        <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Example&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;link&quot;</span><span class="p">:</span> <span class="s2">&quot;https://example.com&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;An example rsserpent plugin.&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;items&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Title&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Description&quot;</span><span class="p">}],</span>
-    <span class="p">}</span>
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>See more example routers <a href="https://github.com/RSSerpent/RSSerpent/tree/master/rsserpent/plugins/builtin">here</a>.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The <code>provider</code> function must be <strong>async</strong> and can <strong>not</strong> have <a href="https://docs.python.org/3/faq/programming.html#faq-positional-only-arguments">position-only arguments</a>.</p>
-</div>
-<p>The <code>path</code> variable defines an endpoint where users could access the RSS feed, and the <code>provider</code> function provides necessary data for rendering and serving the RSS feed to users. You will also need to register you routers in <code>rsserpent_plugin_xxx/__init__.py</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">route1</span><span class="p">,</span> <span class="n">route2</span><span class="p">,</span> <span class="n">route3</span>
-
-
-<span class="n">plugin</span> <span class="o">=</span> <span class="n">Plugin</span><span class="p">(</span>
-    <span class="c1"># ...</span>
-    <span class="n">routers</span><span class="o">=</span><span class="p">{</span>
-        <span class="n">route1</span><span class="o">.</span><span class="n">path</span><span class="p">:</span> <span class="n">route1</span><span class="o">.</span><span class="n">provider</span><span class="p">,</span>
-        <span class="n">route2</span><span class="o">.</span><span class="n">path</span><span class="p">:</span> <span class="n">route2</span><span class="o">.</span><span class="n">provider</span><span class="p">,</span>
-        <span class="n">route3</span><span class="o">.</span><span class="n">path</span><span class="p">:</span> <span class="n">route3</span><span class="o">.</span><span class="n">provider</span><span class="p">,</span>
-    <span class="p">},</span>
-<span class="p">)</span>
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Poetry install dependencies inside a <a href="https://virtualenv.pypa.io/">virtualenv</a>. Therefore, in order to use tools like <code>pre-commit</code>, <code>pytest</code> or <code>uvicorn</code>, you will need to run <code>poetry shell</code> or <code>source $(poetry env info -p)/bin/activate</code> to activate the virtual environment.</p>
-</div>
-<p>Run <code>uvicorn --reload rsserpent:app</code> in your terminal to start an RSSerpent instance locally, so that you can see if you plugin works as expected.</p>
-<div class="highlight"><pre><span></span><code>➜ uvicorn --reload rsserpent:app
-INFO:     Will watch for changes in these directories: [&#39;/path/to/your/directory&#39;]
-INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process [30920] using statreload
-INFO:     Started server process [30922]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>We recommend plugin authors to write tests, so that the plugin can be more robust and have less bugs. Write your tests in the <code>tests/</code> directory and run <code>pytest</code> to run the tests.</p>
-</div>
-<h2 id="publish">Publish<a class="headerlink" href="#publish" title="Permanent link">&para;</a></h2>
-<p>After you made enough changes to the plugin locally, make sure to commit your changes and push to GitHub. In this way, you can make you latest work available to plugin users.</p>
-<div class="highlight"><pre><span></span><code>git add --all
-git commit -m <span class="s2">&quot;&lt;type&gt;: &lt;description&gt;&quot;</span>
-git push origin
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Commit messages should be in accordance with the <a href="https://www.conventionalcommits.org/">Conventional Commits</a> specification.</p>
-</div>
-<p>When you run <code>git commit</code>, a set of pre-commit hooks will be triggered. Make sure you pass the checks before actually pushing to GitHub. You could also run the checks manually:</p>
-<div class="highlight"><pre><span></span><code>➜ pre-commit run --all-files
-Nitpick Check............................................................Passed
-Fix End of Files.........................................................Passed
-Trim Trailing Whitespace.................................................Passed
-Check Blanket &quot;#noqa&quot;....................................................Passed
-Check Blanket &quot;#type:ignore&quot;.............................................Passed
-Upgrade Python Syntax....................................................Passed
-Check Typos..............................................................Passed
-Format Source Code.......................................................Passed
-Sort Imports.............................................................Passed
-Type Check...............................................................Passed
-Lint.....................................................................Passed
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In pre-commit hooks we run <a href="https://github.com/psf/black">black</a>, <a href="https://github.com/pycqa/isort">isort</a> for source code formatting, <a href="https://github.com/python/mypy">mypy</a> for type checking, and <a href="https://github.com/PyCQA/flake8">flake8</a> for linting.
-We also run <a href="https://github.com/andreoliwa/nitpick"><strong>nitpick</strong></a>, which contains a set of recommended <a href="https://github.com/RSSerpent/RSSerpent/blob/master/styles/main.toml">configurations</a> for black/isort/mypy/flake8 etc from the upstream.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If no pre-commit hooks are triggered (that's to say, you didn't see lines of checks marked with either <em>Passed</em> or <em>Failed</em>, as shown above) when you do <code>git commit</code>, you can manually install the pre-commit hooks with <code>pre-commit install -t pre-commit -t commit-msg</code>.</p>
-</div>
+<h1 id="plugin">Plugin<a class="headerlink" href="#plugin" title="Permanent link">&para;</a></h1>
 
   <hr>
 <div class="md-source-file">
@@ -1020,41 +817,6 @@ We also run <a href="https://github.com/andreoliwa/nitpick"><strong>nitpick</str
       </main>
       
         <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../core/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Core" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Core
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="data/" class="md-footer__link md-footer__link--next" aria-label="Next: Retrieving Data" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Retrieving Data
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
