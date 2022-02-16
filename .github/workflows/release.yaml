@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: git fetch origin doc:doc
       - uses: fregante/setup-git-user@v1
       - uses: actions/setup-python@v2
         with:
@@ -24,6 +23,11 @@ jobs:
         run: |
           [[ "$(poetry version --short)" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] ||
           echo "IS_PRE_RELEASE=true" >> $GITHUB_ENV
+      - name: "Build Stable Document"
+        if: ${{ env.IS_PRE_RELEASE != true }}
+        run: |
+          poetry install
+          poetry run mike deploy --push --update-aliases stable
       - name: "Generate Release Note"
         run: awk "/^## $(poetry version --short)/{mark=1;next}/^## /{mark=0}mark" CHANGELOG.md > RELEASE.md
       - name: "Build Project"
