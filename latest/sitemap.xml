@@ -16,11 +16,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.rsserpent.com/latest/structure/</loc>
-         <lastmod>2022-02-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.rsserpent.com/latest/contribution/</loc>
          <lastmod>2022-02-16</lastmod>
          <changefreq>daily</changefreq>
@@ -51,11 +46,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.rsserpent.com/latest/deployment/docker/</loc>
-         <lastmod>2022-02-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.rsserpent.com/latest/deployment/heroku/</loc>
          <lastmod>2022-02-16</lastmod>
          <changefreq>daily</changefreq>
@@ -66,17 +56,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.rsserpent.com/latest/deployment/vercel/</loc>
-         <lastmod>2022-02-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.rsserpent.com/latest/plugin/</loc>
-         <lastmod>2022-02-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.rsserpent.com/latest/plugin/official/</loc>
          <lastmod>2022-02-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -92,11 +72,6 @@
     </url>
     <url>
          <loc>https://docs.rsserpent.com/latest/usage/router/</loc>
-         <lastmod>2022-02-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.rsserpent.com/latest/usage/rss/</loc>
          <lastmod>2022-02-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
