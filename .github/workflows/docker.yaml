@@ -1,4 +1,4 @@
-name: Build Docker Image
+name: Docker
 
 on:
   pull_request:
@@ -20,7 +20,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  run:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -50,7 +50,6 @@ jobs:
           images: queensferry/rsserpent,ghcr.io/rsserpent/rsserpent
           tags: |
             type=ref,event=branch
-            type=ref,event=pr
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
       - uses: docker/build-push-action@v2
@@ -62,6 +61,7 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: ${{ github.repository == 'RSSerpent/RSSerpent' && github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
+      # delete untagged images from ghcr.io
       - uses: bots-house/ghcr-delete-image-action@main
         if: github.repository == 'RSSerpent/RSSerpent' && github.event_name != 'pull_request'
         with:
@@ -69,24 +69,3 @@ jobs:
           name: rsserpent
           token: ${{ secrets.PAT_TOKEN }}
           untagged-keep-latest: 10
-      - uses: peter-evans/dockerhub-description@v2
-        if: github.repository == 'RSSerpent/RSSerpent' && github.event_name != 'pull_request'
-        with:
-          username: queensferry
-          password: ${{ secrets.DOCKERHUB_PASSWORD }}
-          repository: queensferry/rsserpent
-          short-description: ${{ github.event.repository.description }}
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-    services:
-      rsserpent:
-        image: ghcr.io/rsserpent/rsserpent:master
-        ports:
-          - 8000:8000
-    steps:
-      - name: "Test Docker Image"
-        run: |
-          # don't remove this line (f**k i wish i know why)
-          sleep 10
-          curl localhost:8000 | grep "RSSerpent is up & running"
