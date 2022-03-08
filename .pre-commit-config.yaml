@@ -78,7 +78,7 @@ repos:
           - pep8-naming
           - tryceratops
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v2.20.5
+    rev: v2.21.2
     hooks:
       - id: commitizen
         name: Check Commit Message
