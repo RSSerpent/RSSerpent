@@ -42,7 +42,6 @@ class TestCacheKey:
             assert key1 == object()
 
 
-@pytest.mark.asyncio
 @settings(max_examples=Times.SOME)
 @given(n=integers(min_value=2, max_value=100))
 async def test_cached(n: int) -> None:
@@ -61,7 +60,6 @@ async def test_cached(n: int) -> None:
     assert cache.misses == n + 1
 
 
-@pytest.mark.asyncio
 @settings(max_examples=Times.ONCE)
 @given(n=integers(min_value=2, max_value=10), expire=integers(max_value=-1))
 async def test_cached_with_expire(n: int, expire: int) -> None:
@@ -78,7 +76,6 @@ async def test_cached_with_expire(n: int, expire: int) -> None:
     assert cache.hits == 0
 
 
-@pytest.mark.asyncio
 @settings(max_examples=Times.SOME)
 @given(data())
 async def test_cached_with_maxsize(data: DataObject) -> None:

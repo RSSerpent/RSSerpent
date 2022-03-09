@@ -13,7 +13,6 @@ async def provider() -> Dict[str, Any]:
     async with Browser() as browser:
         await browser.goto("https://httpbin.org/html")
         content = await browser.content()
-        # response = await client.get("https://httpbin.org/html")
     dom = PyQuery(content)
     return {
         "title": "Example",

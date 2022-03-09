@@ -37,4 +37,4 @@ class Times:
 @pytest.fixture(scope="module")
 def client() -> TestClient:
     """Share one test client across the whole module with `pytest.fixture`."""
-    return TestClient(app)
+    return TestClient(app, backend_options={"use_uvloop": True})

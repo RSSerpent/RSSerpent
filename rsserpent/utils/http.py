@@ -24,7 +24,7 @@ class Browser:
     async def __aexit__(self, *_: Any) -> None:
         """Leave the context manager."""
         await self.browser.close()
-        self.context.stop()
+        await self.context.stop()  # type: ignore[func-returns-value]
 
 
 class HTTPClient(httpx.AsyncClient):

@@ -1,7 +1,6 @@
 import math
 from typing import Any, Dict
 
-import pytest
 from hypothesis import given, infer, settings
 
 from rsserpent.utils import fetch_data
@@ -17,7 +16,6 @@ async def provider(
     return {"value": a - b + d}
 
 
-@pytest.mark.asyncio
 @settings(max_examples=Times.SOME)
 @given(a=infer, b=infer, c=infer)
 async def test_fetch_data(a: int, b: float, c: bool) -> None:
