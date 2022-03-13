@@ -1,4 +1,4 @@
-# Retrieving Data
+# Retrieve Data
 
 When you are writing a data provider function, you need to retrieve data from a source website. RSSerpent ships with convenient utility functions for you to retrieve data in various scenarios.
 

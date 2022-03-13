@@ -12,11 +12,11 @@ RSSerpent 是一个开源软件。它能帮助你使用 [RSS](https://zh.wikiped
 - 文档：<https://docs.rsserpent.com/>
 
 ## 致谢
-RSSerpent 项目是在 [RSSHub](https://github.com/DIYgod/RSSHub) 的启发下开发的 🎉 我们向 RSSHub 项目及其维护者致以最高的敬意。
+RSSerpent 项目是在 [RSSHub](https://github.com/DIYgod/RSSHub) 的启发下开发的 🎉 我们向 RSSHub 项目及其维护者致以敬意。
 
 ## 赞助商
 
-[![rss3](https://rss3.io/assets/logo.4b7645bd.svg){ width=200 }](https://linktr.ee/rss3)
+[![rss3](https://ipfs.rss3.page/ipfs/QmUG6H3Z7D5P511shn7sB4CPmpjH5uZWu4m5mWX7U3Gqbu){ width=200 }](https://linktr.ee/rss3)
 
 ## 成员
 

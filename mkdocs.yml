@@ -26,7 +26,6 @@ nav:
   - Usage:
     - usage/index.md
     - usage/router.md
-    - usage/parameter.md
   - Deployment:
     - deployment/index.md
     - deployment/deta.md

@@ -18,9 +18,9 @@
 
 [![chat on telegram](https://img.shields.io/badge/chat%20on-telegram-blue.svg)](https://t.me/rsserpent)
 
-This snake helps you reconnect the Web, with RSS feeds!
+> This snake helps you reconnect the Web, with RSS feeds!
 
-RSSerpent is an open-source software that create [RSS](https://en.wikipedia.org/wiki/RSS) feeds for websites that do not provide any.
+RSSerpent is an open-source software that creates [RSS](https://en.wikipedia.org/wiki/RSS) feeds for websites without them.
 
 [English](https://github.com/RSSerpent/RSSerpent/blob/master/README.md) | [中文](https://github.com/RSSerpent/RSSerpent/blob/master/README.zh.md)
 
@@ -34,7 +34,7 @@ The RSSerpent Project is heavily inspired by [RSSHub](https://github.com/DIYgod/
 
 ## Sponsors
 
-<a href="https://linktr.ee/rss3" target="_blank"><img alt="rss3" src="https://rss3.io/assets/logo.4b7645bd.svg" width="200" /></a>
+<a href="https://linktr.ee/rss3" target="_blank"><img alt="rss3" src="https://ipfs.rss3.page/ipfs/QmUG6H3Z7D5P511shn7sB4CPmpjH5uZWu4m5mWX7U3Gqbu" width="200" /></a>
 
 # People
 

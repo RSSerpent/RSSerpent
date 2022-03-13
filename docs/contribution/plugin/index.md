@@ -1,4 +1,4 @@
-# Creating Plugins
+# Create Plugins
 
 !!!note
     Make sure you have read [Environment](index.md) before continuing.
