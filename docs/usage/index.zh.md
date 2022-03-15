@@ -7,7 +7,7 @@
 
 [RSS](https://en.wikipedia.org/wiki/RSS) 是 Really Simple Syndication 的缩写，中文译作“简易信息聚合”。RSS 是一种互联网消息来源的格式。其他常见的消息来源格式还包括 [Atom](https://en.wikipedia.org/wiki/Atom_(Web_standard))、[JSON Feed](https://en.wikipedia.org/wiki/JSON_Feed) 等。作为最早出现也最流行的消息来源格式，RSS 也常被用作 RSS、Atom 等消息来源格式的统称。
 
-作为一种消息来源的格式，RSS 能够向用户推送网络上一些频繁更新的内容 —— 其中的一个典型应用就是*新闻*。时至今日，许多新闻发布者都仍在通过 RSS 发布新闻，例如 BBC New、The Guardian 等。
+作为一种消息来源的格式，RSS 能够向用户推送网络上一些频繁更新的内容 —— 其中的一个典型应用就是*新闻*。时至今日，许多新闻发布者都仍在通过 RSS 发布新闻，例如 BBC News、The Guardian 等。
 
 ## 为什么选择 RSS
 
