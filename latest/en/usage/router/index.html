@@ -482,9 +482,54 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Routers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Routers
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instances-and-routes" class="md-nav__link">
+    Instances and Routes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#route-parameters" class="md-nav__link">
+    Route Parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-parameters" class="md-nav__link">
+    Query Parameters
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -778,6 +823,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instances-and-routes" class="md-nav__link">
+    Instances and Routes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#route-parameters" class="md-nav__link">
+    Route Parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-parameters" class="md-nav__link">
+    Query Parameters
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -795,13 +869,50 @@
 
 
 <h1 id="routers">Routers<a class="headerlink" href="#routers" title="Permanent link">&para;</a></h1>
+<p>Under normal circumstances, every RSS feed has a subscription link. For example, the subscription link of The Guardian World News' feed is <a href="https://www.theguardian.com/world/rss">www.theguardian.com/world/rss</a>. In this subscription link, the part before the first slash <code>/</code> is called the <em>domain</em> (<code>www.theguardian.com</code>), and the other part is called the <em>route</em> (<code>/world/rss</code>). You can conceive of a subscription link as a virtual pathway, of which the domain is an approximate address while the route is the specific unit/room, etc. The subscription link leads you towards resources you need on the Internet.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The definition of a subscription link here does not necessarily comply with the <a href="https://en.wikipedia.org/wiki/URL">URL</a> standard. There are simplifications so that readers from a non-tech background can understand more easily.</p>
+</div>
+<h2 id="instances-and-routes">Instances and Routes<a class="headerlink" href="#instances-and-routes" title="Permanent link">&para;</a></h2>
+<p>If you wish to subscribe to news sources without RSS through RSSerpent, you will need to find the subscription link, as usual. RSSerpent's subscription links, similarly, consist of a domain and a route:</p>
+<ul>
+<li>Every domain corresponds to an RSSerpent instance. For example, the official domain <a href="https://www.rsserpent.com">www.rsserpent.com</a> corresponds to the official instance. You can find more official instances to use on the <a href="../deploy/index.md">[Deploy]</a> page, but we recommend self-hosting to accommodate your growing and varied requirements.</li>
+<li>By default, an RSSerpent instance contains no route. Maintainers of instances will need to <a href="../../deployment/plugin/">[Install Plugins]</a> to import routes. If you found a plugin/route missing while using an RSSerpent hosted by others, you can appeal to the instance maintainer or, as recommended, self-host an instance on your own.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>An instance is a running copy of the RSSerpent software.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Every RSSerpent plugin contains one or more routes.</p>
+</div>
+<p>RSSerpent's official <a href="https://www.rsserpent.com">instance</a> comes with the <abbr title="A Chinese video sharing platform akin to Youtube">Bilibili</abbr> <a href="https://github.com/RSSerpent/rsserpent-plugin-bilibili">plugin</a>. Therefore, you can access the <code>/bilibili/user/{id}/video</code> route on the official instance to subscribe to some users' published videos. For example, if you wish to subscribe to <a href="https://www.youtube.com/channel/UCKOvOaJv4GK-oDqx-sj7VVg">Chubbyemu</a>'s official Chinese translation <a href="https://space.bilibili.com/297786973">channel</a> on Bilibili, you could concatenate the official domain <code>www.rsserpent.com</code> and the route <code>/bilibili/user/297786973/video</code> to generate the subscription link as follows:</p>
+<p><img alt="RSSerpent Bilibili Chubbyemu" src="https://cdn.jsdelivr.net/gh/rsserpent/asset@latest/rsserpent-bilibili-chubbyemu.png" /></p>
+<h2 id="route-parameters">Route Parameters<a class="headerlink" href="#route-parameters" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Any example under this warning is provided "as is" and does not necessarily work with any instances.</p>
+</div>
+<p>From the example given above, we note that some routes are not complete, and require your information input. Assuming this route can help you subscribe to some users' published videos, the route will need to know <em>which</em> users you'd like to subscribe to to work as expected. These information inputs are called <em>route parameters</em>.</p>
+<p>Route parameters are usually surrounded by brackets <code>{}</code>. When filling the route parameters, you should remove the bracket pair. Different routes are provided by different plugins, and you should refer to the documentation of the respective plugin to understand the implication of each route parameter and how you can find and fill in these route parameters.</p>
+<p>Again, taking the <code>/bilibili/user/{id}/video</code> route for example: the route accepts one route parameter <em>id</em>. Every Bilibili user is endowed with a unique ID, which you usually can find in the user profile's address. Only with this unique identifier, the route will then be able to retrieve the user's list of published videos, and output the list in the RSS feed subscription link.</p>
+<h2 id="query-parameters">Query Parameters<a class="headerlink" href="#query-parameters" title="Permanent link">&para;</a></h2>
+<p>Route parameters are required. However, sometimes routes need to access optional or conditional parameters -- we call such parameters <em>query parameters</em>:</p>
+<ul>
+<li>Query parameters should be placed after the route, and guarded by a question mark <code>?</code>;</li>
+<li>There can be arbitrary amount of query parameters, each looking like <code>{name}={value}</code>;</li>
+<li>Multiple query parameters are separated with an ampersand <code>&amp;</code>.</li>
+</ul>
+<p>For example, assuming the <code>/bilibili/user/{id}/video</code> route accepts two query parameters, of which the <code>sort</code> parameter is used to specify the sorting criteria while the <code>order</code> parameter is used to indicate ascent/descent. Given that most users would probably subscribe to the latest videos, the route by default will sort the list of videos in chronologically descending order. However, if you need to subscribe to the most trending videos, the route should look like <code>/bilibili/user/{id}/video?sort=hot&amp;order=desc</code>.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2022-03-13
+      2022-03-15
     
   </small>
 </div>
