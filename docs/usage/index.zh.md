@@ -21,7 +21,7 @@ RSS 对于内容阅读者来说是方便的。通过订阅 RSS，你可以将多
 
 下面以卫报世界新闻的 RSS 订阅[链接](https://www.theguardian.com/world/rss)在某一时刻输出的内容为例：
 
-![The Guardian feed](https://cdn.jsdelivr.net/gh/rsserpent/asset/the-guardian-feed.png)
+![The Guardian feed](https://cdn.jsdelivr.net/gh/rsserpent/asset@latest/the-guardian-feed.png)
 
 在浏览器中打开该订阅链接，你可能会看到这样一份难以理解的 XML 格式文档。请不要惊慌：你无需从事任何计算机编程相关工作就可以学会如何使用 RSS 😉 你需要关注的只有浏览器地址栏中的那个链接 —— 也就是卫报世界新闻的 RSS 订阅链接。将该链接拷贝到剪贴板，然后打开你的 RSS 阅读器，输入该链接，你就可以成功订阅该信息源了。
 

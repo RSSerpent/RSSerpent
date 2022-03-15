@@ -21,7 +21,7 @@ Usually, you subscribe to an RSS feed with a link (URL). RSS subscription links,
 
 Taking the RSS subscription [link](https://www.theguardian.com/world/rss) of The Guardian's World News as an example:
 
-![The Guardian feed](https://cdn.jsdelivr.net/gh/rsserpent/asset/the-guardian-feed.png)
+![The Guardian feed](https://cdn.jsdelivr.net/gh/rsserpent/asset@latest/the-guardian-feed.png)
 
 By opening that subscription link in the browser, you are likely to be confronted with this incomprehensible document. Don't panic! You are not mandated to understand anything about computer programming in order to learn about how to use RSS 😉 The only thing you will need to know is the link in the browser's address bar. Copy that subscription link to your clipboard, open your RSS reader, paste that link, and you will successfully subscribe to the RSS feed.
 
