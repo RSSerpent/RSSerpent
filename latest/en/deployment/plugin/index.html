@@ -806,19 +806,23 @@
 <li>It's the same as writing <code>requirements.txt</code> for any Python project;</li>
 <li>Do not modify <code>requirements.txt</code>, only edit <code>rsserpent.txt</code>. GitHub Actions will be in charge of automatically updating <code>requirements.txt</code> and deploying your instance;</li>
 <li>By <em>automatically</em> it means every week or every time you commit changes to the repository;</li>
-<li>It's recommended to not specify versions so that <a href="https://github.com/features/actions">GitHub Actions</a> could automatically updates them;</li>
-</ul>
-<p><div class="highlight"><pre><span></span><code><span class="c1"># PyPI</span>
+<li>
+<p>It's recommended to not specify versions so that <a href="https://github.com/features/actions">GitHub Actions</a> could automatically updates them;</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># PyPI</span>
 <span class="n">rsserpent</span>
 <span class="c1"># Git</span>
 <span class="n">rsserpent</span><span class="o">-</span><span class="n">plugin</span><span class="o">-</span><span class="n">bilibili</span> <span class="o">@</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">RSSerpent</span><span class="o">/</span><span class="n">rsserpent</span><span class="o">-</span><span class="n">plugin</span><span class="o">-</span><span class="n">bilibili</span><span class="o">.</span><span class="n">git</span>
 </code></pre></div>
-- If you do need a specific version of some dependency, you could always pin its version with:</p>
+</li>
+<li>
+<p>If you do need a specific version of some dependency, you could always pin its version with:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># PyPI</span>
 <span class="n">rsserpent</span><span class="o">==</span><span class="mf">0.1.4</span>
 <span class="c1"># Git</span>
 <span class="n">rsserpent</span><span class="o">-</span><span class="n">plugin</span><span class="o">-</span><span class="n">bilibili</span> <span class="o">@</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">RSSerpent</span><span class="o">/</span><span class="n">rsserpent</span><span class="o">-</span><span class="n">plugin</span><span class="o">-</span><span class="n">bilibili</span><span class="o">.</span><span class="n">git</span><span class="o">@</span><span class="mi">0609</span><span class="n">c0bd466e5d19fbb13078d9b93e0134b8c5bd</span>
 </code></pre></div>
+</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
