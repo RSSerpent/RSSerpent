@@ -2,6 +2,14 @@
 
 You are encouraged to self-host an RSSerpent instance.
 
+!!!note
+    An instance is a running copy of the RSSerpent software.
+
+Self-hosting is neither difficult nor complicated. You are not required to have any relevant experience in computer programming to achieve this job. Here are some easy-to-follow tutorials on self-hosting an RSSerpent instance:
+
+- [[Deploy with Deta]](deta.md)
+- [[Deploy with Heroku]](heroku.md)
+
 ## Official Instances
 
 RSSerpent has hosted some official instances. If you believe self-hosting is not a viable option for you, consider using one of the follows:

@@ -9,7 +9,7 @@ Under normal circumstances, every RSS feed has a subscription link. For example,
 
 If you wish to subscribe to news sources without RSS through RSSerpent, you will need to find the subscription link, as usual. RSSerpent's subscription links, similarly, consist of a domain and a route:
 
-- Every domain corresponds to an RSSerpent instance. For example, the official domain [www.rsserpent.com](https://www.rsserpent.com) corresponds to the official instance. You can find more official instances to use on the [[Deploy]](../deploy/index.md) page, but we recommend self-hosting to accommodate your growing and varied requirements.
+- Every domain corresponds to an RSSerpent instance. For example, the official domain [www.rsserpent.com](https://www.rsserpent.com) corresponds to the official instance. You can find more official instances to use on the [[Deploy]](../deployment/index.md) page, but we recommend self-hosting to accommodate your growing and varied requirements.
 - By default, an RSSerpent instance contains no route. Maintainers of instances will need to [[Install Plugins]](../deployment/plugin.md) to import routes. If you found a plugin/route missing while using an RSSerpent hosted by others, you can appeal to the instance maintainer or, as recommended, self-host an instance on your own.
 
 !!!note

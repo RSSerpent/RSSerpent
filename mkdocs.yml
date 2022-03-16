@@ -7,6 +7,9 @@ extra:
   version:
     provider: mike
 
+extra_css:
+  - __asset__/custom.css
+
 markdown_extensions:
   - admonition
   - attr_list
