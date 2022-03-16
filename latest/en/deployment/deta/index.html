@@ -37,6 +37,8 @@
       
     
     
+      <link rel="stylesheet" href="../../../__asset__/custom.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -888,32 +890,47 @@
 <p>In order to deploy on Deta, you need to create an account at <a href="https://web.deta.sh">https://web.deta.sh</a> first.</p>
 <p>After successful registration &amp; sign-in, you will need to create an <strong>access token</strong> so that RSSerpent could help you do the rest!</p>
 <ol>
-<li>Go to your home page <code>https://web.deta.sh/home/{username}/</code>;</li>
-<li>Click the <em>Settings</em> tab, then click the <em>Create Token</em> button;</li>
-<li>Copy the generated access token to your clipboard.</li>
+<li>
+<p>Go to your home page <code>https://web.deta.sh/home/{username}/</code>;</p>
+</li>
+<li>
+<p>Click the <em>Settings</em> tab, then click the <em>Create Token</em> button;</p>
+<p><img alt="Create Deta Token" src="https://cdn.jsdelivr.net/gh/rsserpent/asset@latest/create-deta-token.png" /></p>
+</li>
+<li>
+<p>Copy the generated access token to your clipboard.</p>
+</li>
 </ol>
 <p>Read Deta's <a href="https://docs.deta.sh/docs/cli/auth">document</a> if you have any question/concern about the access token.</p>
 <h2 id="use-the-template">Use the Template<a class="headerlink" href="#use-the-template" title="Permanent link">&para;</a></h2>
 <p>RSSerpent provides a Deta deployment template. You will need an <a href="https://github.com/">GitHub</a> account before continuing.</p>
 <ol>
 <li>Go to the <a href="https://github.com/RSSerpent/rsserpent-deploy-deta">template</a> on GitHub;</li>
-<li>Click the green <em>Use this template</em> button.</li>
+<li>Click the <a href="https://github.com/RSSerpent/rsserpent-deploy-deta/generate"><img alt="Template Button" src="https://cdn.jsdelivr.net/gh/rsserpent/asset@latest/template-button.png" /></a> button.</li>
 </ol>
 <p>You will be prompted to create a repository based on the template. After successful creation:</p>
 <ol>
 <li>Go to your repository's <em>Settings</em> tab;</li>
 <li>Go to the <em>Secrets</em> section, click the <em>New repository secret</em> button;</li>
-<li>Create a secret whose name is <em>DETA_TOKEN</em> and whose value is the Deta access token you just created.</li>
+<li>
+<p>Create a secret whose name is <code>DETA_TOKEN</code> and whose value is the Deta access token you just created.</p>
+<p><img alt="Create Deta Action Secret" src="https://cdn.jsdelivr.net/gh/rsserpent/asset@latest/create-action-secret.png" /></p>
+</li>
 </ol>
 <p>GitHub will need the access token so that it could automatically deploy your RSSerpent instance on Deta.</p>
 <h2 id="running-">Running 🎉<a class="headerlink" href="#running-" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Go to your repository -&gt; <em>Actions</em> tab -&gt; <em>All workflows</em> -&gt; <em>Update</em>, click the <em>Run workflow</em> button to manually trigger the first deployment;</li>
-<li>Go to your <a href="https://www.deta.sh/">deta.sh</a> home page -&gt; <em>default</em> project -&gt; <em>Micros</em>, select <em>rsserpent</em>, you will see the domain name of your instance (usually <em>https://xxxxxx.deta.dev/</em>) at the top-right corner.</li>
+<li>
+<p>In your repository's <em>Actions</em> tab, locate the <em>Update</em> workflow, click the <em>Run workflow</em> button to manually trigger the first deployment;</p>
+<p><img alt="Run Update Workflow" src="https://cdn.jsdelivr.net/gh/rsserpent/asset@latest/run-update-workflow.png" /></p>
+</li>
+<li>
+<p>Go to your <a href="https://www.deta.sh/">deta.sh</a> home page, under the <em>default</em> project's <em>Micros</em> list, select <em>rsserpent</em>, you will see the URL of your instance (usually <em>https://xxxxxx.deta.dev/</em>) at the top-right corner.</p>
+</li>
 </ol>
-<p>Open that domain in your browser. If you see the <em>"Welcome to RSSerpent!"</em> message, congratulations, you are good to go!</p>
+<p>Open that URL in your browser. If you see the "<em>Welcome to RSSerpent!</em>" message, congratulations, you are good to go!</p>
 <h2 id="miscellany">Miscellany<a class="headerlink" href="#miscellany" title="Permanent link">&para;</a></h2>
-<p>If you wish to add RSSerpent plugins, read <a href="../plugin/">Install Plugins</a>.</p>
+<p>If you wish to add RSSerpent plugins, read <a href="../plugin/">[Install Plugins]</a>.</p>
 <p>If you need a custom domain, read Deta's <a href="https://docs.deta.sh/docs/micros/custom_domains">document</a>.</p>
 
   <hr>
@@ -921,7 +938,7 @@
   <small>
     
       Last update:
-      2022-03-15
+      2022-03-16
     
   </small>
 </div>

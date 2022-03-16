@@ -37,6 +37,8 @@
       
     
     
+      <link rel="stylesheet" href="../../__asset__/custom.css">
+    
     <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -558,9 +560,54 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Deploy with Heroku
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Deploy with Heroku
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#use-the-template" class="md-nav__link">
+    Use the Template
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-" class="md-nav__link">
+    Running 🎉
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miscellany" class="md-nav__link">
+    Miscellany
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -778,6 +825,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#use-the-template" class="md-nav__link">
+    Use the Template
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-" class="md-nav__link">
+    Running 🎉
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miscellany" class="md-nav__link">
+    Miscellany
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -796,17 +872,21 @@
 
 <h1 id="deploy-with-heroku">Deploy with Heroku<a class="headerlink" href="#deploy-with-heroku" title="Permanent link">&para;</a></h1>
 <p>Deploying an RSSerpent instance on <a href="https://www.heroku.com/">Heroku</a> is easy &amp; free! You will need a <a href="https://github.com/">GitHub</a> and a Heroku account before proceeding.</p>
-<ol>
-<li>Go to the RSSerpent Heroku deployment <a href="https://github.com/RSSerpent/rsserpent-deploy-heroku">template</a>, then click the green <em>Use this template</em> button. You will be prompted to create a repository based on the template.</li>
-<li>After successful creation, in your generated repository, click the purple <em>Deploy to Heroku</em> button. You will be redirected to Heroku and then be prompted to fill in you Heroku app name. Wait for minutes and your RSSerpent instance will be up &amp; running!</li>
-</ol>
+<h2 id="use-the-template">Use the Template<a class="headerlink" href="#use-the-template" title="Permanent link">&para;</a></h2>
+<p>Go to the RSSerpent Heroku deployment <a href="https://github.com/RSSerpent/rsserpent-deploy-heroku">template</a>, then click the <a href="https://github.com/RSSerpent/rsserpent-deploy-heroku/generate"><img alt="Template Button" src="https://cdn.jsdelivr.net/gh/rsserpent/asset@latest/template-button.png" /></a> button. You will be prompted to create a repository based on the template.</p>
+<h2 id="running-">Running 🎉<a class="headerlink" href="#running-" title="Permanent link">&para;</a></h2>
+<p>After successful creation, in your generated repository, click the <img alt="Heroku Deploy Button" src="https://www.herokucdn.com/deploy/button.svg" /> button. You will be redirected to Heroku and then be prompted to fill in you Heroku app name. Wait for minutes and your RSSerpent instance will be up &amp; running!</p>
+<p>After successful deployment, you can open you RSSerpent instance in the browser by clicking the <em>Open app</em> button at the right top corner of the page. If you see the "<em>Welcome to RSSerpent!</em>" message, congratulations, you are good to go!</p>
+<h2 id="miscellany">Miscellany<a class="headerlink" href="#miscellany" title="Permanent link">&para;</a></h2>
+<p>If you wish to add RSSerpent plugins, read <a href="../plugin/">[Install Plugins]</a>.</p>
+<p>If you need a custom domain, read Heroku's <a href="https://devcenter.heroku.com/articles/custom-domains">document</a>.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2022-03-15
+      2022-03-16
     
   </small>
 </div>

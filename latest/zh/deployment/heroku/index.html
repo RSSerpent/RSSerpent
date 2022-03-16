@@ -37,6 +37,8 @@
       
     
     
+      <link rel="stylesheet" href="../../../__asset__/custom.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -558,9 +560,54 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          使用 Heroku 部署
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         使用 Heroku 部署
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#使用模板" class="md-nav__link">
+    使用模板
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#成功运行-" class="md-nav__link">
+    成功运行 🎉
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#其他事项" class="md-nav__link">
+    其他事项
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -778,6 +825,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#使用模板" class="md-nav__link">
+    使用模板
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#成功运行-" class="md-nav__link">
+    成功运行 🎉
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#其他事项" class="md-nav__link">
+    其他事项
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -795,18 +871,22 @@
 
 
 <h1 id="使用-heroku-部署">使用 Heroku 部署<a class="headerlink" href="#使用-heroku-部署" title="Permanent link">&para;</a></h1>
-<p>在 <a href="https://www.heroku.com/">Heroku</a> 上部署 RSSerpent 实例非常简单、而且免费！在进行下一步之前，请先确认你已拥有 <a href="https://github.com/">GitHub</a> 和 Heroku 账号。</p>
-<ol>
-<li>在 GitHub 上打开 RSSerpent Heroku 部署<a href="https://github.com/RSSerpent/rsserpent-deploy-heroku">模板</a>，然后点击绿色的 <em>Use this template</em> 按钮使用模板。GitHub 会提示你填写一些信息，然后就会基于模板为你创建一个代码仓库。</li>
-<li>成功创建代码仓库后，打开你的代码仓库，点击紫色的 <em>Deploy to Heroku</em> 按钮部署到 Heroku。你需要填写你的 Heroku app 名字，然后稍等数分钟，你的 RSSerpent 实例就会成功运行！</li>
-</ol>
+<p>在 <a href="https://www.heroku.com/">Heroku</a> 上部署 RSSerpent 实例完全免费、且非常简单！在进行下一步之前，请先确认你已拥有 <a href="https://github.com/">GitHub</a> 和 Heroku 账号。</p>
+<h2 id="使用模板">使用模板<a class="headerlink" href="#使用模板" title="Permanent link">&para;</a></h2>
+<p>在 GitHub 上打开 RSSerpent Heroku 部署<a href="https://github.com/RSSerpent/rsserpent-deploy-heroku">模板</a>，然后点击 <a href="https://github.com/RSSerpent/rsserpent-deploy-heroku/generate"><img alt="Template Button" src="https://cdn.jsdelivr.net/gh/rsserpent/asset@latest/template-button.png" /></a> 按钮使用模板。GitHub 会提示你填写一些信息，然后就会基于模板为你创建一个代码仓库。</p>
+<h2 id="成功运行-">成功运行 🎉<a class="headerlink" href="#成功运行-" title="Permanent link">&para;</a></h2>
+<p>成功创建代码仓库后，打开你的代码仓库，点击 <img alt="Heroku Deploy Button" src="https://www.herokucdn.com/deploy/button.svg" /> 按钮部署到 Heroku。你需要填写你的 Heroku app 名字，然后稍等数分钟，你的 RSSerpent 实例就会成功运行！</p>
+<p>成功部署 Heroku app 后，点击页面右上角的 <em>Open app</em> 按钮，即可在浏览器中打开你的 RSSerpent 实例。如果你看到 “<em>Welcome to RSSerpent!</em>” 这个欢迎信息，那么恭喜你，你已经部署成功了！</p>
+<h2 id="其他事项">其他事项<a class="headerlink" href="#其他事项" title="Permanent link">&para;</a></h2>
+<p>如果你需要新增 RSSerpent 插件，请阅读<a href="../plugin/">[安装插件]</a>。</p>
+<p>如果你需要自定义域名，请阅读 Heroku <a href="https://devcenter.heroku.com/articles/custom-domains">文档</a>。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      2022-03-15
+      2022-03-16
     
   </small>
 </div>

@@ -37,6 +37,8 @@
       
     
     
+      <link rel="stylesheet" href="../../../__asset__/custom.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -888,32 +890,47 @@
 <p>你首先需要注册 Deta 账户才能进行部署，浏览器打开 <a href="https://web.deta.sh">https://web.deta.sh</a> 进行注册。</p>
 <p>成功注册并登录后，你需要创建一个 Deta <strong>访问令牌</strong>（access token），然后 RSSerpent 会帮助你完成剩下的事。</p>
 <ol>
-<li>打开你的个人主页 <code>https://web.deta.sh/home/{username}/</code>；</li>
-<li>点击 <em>Settings</em> 设置标签页，然后点击 <em>Create Token</em> 按钮创建令牌；</li>
-<li>将生成的访问令牌拷贝到你的剪贴板。</li>
+<li>
+<p>打开你的个人主页 <code>https://web.deta.sh/home/{username}/</code>；</p>
+</li>
+<li>
+<p>点击 <em>Settings</em> 标签页进入设置，然后点击 <em>Create Token</em> 按钮创建令牌；</p>
+<p><img alt="Create Deta Token" src="https://cdn.jsdelivr.net/gh/rsserpent/asset@latest/create-deta-token.png" /></p>
+</li>
+<li>
+<p>将生成的访问令牌拷贝到你的剪贴板。</p>
+</li>
 </ol>
 <p>如果你对访问令牌有任何疑虑，请阅读 Deta 的<a href="https://docs.deta.sh/docs/cli/auth">文档</a>。</p>
 <h2 id="使用模板">使用模板<a class="headerlink" href="#使用模板" title="Permanent link">&para;</a></h2>
 <p>RSSerpent 为用户提供了 Deta 部署模板，你可以用模板快速完成部署。假设你已经开通 <a href="https://github.com/">GitHub</a> 账户：</p>
 <ol>
 <li>在 GitHub 上打开<a href="https://github.com/RSSerpent/rsserpent-deploy-deta">模板</a>；</li>
-<li>点击绿色的 <em>Use this template</em> 按钮使用模板。</li>
+<li>点击 <a href="https://github.com/RSSerpent/rsserpent-deploy-deta/generate"><img alt="Template Button" src="https://cdn.jsdelivr.net/gh/rsserpent/asset@latest/template-button.png" /></a> 按钮使用模板。</li>
 </ol>
 <p>GitHub 会提示你填写一些信息，然后就会基于模板为你创建一个代码仓库。</p>
 <ol>
 <li>打开你仓库的 <em>Settings</em> 设置标签页；</li>
 <li>找到 <em>Secrets</em>，点击 <em>New repository secret</em> 按钮新建密钥;</li>
-<li>密钥名字为 <em>DETA_TOKEN</em>，密钥内容就是你刚才创建的 Deta 访问令牌.</li>
+<li>
+<p>密钥名字为 <code>DETA_TOKEN</code>，密钥内容就是你刚才创建的 Deta 访问令牌。</p>
+<p><img alt="Create Deta Action Secret" src="https://cdn.jsdelivr.net/gh/rsserpent/asset@latest/create-action-secret.png" /></p>
+</li>
 </ol>
 <p>GitHub 会使用你的访问令牌来将你的 RSSerpent 实例自动部署到 Deta 上。</p>
 <h2 id="成功运行-">成功运行 🎉<a class="headerlink" href="#成功运行-" title="Permanent link">&para;</a></h2>
 <ol>
-<li>打开你的代码仓库 -&gt; <em>Actions</em> 标签页 -&gt; <em>All workflows</em> -&gt; <em>Update</em>，点击 <em>Run workflow</em> 按钮来手动触发第一次部署；</li>
-<li>打开你的 Deta 个人主页 -&gt; <em>default</em> 项目 -&gt; <em>Micros</em>，选择 <em>rsserpent</em>，你就能在页面右上角看到你实例的域名（类似 <em>https://xxxxxx.deta.dev/</em>）。</li>
+<li>
+<p>在你的代码仓库的 <em>Actions</em> 标签页下，找到 <em>Update</em> 工作流，点击 <em>Run workflow</em> 按钮来手动进行第一次部署；</p>
+<p><img alt="Run Update Workflow" src="https://cdn.jsdelivr.net/gh/rsserpent/asset@latest/run-update-workflow.png" /></p>
+</li>
+<li>
+<p>打开 <a href="https://www.deta.sh/">deta.sh</a>，在 <em>default</em> 项目的 <em>Micros</em> 列表中，选择 <em>rsserpent</em>，你能在页面右上角看到你实例的网站地址（类似 <em>https://xxxxxx.deta.dev/</em>）。</p>
+</li>
 </ol>
-<p>在浏览器中打开该域名。如果你看到<em>“Welcome to RSSerpent!”</em>这个欢迎信息，那么恭喜你，你已经部署成功了！</p>
+<p>在浏览器中打开该网址。如果你看到 “<em>Welcome to RSSerpent!</em>” 这个欢迎信息，那么恭喜你，你已经部署成功了！</p>
 <h2 id="其他事项">其他事项<a class="headerlink" href="#其他事项" title="Permanent link">&para;</a></h2>
-<p>如果你需要新增 RSSerpent 插件，请阅读<a href="../plugin/">安装插件</a>。</p>
+<p>如果你需要新增 RSSerpent 插件，请阅读<a href="../plugin/">[安装插件]</a>。</p>
 <p>如果你需要自定义域名，请阅读 Deta <a href="https://docs.deta.sh/docs/micros/custom_domains">文档</a>。</p>
 
   <hr>
@@ -921,7 +938,7 @@
   <small>
     
       最后更新:
-      2022-03-15
+      2022-03-16
     
   </small>
 </div>
