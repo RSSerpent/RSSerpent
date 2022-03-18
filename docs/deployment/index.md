@@ -9,6 +9,7 @@ Self-hosting is neither difficult nor complicated. You are not required to have 
 
 - [[Deploy with Deta]](deta.md)
 - [[Deploy with Heroku]](heroku.md)
+- [[Deploy with Vercel]](vercel.md)
 
 ## Official Instances
 

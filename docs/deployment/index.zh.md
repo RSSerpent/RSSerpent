@@ -9,6 +9,7 @@
 
 - [[使用 Deta 部署]](deta.md)
 - [[使用 Heroku 部署]](heroku.md)
+- [[使用 Vercel 部署]](vercel.md)
 
 ## 官方实例
 

@@ -1,6 +1,6 @@
 # 使用 Deta 部署
 
-本教程将帮助你学会如何使用 [deta.sh](https://www.deta.sh/) 免费自建 RSSerpent 实例。
+本教程将帮助你学会如何使用 [Deta](https://www.deta.sh/) 免费自建 RSSerpent 实例。
 
 ## 访问令牌
 

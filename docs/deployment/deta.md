@@ -1,6 +1,6 @@
 # Deploy with Deta
 
-Learn to self-host an RSSerpent instance on [deta.sh](https://www.deta.sh/) (for *free*) through this tutorial.
+Learn to self-host an RSSerpent instance on [Deta](https://www.deta.sh/) (for *free*) through this tutorial.
 
 ## Access Token
 
