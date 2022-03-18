@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="zh" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://docs.rsserpent.com/latest/en/contribution/plugin/">
+        <link rel="canonical" href="https://docs.rsserpent.com/latest/zh/deployment/vercel/">
       
       <link rel="icon" href="https://i.loli.net/2021/07/31/LCsB3u2yInHfwak.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
       
-        <title>Create Plugins - RSSerpent Docs</title>
+        <title>使用 Vercel 部署 - RSSerpent Docs</title>
       
     
     
@@ -67,8 +67,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#create-plugins" class="md-skip">
-          Skip to content
+        <a href="#使用-vercel-部署" class="md-skip">
+          跳转至
         </a>
       
     </div>
@@ -86,7 +86,7 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
     <a href="../../.." title="RSSerpent Docs" class="md-header__button md-logo" aria-label="RSSerpent Docs" data-md-component="logo">
       
   
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Create Plugins
+              使用 Vercel 部署
             
           </span>
         </div>
@@ -139,20 +139,20 @@
       <div class="md-header__option">
         <div class="md-select">
           
-          <button class="md-header__button md-icon" aria-label="Select language">
+          <button class="md-header__button md-icon" aria-label="选择当前语言">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
           </button>
           <div class="md-select__inner">
             <ul class="md-select__list">
               
                 <li class="md-select__item">
-                  <a href="../../../contribution/plugin/" hreflang="en" class="md-select__link">
+                  <a href="../../../deployment/vercel/" hreflang="en" class="md-select__link">
                     English
                   </a>
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="../../../zh/contribution/plugin/" hreflang="zh" class="md-select__link">
+                  <a href="./" hreflang="zh" class="md-select__link">
                     中文
                   </a>
                 </li>
@@ -170,14 +170,14 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="查找">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
         </button>
       </nav>
@@ -187,7 +187,7 @@
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            正在初始化搜索引擎
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -198,7 +198,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/RSSerpent/RSSerpent/" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/RSSerpent/RSSerpent/" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
@@ -219,7 +219,7 @@
         
           
             
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
@@ -233,7 +233,7 @@
   
     <li class="md-tabs__item">
       <a href="../../" class="md-tabs__link">
-        Introduction
+        介绍
       </a>
     </li>
   
@@ -249,23 +249,7 @@
   
     <li class="md-tabs__item">
       <a href="../../usage/" class="md-tabs__link">
-        Usage
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../deployment/" class="md-tabs__link">
-        Deployment
+        使用
       </a>
     </li>
   
@@ -283,7 +267,23 @@
   
     <li class="md-tabs__item">
       <a href="../" class="md-tabs__link md-tabs__link--active">
-        Contribution
+        部署
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contribution/" class="md-tabs__link">
+        贡献
       </a>
     </li>
   
@@ -299,7 +299,7 @@
   
     <li class="md-tabs__item">
       <a href="../../plugin/" class="md-tabs__link">
-        Plugin
+        插件
       </a>
     </li>
   
@@ -324,7 +324,7 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="RSSerpent Docs" class="md-nav__button md-logo" aria-label="RSSerpent Docs" data-md-component="logo">
       
@@ -336,7 +336,7 @@
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/RSSerpent/RSSerpent/" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/RSSerpent/RSSerpent/" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
@@ -366,14 +366,14 @@
       
       
         <label class="md-nav__link" for="__nav_1">
-          Introduction
+          介绍
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Introduction" data-md-level="1">
+      <nav class="md-nav" aria-label="介绍" data-md-level="1">
         <label class="md-nav__title" for="__nav_1">
           <span class="md-nav__icon md-icon"></span>
-          Introduction
+          介绍
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -384,7 +384,7 @@
   
     <li class="md-nav__item">
       <a href="../../" class="md-nav__link">
-        Introduction
+        介绍
       </a>
     </li>
   
@@ -398,7 +398,7 @@
   
     <li class="md-nav__item">
       <a href="../../outline/" class="md-nav__link">
-        Outline
+        文档结构
       </a>
     </li>
   
@@ -412,7 +412,7 @@
   
     <li class="md-nav__item">
       <a href="../../faq/" class="md-nav__link">
-        F.A.Q.
+        常见问题
       </a>
     </li>
   
@@ -442,14 +442,14 @@
       
       
         <label class="md-nav__link" for="__nav_2">
-          Usage
+          使用
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Usage" data-md-level="1">
+      <nav class="md-nav" aria-label="使用" data-md-level="1">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          Usage
+          使用
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -460,7 +460,7 @@
   
     <li class="md-nav__item">
       <a href="../../usage/" class="md-nav__link">
-        Know about RSS
+        认识 RSS
       </a>
     </li>
   
@@ -474,7 +474,175 @@
   
     <li class="md-nav__item">
       <a href="../../usage/router/" class="md-nav__link">
-        Routers
+        理解路由
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          部署
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="部署" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          部署
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        自建
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deta/" class="md-nav__link">
+        使用 Deta 部署
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../heroku/" class="md-nav__link">
+        使用 Heroku 部署
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          使用 Vercel 部署
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        使用 Vercel 部署
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#使用模板" class="md-nav__link">
+    使用模板
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#部署项目" class="md-nav__link">
+    部署项目
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#成功运行-" class="md-nav__link">
+    成功运行 🎉
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#其他事项" class="md-nav__link">
+    其他事项
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugin/" class="md-nav__link">
+        安装插件
       </a>
     </li>
   
@@ -498,126 +666,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_3">
-          Deployment
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Deployment" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
-          Deployment
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deployment/" class="md-nav__link">
-        Self-Hosting
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deployment/deta/" class="md-nav__link">
-        Deploy with Deta
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deployment/heroku/" class="md-nav__link">
-        Deploy with Heroku
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deployment/vercel/" class="md-nav__link">
-        Deploy with Vercel
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../deployment/plugin/" class="md-nav__link">
-        Install Plugins
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
       
       
       
       
         <label class="md-nav__link" for="__nav_4">
-          Contribution
+          贡献
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Contribution" data-md-level="1">
+      <nav class="md-nav" aria-label="贡献" data-md-level="1">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
-          Contribution
+          贡献
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -627,8 +689,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
-        Environment
+      <a href="../../contribution/" class="md-nav__link">
+        环境
       </a>
     </li>
   
@@ -641,8 +703,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../core/" class="md-nav__link">
-        Core
+      <a href="../../contribution/core/" class="md-nav__link">
+        核心
       </a>
     </li>
   
@@ -653,27 +715,25 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" data-md-state="indeterminate" type="checkbox" id="__nav_4_3" checked>
       
       
       
       
         <label class="md-nav__link" for="__nav_4_3">
-          Plugin
+          插件
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Plugin" data-md-level="2">
+      <nav class="md-nav" aria-label="插件" data-md-level="2">
         <label class="md-nav__title" for="__nav_4_3">
           <span class="md-nav__icon md-icon"></span>
-          Plugin
+          插件
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -681,66 +741,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Create Plugins
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Create Plugins
+    <li class="md-nav__item">
+      <a href="../../contribution/plugin/" class="md-nav__link">
+        创建插件
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#scaffold" class="md-nav__link">
-    Scaffold
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#develop" class="md-nav__link">
-    Develop
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#publish" class="md-nav__link">
-    Publish
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -752,8 +757,8 @@
   
   
     <li class="md-nav__item">
-      <a href="data/" class="md-nav__link">
-        Retrieve Data
+      <a href="../../contribution/plugin/data/" class="md-nav__link">
+        获取数据
       </a>
     </li>
   
@@ -790,14 +795,14 @@
       
       
         <label class="md-nav__link" for="__nav_5">
-          Plugin
+          插件
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Plugin" data-md-level="1">
+      <nav class="md-nav" aria-label="插件" data-md-level="1">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
-          Plugin
+          插件
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -808,7 +813,7 @@
   
     <li class="md-nav__item">
       <a href="../../plugin/" class="md-nav__link">
-        Official
+        官方
       </a>
     </li>
   
@@ -834,7 +839,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
   
@@ -843,27 +848,34 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      目录
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#scaffold" class="md-nav__link">
-    Scaffold
+  <a href="#使用模板" class="md-nav__link">
+    使用模板
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#develop" class="md-nav__link">
-    Develop
+  <a href="#部署项目" class="md-nav__link">
+    部署项目
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#publish" class="md-nav__link">
-    Publish
+  <a href="#成功运行-" class="md-nav__link">
+    成功运行 🎉
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#其他事项" class="md-nav__link">
+    其他事项
   </a>
   
 </li>
@@ -880,132 +892,31 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/RSSerpent/RSSerpent/edit/master/docs/contribution/plugin/index.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/RSSerpent/RSSerpent/edit/master/docs/deployment/vercel.zh.md" title="编辑此页" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
 
-<h1 id="create-plugins">Create Plugins<a class="headerlink" href="#create-plugins" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Make sure you have read <a href="./">Environment</a> before continuing.</p>
-</div>
-<p>Learn to create a RSSerpent plugin project from scratch through this tutorial.</p>
-<h2 id="scaffold">Scaffold<a class="headerlink" href="#scaffold" title="Permanent link">&para;</a></h2>
-<p>You will need to install <a href="https://cookiecutter.readthedocs.io/en/stable/installation.html">cookiecutter</a> for quickly scaffolding an RSSerpent plugin, by using the official plugin <a href="https://github.com/RSSerpent/template">template</a>.</p>
-<div class="highlight"><pre><span></span><code>pip install --user cookiecutter
-<span class="c1"># or on macOS</span>
-brew install cookiecutter
-<span class="c1"># or on Debian/Ubuntu</span>
-sudo apt install cookiecutter
-</code></pre></div>
-<p>Now it's time to scaffold you project! In your terminal, start a new session and run:</p>
-<div class="highlight"><pre><span></span><code>cookiecutter gh:rsserpent/template
-</code></pre></div>
-<p>This will download the official RSSerpent plugin <a href="https://github.com/RSSerpent/template">template</a> from GitHub. You will then be prompted to fill in some information:</p>
-<div class="highlight"><pre><span></span><code>plugin [rsserpent-plugin-xxx]:
-description [An rsserpent plugin for xxx.]:
-username [queensferryme]:
-link [https://github.com/queensferryme]:
-email [queensferryme@example.com]:
-</code></pre></div>
-<p>The message between the brackets <code>[...]</code> are default values for respective fields, you may press <code>Enter</code> to accept or type in your own choice. You personal information (<em>email</em> etc.) will only be used for rendering the template. You could always remain anonymous if you'd like to.</p>
-<p>After that, we'll automatically create a directory <code>rsserpent-plugin-xxx/</code> with all the necessary project configurations for you. We will also install project dependencies (through <code>poetry</code>) and <a href="https://pre-commit.com/">pre-commit</a> hooks, which may take minutes depending on your network connection.</p>
-<h2 id="develop">Develop<a class="headerlink" href="#develop" title="Permanent link">&para;</a></h2>
-<p>You will need a <a href="https://en.wikipedia.org/wiki/Integrated_development_environment">IDE</a> to start developing. We recommend using <a href="https://code.visualstudio.com/">Visual Studio Code</a>, or VSCode for short. Use VSCode to open the directory you just created using <code>cookiecutter</code>. You may be prompted to install some recommended VSCode plugins.</p>
-<p>An RSSerpent plugin is mostly a collection of <a href="/usage/router.md">routers</a>, and each router is a <code>path</code> string accompanied by a data <code>provider</code> function.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span>
-
-
-<span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;/path/to/route&quot;</span>
-
-
-<span class="k">async</span> <span class="k">def</span> <span class="nf">provider</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-    <span class="k">return</span> <span class="p">{</span>
-        <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Example&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;link&quot;</span><span class="p">:</span> <span class="s2">&quot;https://example.com&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;An example rsserpent plugin.&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;items&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Title&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Description&quot;</span><span class="p">}],</span>
-    <span class="p">}</span>
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>See more example routers <a href="https://github.com/RSSerpent/RSSerpent/tree/master/rsserpent/plugins/builtin">here</a>.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The <code>provider</code> function must be <strong>async</strong> and can <strong>not</strong> have <a href="https://docs.python.org/3/faq/programming.html#faq-positional-only-arguments">position-only arguments</a>.</p>
-</div>
-<p>The <code>path</code> variable defines an endpoint where users could access the RSS feed, and the <code>provider</code> function provides necessary data for rendering and serving the RSS feed to users. You will also need to register you routers in <code>rsserpent_plugin_xxx/__init__.py</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">route1</span><span class="p">,</span> <span class="n">route2</span><span class="p">,</span> <span class="n">route3</span>
-
-
-<span class="n">plugin</span> <span class="o">=</span> <span class="n">Plugin</span><span class="p">(</span>
-    <span class="c1"># ...</span>
-    <span class="n">routers</span><span class="o">=</span><span class="p">{</span>
-        <span class="n">route1</span><span class="o">.</span><span class="n">path</span><span class="p">:</span> <span class="n">route1</span><span class="o">.</span><span class="n">provider</span><span class="p">,</span>
-        <span class="n">route2</span><span class="o">.</span><span class="n">path</span><span class="p">:</span> <span class="n">route2</span><span class="o">.</span><span class="n">provider</span><span class="p">,</span>
-        <span class="n">route3</span><span class="o">.</span><span class="n">path</span><span class="p">:</span> <span class="n">route3</span><span class="o">.</span><span class="n">provider</span><span class="p">,</span>
-    <span class="p">},</span>
-<span class="p">)</span>
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Poetry install dependencies inside a <a href="https://virtualenv.pypa.io/">virtualenv</a>. Therefore, in order to use tools like <code>pre-commit</code>, <code>pytest</code> or <code>uvicorn</code>, you will need to run <code>poetry shell</code> or <code>source $(poetry env info -p)/bin/activate</code> to activate the virtual environment.</p>
-</div>
-<p>Run <code>uvicorn --reload rsserpent:app</code> in your terminal to start an RSSerpent instance locally, so that you can see if you plugin works as expected.</p>
-<div class="highlight"><pre><span></span><code>➜ uvicorn --reload rsserpent:app
-INFO:     Will watch for changes in these directories: [&#39;/path/to/your/directory&#39;]
-INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process [30920] using statreload
-INFO:     Started server process [30922]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>We recommend plugin authors to write tests, so that the plugin can be more robust and have less bugs. Write your tests in the <code>tests/</code> directory and run <code>pytest</code> to run the tests.</p>
-</div>
-<h2 id="publish">Publish<a class="headerlink" href="#publish" title="Permanent link">&para;</a></h2>
-<p>After you made enough changes to the plugin locally, make sure to commit your changes and push to GitHub. In this way, you can make you latest work available to plugin users.</p>
-<div class="highlight"><pre><span></span><code>git add --all
-git commit -m <span class="s2">&quot;&lt;type&gt;: &lt;description&gt;&quot;</span>
-git push origin
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Commit messages should be in accordance with the <a href="https://www.conventionalcommits.org/">Conventional Commits</a> specification.</p>
-</div>
-<p>When you run <code>git commit</code>, a set of pre-commit hooks will be triggered. Make sure you pass the checks before actually pushing to GitHub. You could also run the checks manually:</p>
-<div class="highlight"><pre><span></span><code>➜ pre-commit run --all-files
-Nitpick Check............................................................Passed
-Fix End of Files.........................................................Passed
-Trim Trailing Whitespace.................................................Passed
-Check Blanket &quot;#noqa&quot;....................................................Passed
-Check Blanket &quot;#type:ignore&quot;.............................................Passed
-Upgrade Python Syntax....................................................Passed
-Check Typos..............................................................Passed
-Format Source Code.......................................................Passed
-Sort Imports.............................................................Passed
-Type Check...............................................................Passed
-Lint.....................................................................Passed
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In pre-commit hooks we run <a href="https://github.com/psf/black">black</a>, <a href="https://github.com/pycqa/isort">isort</a> for source code formatting, <a href="https://github.com/python/mypy">mypy</a> for type checking, and <a href="https://github.com/PyCQA/flake8">flake8</a> for linting.
-We also run <a href="https://github.com/andreoliwa/nitpick"><strong>nitpick</strong></a>, which contains a set of recommended <a href="https://github.com/RSSerpent/RSSerpent/blob/master/styles/main.toml">configurations</a> for black/isort/mypy/flake8 etc from the upstream.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If no pre-commit hooks are triggered (that's to say, you didn't see lines of checks marked with either <em>Passed</em> or <em>Failed</em>, as shown above) when you do <code>git commit</code>, you can manually install the pre-commit hooks with <code>pre-commit install -t pre-commit -t commit-msg</code>.</p>
-</div>
+<h1 id="使用-vercel-部署">使用 Vercel 部署<a class="headerlink" href="#使用-vercel-部署" title="Permanent link">&para;</a></h1>
+<p>本教程将帮助你学会如何使用 <a href="https://vercel.com">Vercel</a> 免费自建 RSSerpent 实例。</p>
+<h2 id="使用模板">使用模板<a class="headerlink" href="#使用模板" title="Permanent link">&para;</a></h2>
+<p>在 GitHub 上打开 RSSerpent Vercel 部署<a href="https://github.com/RSSerpent/rsserpent-deploy-vercel">模板</a>，然后点击 <a href="https://github.com/RSSerpent/rsserpent-deploy-vercel/generate"><img alt="Template Button" src="https://cdn.jsdelivr.net/gh/rsserpent/asset@latest/template-button.png" /></a> 按钮使用模板。GitHub 会提示你填写一些信息，然后就会基于模板为你创建一个代码仓库。</p>
+<h2 id="部署项目">部署项目<a class="headerlink" href="#部署项目" title="Permanent link">&para;</a></h2>
+<p>在浏览器中打开此<a href="https://vercel.com/new">链接</a>，选择 <em>Continue with GitHub</em>。Vercel 会提示你授权使用你的 GitHub 账户登陆 Vercel。登录成功后，Vercel 会指引你导入 GitHub 代码仓库进行部署。你需要找到你刚刚创建的、名为 <code>rsserpent-deploy-vercel</code> 的代码仓库，并点击其右侧的 <img alt="Vercel Import Repository Button" src="https://cdn.jsdelivr.net/gh/rsserpent/asset@latest/vercel-import-repo-button.png" /> 按钮。</p>
+<p>现在，Vercel 会提示你对项目进行配置。不过好消息是，你完全不需要任何配置！点击 <em>Deploy</em>，等待数分钟，你的 RSSerpent 实例就会被成功部署。</p>
+<h2 id="成功运行-">成功运行 🎉<a class="headerlink" href="#成功运行-" title="Permanent link">&para;</a></h2>
+<p>如果你见到如下界面，那么恭喜你，你已经部署成功了！点击页面中间的网站缩略图，即可在浏览器中打开你的 RSSerpent 实例。</p>
+<p><img alt="Vercel Deploy Success" src="https://cdn.jsdelivr.net/gh/rsserpent/asset@latest/vercel-deploy-success.png" /></p>
+<h2 id="其他事项">其他事项<a class="headerlink" href="#其他事项" title="Permanent link">&para;</a></h2>
+<p>如果你需要新增 RSSerpent 插件，请阅读<a href="../plugin/">[安装插件]</a>。</p>
+<p>如果你需要自定义域名，请阅读 Vercel <a href="https://vercel.com/docs/concepts/projects/custom-domains">文档</a>。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
-      Last update:
+      最后更新:
       2022-03-18
     
   </small>
@@ -1018,39 +929,39 @@ We also run <a href="https://github.com/andreoliwa/nitpick"><strong>nitpick</str
         
           <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
-            Back to top
+            回到页面顶部
           </a>
         
       </main>
       
         <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
+    <nav class="md-footer__inner md-grid" aria-label="页脚">
       
         
-        <a href="../core/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Core" rel="prev">
+        <a href="../heroku/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 使用 Heroku 部署" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
-                Previous
+                上一页
               </span>
-              Core
+              使用 Heroku 部署
             </div>
           </div>
         </a>
       
       
         
-        <a href="data/" class="md-footer__link md-footer__link--next" aria-label="Next: Retrieve Data" rel="next">
+        <a href="../plugin/" class="md-footer__link md-footer__link--next" aria-label="下一页: 安装插件" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
-                Next
+                下一页
               </span>
-              Retrieve Data
+              安装插件
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1102,7 +1013,7 @@ We also run <a href="https://github.com/andreoliwa/nitpick"><strong>nitpick</str
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.expand", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js", "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.expand", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js", "version": {"provider": "mike"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
