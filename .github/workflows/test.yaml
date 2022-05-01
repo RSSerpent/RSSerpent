@@ -49,6 +49,6 @@ jobs:
         run: poetry run pytest --cov --cov-report=term --cov-report=xml -n auto
       - name: "Upload to Codecov.io"
         if: github.repository == 'RSSerpent/RSSerpent' && github.event_name != 'pull_request'
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v3
         with:
           fail_ci_if_error: true
