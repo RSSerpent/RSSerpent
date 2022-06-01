@@ -29,7 +29,7 @@ jobs:
           pip install --upgrade pip
           pip install --user poetry
           poetry export -o requirements.txt --without-hashes
-      - uses: docker/setup-qemu-action@v1
+      - uses: docker/setup-qemu-action@v2
       - uses: docker/setup-buildx-action@v1
       - name: "Login to Docker Hub"
         if: github.repository == 'RSSerpent/RSSerpent' && github.event_name != 'pull_request'
