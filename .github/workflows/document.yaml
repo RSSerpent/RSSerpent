@@ -27,7 +27,7 @@ jobs:
           pip install --upgrade pip
           pip install --user poetry
           poetry config virtualenvs.in-project true
-      - uses: actions/cache@v2.1.7
+      - uses: actions/cache@v3.0.8
         with:
           path: .venv
           key: ${{ hashFiles('poetry.lock') }}
